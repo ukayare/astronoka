@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="shift_jis"?>
+<トラップデータ>
+  <トラップ>
+    <type>4</type>
+    <grade>0</grade>
+  </トラップ>
+  <トラップ>
+    <type>5</type>
+    <grade>0</grade>
+  </トラップ>
+  <トラップ>
+    <type>5</type>
+    <grade>1</grade>
+  </トラップ>
+  <トラップ>
+    <type>13</type>
+    <grade>0</grade>
+  </トラップ>
+</トラップデータ>
