@@ -111,3 +111,6 @@ D:\astronoka\mygame\bin\Debug\mygame.exe
 D:\astronoka\mygame\bin\Debug\mygame.pdb
 D:\astronoka\mygame\obj\x86\Debug\mygame.exe.manifest
 D:\astronoka\mygame\obj\x86\Debug\mygame.application
+D:\アストロノーカ\mygame\bin\Debug\mygame.exe.config
+D:\アストロノーカ\mygame\obj\x86\Debug\mygame.exe
+D:\アストロノーカ\mygame\obj\x86\Debug\mygame.pdb
