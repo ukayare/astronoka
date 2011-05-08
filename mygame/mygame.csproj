@@ -94,6 +94,9 @@
     <Compile Include="busmove.Designer.cs">
       <DependentUpon>busmove.cs</DependentUpon>
     </Compile>
+    <Compile Include="nform.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="point.cs" />
     <Compile Include="date.cs" />
     <Compile Include="item.cs" />
