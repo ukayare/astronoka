@@ -5,7 +5,7 @@ using System.Text;
 
 namespace WindowsFormsApplication1
 {
-    //日にちとかその辺のデータの構造体
+    //日にちとかその辺のデータのクラス
     public static class date
     {
         internal static int day;//日
