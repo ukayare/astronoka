@@ -18,7 +18,6 @@ namespace WindowsFormsApplication1
         }
 
         babooactive ba;
-        internal Form3 pointer;
 
 
         private void butclose_Click(object sender, EventArgs e)

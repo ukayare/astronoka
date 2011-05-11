@@ -17,7 +17,6 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
 
-        internal Form3 pointer = new Form3();//ポインタ
         public trapdirection td;//方向の決定
         internal int direction;//方向
         internal Boolean flag=false;//フラグ
@@ -93,7 +92,7 @@ namespace WindowsFormsApplication1
                         this.listBox1.Items.Clear();
                         this.comboBox1.SelectedIndex = -1;
                         this.comboBox1.SelectedIndex = 0;
-                        this.pointer.trapsearch();
+                        motimono.trapsearch();
                     }
                 }
                 else
@@ -253,8 +252,8 @@ namespace WindowsFormsApplication1
                 else
                 {
                     int i;
-                    for (i = 0; i < this.pointer.tlist.Length; i++)
-                        if (this.pointer.tname[i] == this.comboBox1.SelectedItem.ToString())
+                    for (i = 0; i < motimono.tlist.Length; i++)
+                        if (motimono.tname[i] == this.comboBox1.SelectedItem.ToString())
                             break;
                     int j = motimono.traplist.FindIndex(t => t.type == i);
                     this.listBox1.Items.Add(motimono.traplist[j].name);
@@ -284,13 +283,13 @@ namespace WindowsFormsApplication1
         private void comboset()
         {
             this.comboBox1.Items.Clear();
-            this.pointer.trapsearch();
+            motimono.trapsearch();
             this.comboBox1.Items.Add("全て");
             //存在する種類を追加
-            for (int i = 0; i < this.pointer.tlist.Length; i++)
+            for (int i = 0; i < motimono.tlist.Length; i++)
             {
-                if (this.pointer.tlist[i] == true)
-                    this.comboBox1.Items.Add(this.pointer.tname[i]);
+                if (motimono.tlist[i] == true)
+                    this.comboBox1.Items.Add(motimono.tname[i]);
             }
             this.comboBox1.SelectedIndex = -1;
             this.comboBox1.SelectedIndex = 0;

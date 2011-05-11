@@ -18,26 +18,12 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
 
-        public Boolean resfrag = false;//再起動フラグ
-        public Boolean loadfrag = false;//ロードフラグ
-        public Boolean finfrag = false;//終了フラグ
-        public Boolean movefrag = false;//移動フラグ
-
-        internal int mode = 0;//移動位置
-        internal int hatakemax = 0;//畑の数
         internal baboo[] baboolist = new baboo[10];//バブーのリスト
         internal List<baboo> todaybaboo = new List<baboo>();//本日のバブー
-        internal List<trap> pedrotrap = new List<trap>();//ペドロさんのトラップリスト
-        internal List<seed> pedroseed = new List<seed>();//ペドロさんの種リスト
 
 
         music sound;
 
-        //トラップの作成時とかそういうのに使う配列
-        internal Boolean[] tlist = new Boolean[17];
-        internal string[] tname = new string[] {"落とし穴"　,"フタ付き落とし穴",　"塀",　"扇風機",　"ジャンプ台",　"ぐるぐる台",
-                    "冷水ぶっかけ装置",　"パンチングマシン",　"ビリビリマシン",　"風船サービス装置",
-                "米俵サービス装置",　"おめでとう装置",　"エサ",　"カカシ",　"オリ",　"とりもち","怪光線"};
 
         
         //再起動
@@ -45,8 +31,8 @@ namespace WindowsFormsApplication1
         {
             if (MessageBox.Show("タイトルに戻りますか？", "タイトル", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                resfrag = true;
-                movefrag = false;
+                motimono.resfrag = true;
+                motimono.movefrag = false;
                 Application.Restart();
             }
         }
@@ -59,7 +45,7 @@ namespace WindowsFormsApplication1
             this.Left = (Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2;
 
             //ニューゲーム？
-            if (loadfrag == false)
+            if (motimono.loadfrag == false)
             {
                 date.day = 1;
                 date.month = 1;
@@ -92,8 +78,8 @@ namespace WindowsFormsApplication1
         {
             if (MessageBox.Show("再起動しますか？", "再起動", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                resfrag = true;
-                movefrag = false;
+                motimono.resfrag = true;
+                motimono.movefrag = false;
                 Application.Restart();
             }
         }
@@ -107,10 +93,10 @@ namespace WindowsFormsApplication1
         //終了時
         private void Form3_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (resfrag == false)
+            if (motimono.resfrag == false)
             {
                 e.Cancel = MessageBox.Show("終了しますかあ？", "終了", MessageBoxButtons.YesNo) == DialogResult.No;
-                movefrag = false;
+                motimono.movefrag = false;
             }
         }
 
@@ -137,12 +123,12 @@ namespace WindowsFormsApplication1
             {
                 //データを上書き
                 load();
-                loadfrag = true;
+                motimono.loadfrag = true;
                 this.datelabel.Text = date.year + "年目 " + date.month + "月 " + date.day + "日" + date.week + date.season;
                 moneychanged(0);
                 finchanged(0);
                 this.namelabel.Text="名前："+date.name;
-                movefrag = false;
+                motimono.movefrag = false;
             }
         }
 
@@ -172,7 +158,7 @@ namespace WindowsFormsApplication1
             if (MessageBox.Show("ロードしますか？", "ロード", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 load();
-                loadfrag = true;
+                motimono.loadfrag = true;
                 this.datelabel.Text = date.year + "年目 " + date.month + "月 " + date.day + "日" + date.week + date.season;
                 moneychanged(0);
                 finchanged(0);
@@ -186,7 +172,6 @@ namespace WindowsFormsApplication1
             musicstop();
             this.Hide();
             home home = new home();
-            home.pointer = this;
             home.ShowDialog();
             this.Show();
             musicstart();
@@ -196,51 +181,46 @@ namespace WindowsFormsApplication1
         private void button3_Click(object sender, EventArgs e)
         {
             busmove busmove = new busmove();
-            busmove.pointer = this;
             musicstop();
             busmove.ShowDialog();
-            movefrag = true;
-            resfrag = true;
-            while (movefrag == true)//自宅に戻るまでループ
+            motimono.movefrag = true;
+            motimono.resfrag = true;
+            while (motimono.movefrag == true)//自宅に戻るまでループ
             {
                 //どこに移動するかの選択
-                switch (mode)
+                switch (motimono.mode)
                 {
                     case 0://自宅
-                        movefrag = false;
+                        motimono.movefrag = false;
                         this.Show();
                         break;
                     case 1://テンガロン
                         tengaron tengaron = new tengaron();
-                        tengaron.pointer = this;
                         this.Hide();
                         tengaron.ShowDialog();
                         break;
                     case 2://パンタロン
                         pantaron pantaron = new pantaron();
-                        pantaron.pointer = this;
                         this.Hide();
                         pantaron.ShowDialog();
                         break;
                     case 3://ソンブレロ
                         sonbrelo sonbrelo = new sonbrelo();
-                        sonbrelo.pointer = this;
                         this.Hide();
                         sonbrelo.ShowDialog();
                         break;
                     case 4://アストロドーム
                         astrodome astrodome = new astrodome();
-                        astrodome.pointer = this;
                         this.Hide();
                         astrodome.ShowDialog();
                         break;
                 }
             }
 
-            if (finfrag == true)
+            if (motimono.finfrag == true)
                 Application.Exit();
 
-            resfrag = false;
+            motimono.resfrag = false;
             musicstart();
         }
 
@@ -273,7 +253,6 @@ namespace WindowsFormsApplication1
         private void buthatake_Click(object sender, EventArgs e)
         {
             hatake hatake = new hatake();
-            hatake.pointer = this;
             this.Hide();
             musicstop();
             hatake.ShowDialog();
@@ -286,11 +265,11 @@ namespace WindowsFormsApplication1
         {
             seed s = new seed();
             s.baseset(2, 0);
-            pedroseed.Add(s);
+            motimono.pedroseed.Add(s);
             motimono.seedsort();
             s = new seed();
             s.baseset(4, 0);
-            pedroseed.Add(s);
+            motimono.pedroseed.Add(s);
             motimono.seedsort();
 
             pedrotrapset(4, 0);
@@ -303,17 +282,17 @@ namespace WindowsFormsApplication1
         public void pedrotrapset(int t, int g)
         {
             trap strap = new trap(t, g);
-            pedrotrap.Add(strap);
+            motimono.pedrotrap.Add(strap);
         }
 
         //ペドロ呼ぶ
         private void butped_Click(object sender, EventArgs e)
         {
             prdro pedro = new prdro();
-            pedro.pointer = this;
             musicstop();
             pedro.ShowDialog();
             musicstart();
+            moneychanged(0);
         }
 
         //トラップ配置
@@ -321,7 +300,6 @@ namespace WindowsFormsApplication1
         {
             this.Hide();
             trapfield trapb = new trapfield();
-            trapb.pointer = this;
             musicstop();
             trapb.ShowDialog();
             this.Show();
@@ -351,12 +329,11 @@ namespace WindowsFormsApplication1
         //ニューゲーム時の処理
         private void Form3_Shown(object sender, EventArgs e)
         {
-            if (loadfrag == false)
+            if (motimono.loadfrag == false)
             {
                 text st = new text("start", "peet");
                 st.ShowDialog();
                 hatake hatake = new hatake();
-                hatake.pointer = this;
                 this.Hide();
                 musicstop();
                 hatake.ShowDialog();
@@ -382,27 +359,17 @@ namespace WindowsFormsApplication1
             }
         }
 
-        //トラップのフラグ立て
-        public void trapsearch()
-        {
-            for (int j = 0; j < tlist.Length; j++)
-                tlist[j] = false;
-
-            for (int j = 0; j < tlist.Length; j++)
-                if (motimono.traplist.Exists(t => t.type == j))
-                    tlist[j] = true;
-        }
 
         //バトルフィールド
         private void butbattle_Click(object sender, EventArgs e)
         {
             trapbattle tb = new trapbattle();
-            tb.pointer = this;
             musicstop();
             this.Hide();
             tb.ShowDialog();
             musicstart();
             this.Show();
         }
+
     }
 }

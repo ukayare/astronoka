@@ -16,7 +16,6 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
 
-        public Form3 pointer = new Form3();//メインへのポインタ
 
         music sound;
 
@@ -50,9 +49,9 @@ namespace WindowsFormsApplication1
                 //行き先OKならフォームを開く準備して閉じる。同じ場合は何もしない
                 if (MessageBox.Show(distlist.SelectedItem + "へ行きますか？", "行き先確認", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    if (this.pointer.mode != distlist.SelectedIndex)
+                    if (motimono.mode != distlist.SelectedIndex)
                     {
-                        this.pointer.mode = distlist.SelectedIndex;
+                        motimono.mode = distlist.SelectedIndex;
                         this.Dispose();
                     }
                     else

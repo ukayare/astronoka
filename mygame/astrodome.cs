@@ -18,7 +18,6 @@ namespace WindowsFormsApplication1
         }
 
         Boolean resfrag = false;//再起動フラグ
-        public Form3 pointer = new Form3();//メイン画面のポインター
 
         music sound;//音楽用のクラス
 
@@ -28,7 +27,7 @@ namespace WindowsFormsApplication1
             if (MessageBox.Show("再起動しますか？", "再起動", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {//押したら再起動
                 resfrag = true;
-                pointer.movefrag = false;
+                motimono.movefrag = false;
                 Application.Restart();
 
             }
@@ -65,8 +64,8 @@ namespace WindowsFormsApplication1
                 e.Cancel = MessageBox.Show("終了しますかえ？", "終了", MessageBoxButtons.YesNo) == DialogResult.No;
                 if (e.Cancel == false)
                 {
-                    pointer.finfrag = true;
-                    pointer.movefrag = false;
+                    motimono.finfrag = true;
+                    motimono.movefrag = false;
                 }
             }
         }
@@ -76,9 +75,8 @@ namespace WindowsFormsApplication1
         {
             musicstop();//音楽停止
             busmove busmove = new busmove();
-            busmove.pointer = pointer;
             busmove.ShowDialog();
-            pointer.movefrag = true;
+            motimono.movefrag = true;
             resfrag = true;
             this.Dispose();
         }
@@ -93,6 +91,11 @@ namespace WindowsFormsApplication1
         {
             sound = new music("music\\astrodome.mp3");
             sound.start();
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
 
         }
 

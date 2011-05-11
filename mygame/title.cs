@@ -97,7 +97,7 @@ namespace WindowsFormsApplication1
             if (System.IO.File.Exists("save\\date.xml"))
             {
                 resfrag = true;
-                form3.loadfrag = true;
+                motimono.loadfrag = true;
                 //form3.ShowDialog();
                 //this.Hide();
                 musicstop();

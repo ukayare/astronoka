@@ -22,7 +22,6 @@ namespace WindowsFormsApplication1
         public seedstatus seedst;//種情報表示
         music sound;
 
-        internal home pointer = new home();//ポインタ
 
         private void butmix_Click(object sender, EventArgs e)
         {

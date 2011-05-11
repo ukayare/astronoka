@@ -46,9 +46,9 @@ namespace WindowsFormsApplication1
             motimono.trapenable = new int[9, 9];
             tfieldload();
 
-            pedroseed.Clear();
+           motimono.pedroseed.Clear();
             pedroseedload();
-            pedrotrap.Clear();
+            motimono.pedrotrap.Clear();
             pedrotrapload();
 
             foreach(seed s in motimono.seedlist)
@@ -154,7 +154,7 @@ namespace WindowsFormsApplication1
                 }
             }
 
-            loadfrag = true;
+            motimono.loadfrag = true;
             MessageBox.Show("ロードが完了しました");
             reader.Close();
 
@@ -293,7 +293,7 @@ namespace WindowsFormsApplication1
                 }
             }
 
-            loadfrag = true;
+            motimono.loadfrag = true;
             reader.Close();
 
         }
@@ -439,7 +439,7 @@ namespace WindowsFormsApplication1
                 }
             }
 
-            loadfrag = true;
+            motimono.loadfrag = true;
             reader.Close();
 
         }
@@ -616,7 +616,7 @@ namespace WindowsFormsApplication1
             }
             finally
             {
-                loadfrag = true;
+                motimono.loadfrag = true;
                 reader.Close();
             }
         }
@@ -698,7 +698,7 @@ namespace WindowsFormsApplication1
                 }
             }
 
-            loadfrag = true;
+            motimono.loadfrag = true;
             reader.Close();
 
         }
@@ -833,7 +833,7 @@ namespace WindowsFormsApplication1
             }
             finally
             {
-                loadfrag = true;
+                motimono.loadfrag = true;
                 reader.Close();
             }
         }
@@ -852,12 +852,12 @@ namespace WindowsFormsApplication1
 
                 xtw.WriteStartDocument();//XML宣言
                 xtw.WriteStartElement("種データ");
-                for (int i = 0; i < pedroseed.Count; i++)
+                for (int i = 0; i <motimono.pedroseed.Count; i++)
                 {
                     xtw.WriteStartElement("種");
 
-                    xtw.WriteElementString("department", pedroseed[i].department.ToString());
-                    xtw.WriteElementString("mendel", pedroseed[i].mendel.ToString());
+                    xtw.WriteElementString("department",motimono.pedroseed[i].department.ToString());
+                    xtw.WriteElementString("mendel",motimono.pedroseed[i].mendel.ToString());
                     xtw.WriteEndElement();
                 }
                 xtw.WriteEndElement();
@@ -903,12 +903,12 @@ namespace WindowsFormsApplication1
                     if (reader.LocalName.Equals("種"))
                     {
                         s.baseset(men, dep);
-                        pedroseed.Add(s);
+                       motimono.pedroseed.Add(s);
                     }
                 }
             }
 
-            loadfrag = true;
+            motimono.loadfrag = true;
             reader.Close();
 
         }
@@ -928,13 +928,13 @@ namespace WindowsFormsApplication1
                 xtw.WriteStartDocument();//XML宣言
                 xtw.WriteStartElement("トラップデータ");
 
-                for (int i = 0; i < pedrotrap.Count; i++)
+                for (int i = 0; i < motimono.pedrotrap.Count; i++)
                 {
 
                     xtw.WriteStartElement("トラップ");
 
-                    xtw.WriteElementString("type", pedrotrap[i].type.ToString());
-                    xtw.WriteElementString("grade", pedrotrap[i].grade.ToString());
+                    xtw.WriteElementString("type", motimono.pedrotrap[i].type.ToString());
+                    xtw.WriteElementString("grade", motimono.pedrotrap[i].grade.ToString());
 
                     xtw.WriteEndElement();
                 }
@@ -980,12 +980,12 @@ namespace WindowsFormsApplication1
                     if (reader.LocalName.Equals("トラップ"))
                     {
                         t.trapset();
-                        pedrotrap.Add(t);
+                        motimono.pedrotrap.Add(t);
                     }
                 }
             }
 
-            loadfrag = true;
+            motimono.loadfrag = true;
             reader.Close();
 
         }

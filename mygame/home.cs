@@ -17,7 +17,6 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
 
-        internal Form3 pointer = new Form3();
 
         music sound;
 
@@ -59,7 +58,6 @@ namespace WindowsFormsApplication1
         {
             this.Hide();
             kouhai kouhai = new kouhai();
-            kouhai.pointer = this;
             musicstop();
             kouhai.ShowDialog();
             this.Show();
@@ -70,7 +68,6 @@ namespace WindowsFormsApplication1
         private void butitem_Click(object sender, EventArgs e)
         {
             itemlist il = new itemlist();
-            il.pointer = this;
             il.ShowDialog();
         }
 

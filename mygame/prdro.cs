@@ -17,31 +17,24 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
 
-        internal Form3 pointer;//ポインタ
-
         music sound;
         //選んだ種とトラップ
         seed selectedseed;
         trap selectedtrap;
 
-        internal Boolean[] tlist = new Boolean[17];
-        internal string[] tname = new string[] {"落とし穴"　,"フタ付き落とし穴",　"塀",　"扇風機",　"ジャンプ台",　"ぐるぐる台",
-                    "冷水ぶっかけ装置",　"パンチングマシン",　"ビリビリマシン",　"風船サービス装置",
-                "米俵サービス装置",　"おめでとう装置",　"エサ",　"カカシ",　"オリ",　"とりもち","怪光線"};
-
         //持ってるとラップ調べる（店側
         public void trapsearch()
         {
-            for (int j = 0; j < tlist.Length; j++)
-                tlist[j] = false;
+            for (int j = 0; j < motimono.tlistpedro.Length; j++)
+                motimono.tlistpedro[j] = false;
 
-            for (int i = 0; i < this.pointer.pedrotrap.Count; i++)
+            for (int i = 0; i < motimono.pedrotrap.Count; i++)
             {
-                for (int j = 0; j < tlist.Length; j++)
+                for (int j = 0; j < motimono.tlistpedro.Length; j++)
                 {
-                    if (this.pointer.pedrotrap[i].type == j)
+                    if (motimono.pedrotrap[i].type == j)
                     {
-                        tlist[j] = true;
+                        motimono.tlistpedro[j] = true;
                         break;
                     }
                 }
@@ -114,11 +107,11 @@ namespace WindowsFormsApplication1
                     foreach(trap t in motimono.traplist)
                         this.listBox.Items.Add(t.name);
 
-                    for (int j = 0; j < this.pointer.tlist.Length; j++)
+                    for (int j = 0; j < motimono.tlist.Length; j++)
                     {
-                        if (this.pointer.tlist[j]==true)
+                        if (motimono.tlist[j]==true)
                         {
-                            this.namebox.Items.Add(this.pointer.tname[j]);
+                            this.namebox.Items.Add(motimono.tname[j]);
                         }
                     }
                 }
@@ -171,9 +164,9 @@ namespace WindowsFormsApplication1
                     }
                     else
                     {
-                        for (j = 0; j < this.pointer.tlist.Length; j++)
+                        for (j = 0; j < motimono.tlist.Length; j++)
                         {
-                            if (this.pointer.tname[j] == this.namebox.SelectedItem.ToString())
+                            if (motimono.tname[j] == this.namebox.SelectedItem.ToString())
                             {
                                 break;
                             }
@@ -228,9 +221,9 @@ namespace WindowsFormsApplication1
                 else if (this.itembox.SelectedItem.ToString() == "トラップ")
                 {
                     this.namebox.Items.Add("全て");
-                    for (int i = 0; i < this.pointer.tlist.Length; i++)
-                        if (this.pointer.tlist[i] == true)
-                            this.namebox.Items.Add(tname[i]);
+                    for (int i = 0; i < motimono.tlist.Length; i++)
+                        if (motimono.tlist[i] == true)
+                            this.namebox.Items.Add(motimono.tname[i]);
                 }
             }
         }
@@ -298,24 +291,24 @@ namespace WindowsFormsApplication1
                     if (this.itembox.SelectedItem.ToString() == "種")
                     {
                         find = motimono.seedlist.FindIndex(s => s.finname == this.listBox.SelectedItem.ToString());
-                        this.pointer.moneychanged(10 * (this.buyBox2.SelectedIndex + 1));
+                        date.moneychanged(10 * (this.buyBox2.SelectedIndex + 1));
                         motimono.seedlist[find].items -= this.buyBox2.SelectedIndex + 1;
                         motimono.seedlist.RemoveAll(s => s.items == 0);
                     }
                     else if (this.itembox.SelectedItem.ToString() == "野菜")
                     {
                         find = motimono.vaglist.FindIndex(v => v.finname == this.listBox.SelectedItem.ToString());
-                        this.pointer.moneychanged(motimono.vaglist[find].price * (this.buyBox2.SelectedIndex + 1));
+                        date.moneychanged(motimono.vaglist[find].price * (this.buyBox2.SelectedIndex + 1));
                         motimono.vaglist[find].items -= this.buyBox2.SelectedIndex + 1;
                         motimono.vaglist.RemoveAll(v => v.items == 0);
                     }
                     else if (this.itembox.SelectedItem.ToString() == "トラップ")
                     {
                         find = motimono.traplist.FindIndex(t => t.name == this.listBox.SelectedItem.ToString());
-                        this.pointer.moneychanged((motimono.traplist[find].price * (this.buyBox2.SelectedIndex + 1)) / 2);
+                        date.moneychanged((motimono.traplist[find].price * (this.buyBox2.SelectedIndex + 1)) / 2);
                         motimono.traplist[find].items -= this.buyBox2.SelectedIndex + 1;
                         motimono.traplist.RemoveAll(t => t.items == 0);
-                        this.pointer.trapsearch();
+                        motimono.trapsearch();
                     }
                     boxset();
                 }
@@ -350,9 +343,9 @@ namespace WindowsFormsApplication1
                 else if (this.bitemBox1.SelectedItem.ToString() == "トラップ")
                 {
                     this.bnameBox.Items.Add("全て");
-                    for (int i = 0; i < tlist.Length; i++)
-                        if (tlist[i] == true)
-                            this.bnameBox.Items.Add(tname[i]);
+                    for (int i = 0; i < motimono.tlistpedro.Length; i++)
+                        if (motimono.tlistpedro[i] == true)
+                            this.bnameBox.Items.Add(motimono.tname[i]);
                 }
             }
         }
@@ -365,23 +358,23 @@ namespace WindowsFormsApplication1
                 this.listBox2.Items.Clear();
                 if (this.bitemBox1.SelectedItem.ToString() == "種")
                 {
-                    foreach(seed s in this.pointer.pedroseed)
+                    foreach(seed s in motimono.pedroseed)
                         this.listBox2.Items.Add(s.finname);
                 }
                 else if (this.bitemBox1.SelectedItem.ToString() == "トラップ")
                 {
                     if (this.bnameBox.SelectedItem.ToString() == "全て")
                     {
-                        foreach(trap t in this.pointer.pedrotrap)
+                        foreach(trap t in motimono.pedrotrap)
                             this.listBox2.Items.Add(t.name);
                     }
                     else
                     {
                         int i;
-                        for(i=0;i<tlist.Length;i++)
-                            if(this.bnameBox.SelectedItem.ToString()==tname[i])
+                        for (i = 0; i < motimono.tlistpedro.Length; i++)
+                            if(this.bnameBox.SelectedItem.ToString()==motimono.tname[i])
                                 break;
-                        List<trap> curtrap = this.pointer.pedrotrap.FindAll(t => t.type == i);
+                        List<trap> curtrap = motimono.pedrotrap.FindAll(t => t.type == i);
                         foreach(trap t in curtrap)
                                 this.listBox2.Items.Add(t.name);
                     }
@@ -397,11 +390,11 @@ namespace WindowsFormsApplication1
             {
                 if (this.bitemBox1.SelectedItem.ToString() == "種")
                 {
-                    selectedseed = this.pointer.pedroseed.Find(s => s.finname == this.listBox2.SelectedItem.ToString());
+                    selectedseed = motimono.pedroseed.Find(s => s.finname == this.listBox2.SelectedItem.ToString());
                 }
                 else if (this.bitemBox1.SelectedItem.ToString() == "トラップ")
                 {
-                    selectedtrap = this.pointer.pedrotrap.Find(t => t.name == this.listBox2.SelectedItem.ToString());
+                    selectedtrap = motimono.pedrotrap.Find(t => t.name == this.listBox2.SelectedItem.ToString());
                 }
             }
         }
@@ -446,7 +439,7 @@ namespace WindowsFormsApplication1
                         trapbuy(selectedtrap, ko);
                     }
                     boxset();
-                    this.pointer.trapsearch();
+                    motimono.trapsearch();
                 }
             }
             else
@@ -477,7 +470,7 @@ namespace WindowsFormsApplication1
         {
             if (date.money >= (s.sell * (count)))//金ある？
             {
-                this.pointer.moneychanged(-(s.sell * (count)));//金額減らす
+                date.moneychanged(-(s.sell * (count)));//金額減らす
                 motimono.syoki(s.mendel, s.department, count);
                 MessageBox.Show(s.finname + "を" + count + "個購入しました");
             }
@@ -490,7 +483,7 @@ namespace WindowsFormsApplication1
         {
             if (date.money >= (t.price * (count)))
             {
-                this.pointer.moneychanged(-(t.price * (count)));
+                date.moneychanged(-(t.price * (count)));
                 motimono.gettrap(t,count);
                 MessageBox.Show(t.name + "を" + count + "個購入しました");
             }

@@ -64,6 +64,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(784, 26);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // メニューToolStripMenuItem
             // 
@@ -77,14 +78,14 @@
             // restart
             // 
             this.restart.Name = "restart";
-            this.restart.Size = new System.Drawing.Size(152, 22);
+            this.restart.Size = new System.Drawing.Size(112, 22);
             this.restart.Text = "再起動";
             this.restart.Click += new System.EventHandler(this.restart_Click);
             // 
             // finish
             // 
             this.finish.Name = "finish";
-            this.finish.Size = new System.Drawing.Size(152, 22);
+            this.finish.Size = new System.Drawing.Size(112, 22);
             this.finish.Text = "終了";
             this.finish.Click += new System.EventHandler(this.finish_Click);
             // 

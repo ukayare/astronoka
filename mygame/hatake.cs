@@ -17,7 +17,6 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
 
-        internal Form3 pointer = new Form3();//ポインタ
         seed s;//植える種
         seedstatus seedst;//種情報
         int hatanum = 0;//畑番号
@@ -295,7 +294,7 @@ namespace WindowsFormsApplication1
         {
             hatanum--;
             if (hatanum < 0)
-                hatanum = this.pointer.hatakemax;
+                hatanum = motimono.hatakemax;
             for (int i = 0; i < 6; i++)
             {
                 hatapic(hatanum, i);
@@ -305,7 +304,7 @@ namespace WindowsFormsApplication1
         private void button8_Click(object sender, EventArgs e)
         {
             hatanum++;
-            if (hatanum > this.pointer.hatakemax)
+            if (hatanum > motimono.hatakemax)
                 hatanum = 0;
             for (int i = 0; i < 6; i++)
             {
@@ -366,7 +365,7 @@ namespace WindowsFormsApplication1
         //ニューゲーム時にメッセージがこのフォームが出てから出すための処理
         private void hatake_Shown(object sender, EventArgs e)
         {
-            if (this.pointer.loadfrag == false)
+            if (motimono.loadfrag == false)
             {
                 text st = new text("hatakestart", "peet");
                 st.ShowDialog();
@@ -374,7 +373,7 @@ namespace WindowsFormsApplication1
                 st = new text("hatakeexend", "peet");
                 st.ShowDialog();
 
-                this.pointer.loadfrag = true;
+                motimono.loadfrag = true;
             }
         }
     }
