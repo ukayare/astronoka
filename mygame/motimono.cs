@@ -23,22 +23,9 @@ namespace WindowsFormsApplication1
         internal static List<trap> pedrotrap = new List<trap>();//ペドロさんのトラップリスト
         internal static List<seed> pedroseed = new List<seed>();//ペドロさんの種リスト
 
-        //トラップの作成時とかそういうのに使う配列
-        internal static Boolean[] tlist = new Boolean[17];
-        internal static string[] tname = new string[] {"落とし穴"　,"フタ付き落とし穴",　"塀",　"扇風機",　"ジャンプ台",　"ぐるぐる台",
-                    "冷水ぶっかけ装置",　"パンチングマシン",　"ビリビリマシン",　"風船サービス装置",
-                "米俵サービス装置",　"おめでとう装置",　"エサ",　"カカシ",　"オリ",　"とりもち","怪光線"};
-        internal static Boolean[] tlistpedro = new Boolean[17];
 
         internal static int mode = 0;//移動位置
         internal static int hatakemax = 0;//畑の数
-
-
-        public static Boolean loadfrag = false;//ロードフラグ
-        public static Boolean resfrag = false;//再起動フラグ
-        public static Boolean finfrag = false;//終了フラグ
-        public static Boolean movefrag = false;//移動フラグ
-
 
 
 
@@ -176,17 +163,6 @@ namespace WindowsFormsApplication1
                 traplist.Add(t);
 
             trapsort();
-        }
-
-        //トラップのフラグ立て
-        public static void trapsearch()
-        {
-            for (int j = 0; j < tlist.Length; j++)
-                tlist[j] = false;
-
-            for (int j = 0; j < tlist.Length; j++)
-                if (traplist.Exists(t => t.type == j))
-                    tlist[j] = true;
         }
 
 

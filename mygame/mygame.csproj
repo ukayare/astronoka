@@ -94,6 +94,7 @@
     <Compile Include="busmove.Designer.cs">
       <DependentUpon>busmove.cs</DependentUpon>
     </Compile>
+    <Compile Include="Flag.cs" />
     <Compile Include="nform.cs">
       <SubType>Form</SubType>
     </Compile>

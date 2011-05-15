@@ -54,8 +54,8 @@ namespace WindowsFormsApplication1
                 else if (this.listBox2.SelectedItem.ToString() == "トラップ")
                 {
                     int j;
-                    for (j=0; j < motimono.tlist.Length; j++)
-                            if (this.namebox1.SelectedItem.ToString() == motimono.tname[j])
+                    for (j=0; j < Flag.tlist.Length; j++)
+                            if (this.namebox1.SelectedItem.ToString() == Flag.tname[j])
                                 break;
                     this.listBox1.Items.Clear();
                     List<trap> curtrap = new List<trap>();
@@ -108,10 +108,10 @@ namespace WindowsFormsApplication1
                 }
                 else if (this.listBox2.SelectedItem.ToString() == "トラップ")
                 {
-                    for (int i = 0; i < motimono.tlist.Length; i++)
+                    for (int i = 0; i < Flag.tlist.Length; i++)
                     {
-                        if (motimono.tlist[i] == true)
-                            this.namebox1.Items.Add(motimono.tname[i]);
+                        if (Flag.tlist[i] == true)
+                            this.namebox1.Items.Add(Flag.tname[i]);
                     }
                     foreach (trap t in motimono.traplist)
                         this.listBox1.Items.Add(t.name);
@@ -129,7 +129,7 @@ namespace WindowsFormsApplication1
             this.Top = (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2;
             this.Left = (Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2;
             boxset();
-            motimono.trapsearch();
+            Flag.trapsearch();
         }
 
         private void boxset()
@@ -210,10 +210,10 @@ namespace WindowsFormsApplication1
                 this.namebox1.Items.Clear();
                 this.depbox1.Items.Clear();
                 this.depbox1.Items.Add("全て");
-                for (int i = 0; i < motimono.tlist.Length; i++)
+                for (int i = 0; i < Flag.tlist.Length; i++)
                 {
                     if(motimono.traplist.Exists(t=>t.type==i)==true)
-                        this.namebox1.Items.Add(motimono.tname[i]);
+                        this.namebox1.Items.Add(Flag.tname[i]);
                 }
             }
         }

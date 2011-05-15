@@ -46,7 +46,7 @@ namespace WindowsFormsApplication1
             motimono.trapenable = new int[9, 9];
             tfieldload();
 
-           motimono.pedroseed.Clear();
+            motimono.pedroseed.Clear();
             pedroseedload();
             motimono.pedrotrap.Clear();
             pedrotrapload();
@@ -154,7 +154,7 @@ namespace WindowsFormsApplication1
                 }
             }
 
-            motimono.loadfrag = true;
+            Flag.loadfrag = true;
             MessageBox.Show("ロードが完了しました");
             reader.Close();
 
@@ -293,7 +293,7 @@ namespace WindowsFormsApplication1
                 }
             }
 
-            motimono.loadfrag = true;
+            Flag.loadfrag = true;
             reader.Close();
 
         }
@@ -439,7 +439,7 @@ namespace WindowsFormsApplication1
                 }
             }
 
-            motimono.loadfrag = true;
+            Flag.loadfrag = true;
             reader.Close();
 
         }
@@ -616,7 +616,7 @@ namespace WindowsFormsApplication1
             }
             finally
             {
-                motimono.loadfrag = true;
+                Flag.loadfrag = true;
                 reader.Close();
             }
         }
@@ -698,7 +698,7 @@ namespace WindowsFormsApplication1
                 }
             }
 
-            motimono.loadfrag = true;
+            Flag.loadfrag = true;
             reader.Close();
 
         }
@@ -833,7 +833,7 @@ namespace WindowsFormsApplication1
             }
             finally
             {
-                motimono.loadfrag = true;
+                Flag.loadfrag = true;
                 reader.Close();
             }
         }
@@ -908,7 +908,7 @@ namespace WindowsFormsApplication1
                 }
             }
 
-            motimono.loadfrag = true;
+            Flag.loadfrag = true;
             reader.Close();
 
         }
@@ -985,7 +985,7 @@ namespace WindowsFormsApplication1
                 }
             }
 
-            motimono.loadfrag = true;
+            Flag.loadfrag = true;
             reader.Close();
 
         }

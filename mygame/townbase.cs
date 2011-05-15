@@ -27,8 +27,8 @@ namespace WindowsFormsApplication1
         {
             if (MessageBox.Show("再起動しますか？", "再起動", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                resfrag = true;
-                motimono.movefrag = false;
+                Flag.resfrag = true;
+                Flag.movefrag = false;
                 Application.Restart();
 
             }
@@ -58,8 +58,8 @@ namespace WindowsFormsApplication1
                 e.Cancel = MessageBox.Show("終了しますかえ？", "終了", MessageBoxButtons.YesNo) == DialogResult.No;
                 if (e.Cancel == false)
                 {
-                    motimono.finfrag = true;
-                    motimono.movefrag = false;
+                    Flag.finfrag = true;
+                    Flag.movefrag = false;
                 }
             }
         }
@@ -69,7 +69,7 @@ namespace WindowsFormsApplication1
             musicstop();
             busmove busmove = new busmove();
             busmove.ShowDialog();
-            motimono.movefrag = true;
+            Flag.movefrag = true;
             resfrag = true;
             this.Dispose();
         }

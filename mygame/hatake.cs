@@ -365,7 +365,7 @@ namespace WindowsFormsApplication1
         //ニューゲーム時にメッセージがこのフォームが出てから出すための処理
         private void hatake_Shown(object sender, EventArgs e)
         {
-            if (motimono.loadfrag == false)
+            if (Flag.loadfrag == false)
             {
                 text st = new text("hatakestart", "peet");
                 st.ShowDialog();
@@ -373,7 +373,7 @@ namespace WindowsFormsApplication1
                 st = new text("hatakeexend", "peet");
                 st.ShowDialog();
 
-                motimono.loadfrag = true;
+                Flag.loadfrag = true;
             }
         }
     }

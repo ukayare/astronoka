@@ -24,6 +24,7 @@ namespace WindowsFormsApplication1
 
         music sound;
 
+
         //ロード
         private void trapfield_Load(object sender, EventArgs e)
         {
@@ -92,7 +93,7 @@ namespace WindowsFormsApplication1
                         this.listBox1.Items.Clear();
                         this.comboBox1.SelectedIndex = -1;
                         this.comboBox1.SelectedIndex = 0;
-                        motimono.trapsearch();
+                        Flag.trapsearch();
                     }
                 }
                 else
@@ -252,8 +253,8 @@ namespace WindowsFormsApplication1
                 else
                 {
                     int i;
-                    for (i = 0; i < motimono.tlist.Length; i++)
-                        if (motimono.tname[i] == this.comboBox1.SelectedItem.ToString())
+                    for (i = 0; i < Flag.tlist.Length; i++)
+                        if (Flag.tname[i] == this.comboBox1.SelectedItem.ToString())
                             break;
                     int j = motimono.traplist.FindIndex(t => t.type == i);
                     this.listBox1.Items.Add(motimono.traplist[j].name);
@@ -283,13 +284,13 @@ namespace WindowsFormsApplication1
         private void comboset()
         {
             this.comboBox1.Items.Clear();
-            motimono.trapsearch();
+            Flag.trapsearch();
             this.comboBox1.Items.Add("全て");
             //存在する種類を追加
-            for (int i = 0; i < motimono.tlist.Length; i++)
+            for (int i = 0; i < Flag.tlist.Length; i++)
             {
-                if (motimono.tlist[i] == true)
-                    this.comboBox1.Items.Add(motimono.tname[i]);
+                if (Flag.tlist[i] == true)
+                    this.comboBox1.Items.Add(Flag.tname[i]);
             }
             this.comboBox1.SelectedIndex = -1;
             this.comboBox1.SelectedIndex = 0;

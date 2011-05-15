@@ -18,21 +18,15 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
 
-        internal baboo[] baboolist = new baboo[10];//バブーのリスト
-        internal List<baboo> todaybaboo = new List<baboo>();//本日のバブー
-
-
         music sound;
 
-
-        
         //再起動
         private void buttitle_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("タイトルに戻りますか？", "タイトル", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                motimono.resfrag = true;
-                motimono.movefrag = false;
+                Flag.resfrag = true;
+                Flag.movefrag = false;
                 Application.Restart();
             }
         }
@@ -45,7 +39,7 @@ namespace WindowsFormsApplication1
             this.Left = (Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2;
 
             //ニューゲーム？
-            if (motimono.loadfrag == false)
+            if (Flag.loadfrag == false)
             {
                 date.day = 1;
                 date.month = 1;
@@ -78,8 +72,8 @@ namespace WindowsFormsApplication1
         {
             if (MessageBox.Show("再起動しますか？", "再起動", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                motimono.resfrag = true;
-                motimono.movefrag = false;
+                Flag.resfrag = true;
+                Flag.movefrag = false;
                 Application.Restart();
             }
         }
@@ -93,10 +87,10 @@ namespace WindowsFormsApplication1
         //終了時
         private void Form3_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (motimono.resfrag == false)
+            if (Flag.resfrag == false)
             {
                 e.Cancel = MessageBox.Show("終了しますかあ？", "終了", MessageBoxButtons.YesNo) == DialogResult.No;
-                motimono.movefrag = false;
+                Flag.movefrag = false;
             }
         }
 
@@ -123,12 +117,12 @@ namespace WindowsFormsApplication1
             {
                 //データを上書き
                 load();
-                motimono.loadfrag = true;
+                Flag.loadfrag = true;
                 this.datelabel.Text = date.year + "年目 " + date.month + "月 " + date.day + "日" + date.week + date.season;
                 moneychanged(0);
                 finchanged(0);
                 this.namelabel.Text="名前："+date.name;
-                motimono.movefrag = false;
+                Flag.movefrag = false;
             }
         }
 
@@ -158,7 +152,7 @@ namespace WindowsFormsApplication1
             if (MessageBox.Show("ロードしますか？", "ロード", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 load();
-                motimono.loadfrag = true;
+                Flag.loadfrag = true;
                 this.datelabel.Text = date.year + "年目 " + date.month + "月 " + date.day + "日" + date.week + date.season;
                 moneychanged(0);
                 finchanged(0);
@@ -183,15 +177,15 @@ namespace WindowsFormsApplication1
             busmove busmove = new busmove();
             musicstop();
             busmove.ShowDialog();
-            motimono.movefrag = true;
-            motimono.resfrag = true;
-            while (motimono.movefrag == true)//自宅に戻るまでループ
+            Flag.movefrag = true;
+            Flag.resfrag = true;
+            while (Flag.movefrag == true)//自宅に戻るまでループ
             {
                 //どこに移動するかの選択
                 switch (motimono.mode)
                 {
                     case 0://自宅
-                        motimono.movefrag = false;
+                        Flag.movefrag = false;
                         this.Show();
                         break;
                     case 1://テンガロン
@@ -217,10 +211,10 @@ namespace WindowsFormsApplication1
                 }
             }
 
-            if (motimono.finfrag == true)
+            if (Flag.finfrag == true)
                 Application.Exit();
 
-            motimono.resfrag = false;
+            Flag.resfrag = false;
             musicstart();
         }
 
@@ -329,7 +323,7 @@ namespace WindowsFormsApplication1
         //ニューゲーム時の処理
         private void Form3_Shown(object sender, EventArgs e)
         {
-            if (motimono.loadfrag == false)
+            if (Flag.loadfrag == false)
             {
                 text st = new text("start", "peet");
                 st.ShowDialog();

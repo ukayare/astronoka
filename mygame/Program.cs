@@ -26,7 +26,7 @@ namespace WindowsFormsApplication1
             //ここからタイトルが閉じたときの処理
             if (form1.finfrag == false)//終了フラグが立ってない
             {
-                if(motimono.loadfrag==true)//ロードフラグ立ってたらロードしてスタート
+                if(Flag.loadfrag==true)//ロードフラグ立ってたらロードしてスタート
                     form3.load();
                 Application.Run(form3);//じゃない場合はデフォルト起動
             }

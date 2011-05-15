@@ -22,25 +22,6 @@ namespace WindowsFormsApplication1
         seed selectedseed;
         trap selectedtrap;
 
-        //持ってるとラップ調べる（店側
-        public void trapsearch()
-        {
-            for (int j = 0; j < motimono.tlistpedro.Length; j++)
-                motimono.tlistpedro[j] = false;
-
-            for (int i = 0; i < motimono.pedrotrap.Count; i++)
-            {
-                for (int j = 0; j < motimono.tlistpedro.Length; j++)
-                {
-                    if (motimono.pedrotrap[i].type == j)
-                    {
-                        motimono.tlistpedro[j] = true;
-                        break;
-                    }
-                }
-
-            }
-        }
 
         //閉じる
         private void butclose_Click(object sender, EventArgs e)
@@ -54,7 +35,7 @@ namespace WindowsFormsApplication1
             this.Top = (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2;
             this.Left = (Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2;
             musicstart();
-            this.trapsearch();
+            Flag.trapsearchpedro();
         }
 
         //
@@ -107,11 +88,11 @@ namespace WindowsFormsApplication1
                     foreach(trap t in motimono.traplist)
                         this.listBox.Items.Add(t.name);
 
-                    for (int j = 0; j < motimono.tlist.Length; j++)
+                    for (int j = 0; j < Flag.tlist.Length; j++)
                     {
-                        if (motimono.tlist[j]==true)
+                        if (Flag.tlist[j]==true)
                         {
-                            this.namebox.Items.Add(motimono.tname[j]);
+                            this.namebox.Items.Add(Flag.tname[j]);
                         }
                     }
                 }
@@ -164,9 +145,9 @@ namespace WindowsFormsApplication1
                     }
                     else
                     {
-                        for (j = 0; j < motimono.tlist.Length; j++)
+                        for (j = 0; j < Flag.tlist.Length; j++)
                         {
-                            if (motimono.tname[j] == this.namebox.SelectedItem.ToString())
+                            if (Flag.tname[j] == this.namebox.SelectedItem.ToString())
                             {
                                 break;
                             }
@@ -221,9 +202,9 @@ namespace WindowsFormsApplication1
                 else if (this.itembox.SelectedItem.ToString() == "トラップ")
                 {
                     this.namebox.Items.Add("全て");
-                    for (int i = 0; i < motimono.tlist.Length; i++)
-                        if (motimono.tlist[i] == true)
-                            this.namebox.Items.Add(motimono.tname[i]);
+                    for (int i = 0; i < Flag.tlist.Length; i++)
+                        if (Flag.tlist[i] == true)
+                            this.namebox.Items.Add(Flag.tname[i]);
                 }
             }
         }
@@ -308,7 +289,7 @@ namespace WindowsFormsApplication1
                         date.moneychanged((motimono.traplist[find].price * (this.buyBox2.SelectedIndex + 1)) / 2);
                         motimono.traplist[find].items -= this.buyBox2.SelectedIndex + 1;
                         motimono.traplist.RemoveAll(t => t.items == 0);
-                        motimono.trapsearch();
+                        Flag.trapsearch();
                     }
                     boxset();
                 }
@@ -343,9 +324,9 @@ namespace WindowsFormsApplication1
                 else if (this.bitemBox1.SelectedItem.ToString() == "トラップ")
                 {
                     this.bnameBox.Items.Add("全て");
-                    for (int i = 0; i < motimono.tlistpedro.Length; i++)
-                        if (motimono.tlistpedro[i] == true)
-                            this.bnameBox.Items.Add(motimono.tname[i]);
+                    for (int i = 0; i < Flag.tlistpedro.Length; i++)
+                        if (Flag.tlistpedro[i] == true)
+                            this.bnameBox.Items.Add(Flag.tname[i]);
                 }
             }
         }
@@ -371,8 +352,8 @@ namespace WindowsFormsApplication1
                     else
                     {
                         int i;
-                        for (i = 0; i < motimono.tlistpedro.Length; i++)
-                            if(this.bnameBox.SelectedItem.ToString()==motimono.tname[i])
+                        for (i = 0; i < Flag.tlistpedro.Length; i++)
+                            if(this.bnameBox.SelectedItem.ToString()==Flag.tname[i])
                                 break;
                         List<trap> curtrap = motimono.pedrotrap.FindAll(t => t.type == i);
                         foreach(trap t in curtrap)
@@ -439,7 +420,7 @@ namespace WindowsFormsApplication1
                         trapbuy(selectedtrap, ko);
                     }
                     boxset();
-                    motimono.trapsearch();
+                    Flag.trapsearch();
                 }
             }
             else
