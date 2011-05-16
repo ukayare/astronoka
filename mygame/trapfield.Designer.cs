@@ -297,6 +297,8 @@
             this.pictureBox99.TabIndex = 214;
             this.pictureBox99.TabStop = false;
             this.pictureBox99.Click += new System.EventHandler(this.pictureBox99_Click);
+            this.pictureBox99.MouseEnter += new System.EventHandler(this.pictureBox99_MouseEnter);
+            this.pictureBox99.MouseLeave += new System.EventHandler(this.pictureBox99_MouseLeave);
             // 
             // pictureBox98
             // 
@@ -307,6 +309,8 @@
             this.pictureBox98.TabIndex = 213;
             this.pictureBox98.TabStop = false;
             this.pictureBox98.Click += new System.EventHandler(this.pictureBox98_Click);
+            this.pictureBox98.MouseEnter += new System.EventHandler(this.pictureBox98_MouseEnter);
+            this.pictureBox98.MouseLeave += new System.EventHandler(this.pictureBox98_MouseLeave);
             // 
             // pictureBox97
             // 
@@ -317,6 +321,8 @@
             this.pictureBox97.TabIndex = 212;
             this.pictureBox97.TabStop = false;
             this.pictureBox97.Click += new System.EventHandler(this.pictureBox97_Click);
+            this.pictureBox97.MouseEnter += new System.EventHandler(this.pictureBox97_MouseEnter);
+            this.pictureBox97.MouseLeave += new System.EventHandler(this.pictureBox97_MouseLeave);
             // 
             // pictureBox96
             // 
@@ -354,6 +360,8 @@
             this.pictureBox93.TabIndex = 208;
             this.pictureBox93.TabStop = false;
             this.pictureBox93.Click += new System.EventHandler(this.pictureBox93_Click);
+            this.pictureBox93.MouseEnter += new System.EventHandler(this.pictureBox93_MouseEnter);
+            this.pictureBox93.MouseLeave += new System.EventHandler(this.pictureBox93_MouseLeave);
             // 
             // pictureBox92
             // 
@@ -364,6 +372,8 @@
             this.pictureBox92.TabIndex = 207;
             this.pictureBox92.TabStop = false;
             this.pictureBox92.Click += new System.EventHandler(this.pictureBox92_Click);
+            this.pictureBox92.MouseEnter += new System.EventHandler(this.pictureBox92_MouseEnter);
+            this.pictureBox92.MouseLeave += new System.EventHandler(this.pictureBox92_MouseLeave);
             // 
             // pictureBox91
             // 
@@ -374,6 +384,8 @@
             this.pictureBox91.TabIndex = 206;
             this.pictureBox91.TabStop = false;
             this.pictureBox91.Click += new System.EventHandler(this.pictureBox91_Click);
+            this.pictureBox91.MouseEnter += new System.EventHandler(this.pictureBox91_MouseEnter);
+            this.pictureBox91.MouseLeave += new System.EventHandler(this.pictureBox91_MouseLeave);
             // 
             // pictureBox90
             // 
@@ -384,6 +396,8 @@
             this.pictureBox90.TabIndex = 205;
             this.pictureBox90.TabStop = false;
             this.pictureBox90.Click += new System.EventHandler(this.pictureBox90_Click);
+            this.pictureBox90.MouseEnter += new System.EventHandler(this.pictureBox90_MouseEnter);
+            this.pictureBox90.MouseLeave += new System.EventHandler(this.pictureBox90_MouseLeave);
             // 
             // pictureBox89
             // 
@@ -394,6 +408,8 @@
             this.pictureBox89.TabIndex = 204;
             this.pictureBox89.TabStop = false;
             this.pictureBox89.Click += new System.EventHandler(this.pictureBox89_Click);
+            this.pictureBox89.MouseEnter += new System.EventHandler(this.pictureBox89_MouseEnter);
+            this.pictureBox89.MouseLeave += new System.EventHandler(this.pictureBox89_MouseLeave);
             // 
             // pictureBox88
             // 
@@ -404,6 +420,8 @@
             this.pictureBox88.TabIndex = 203;
             this.pictureBox88.TabStop = false;
             this.pictureBox88.Click += new System.EventHandler(this.pictureBox88_Click);
+            this.pictureBox88.MouseEnter += new System.EventHandler(this.pictureBox88_MouseEnter);
+            this.pictureBox88.MouseLeave += new System.EventHandler(this.pictureBox88_MouseLeave);
             // 
             // pictureBox87
             // 
@@ -441,6 +459,8 @@
             this.pictureBox84.TabIndex = 199;
             this.pictureBox84.TabStop = false;
             this.pictureBox84.Click += new System.EventHandler(this.pictureBox84_Click);
+            this.pictureBox84.MouseEnter += new System.EventHandler(this.pictureBox84_MouseEnter);
+            this.pictureBox84.MouseLeave += new System.EventHandler(this.pictureBox84_MouseLeave);
             // 
             // pictureBox83
             // 
@@ -451,6 +471,8 @@
             this.pictureBox83.TabIndex = 198;
             this.pictureBox83.TabStop = false;
             this.pictureBox83.Click += new System.EventHandler(this.pictureBox83_Click);
+            this.pictureBox83.MouseEnter += new System.EventHandler(this.pictureBox83_MouseEnter);
+            this.pictureBox83.MouseLeave += new System.EventHandler(this.pictureBox83_MouseLeave);
             // 
             // pictureBox82
             // 
@@ -461,6 +483,8 @@
             this.pictureBox82.TabIndex = 197;
             this.pictureBox82.TabStop = false;
             this.pictureBox82.Click += new System.EventHandler(this.pictureBox82_Click);
+            this.pictureBox82.MouseEnter += new System.EventHandler(this.pictureBox82_MouseEnter);
+            this.pictureBox82.MouseLeave += new System.EventHandler(this.pictureBox82_MouseLeave);
             // 
             // pictureBox81
             // 
@@ -471,6 +495,8 @@
             this.pictureBox81.TabIndex = 196;
             this.pictureBox81.TabStop = false;
             this.pictureBox81.Click += new System.EventHandler(this.pictureBox81_Click);
+            this.pictureBox81.MouseEnter += new System.EventHandler(this.pictureBox81_MouseEnter);
+            this.pictureBox81.MouseLeave += new System.EventHandler(this.pictureBox81_MouseLeave);
             // 
             // pictureBox80
             // 
@@ -481,6 +507,8 @@
             this.pictureBox80.TabIndex = 195;
             this.pictureBox80.TabStop = false;
             this.pictureBox80.Click += new System.EventHandler(this.pictureBox80_Click);
+            this.pictureBox80.MouseEnter += new System.EventHandler(this.pictureBox80_MouseEnter);
+            this.pictureBox80.MouseLeave += new System.EventHandler(this.pictureBox80_MouseLeave);
             // 
             // pictureBox79
             // 
@@ -491,6 +519,8 @@
             this.pictureBox79.TabIndex = 194;
             this.pictureBox79.TabStop = false;
             this.pictureBox79.Click += new System.EventHandler(this.pictureBox79_Click);
+            this.pictureBox79.MouseEnter += new System.EventHandler(this.pictureBox79_MouseEnter);
+            this.pictureBox79.MouseLeave += new System.EventHandler(this.pictureBox79_MouseLeave);
             // 
             // pictureBox78
             // 
@@ -501,6 +531,8 @@
             this.pictureBox78.TabIndex = 193;
             this.pictureBox78.TabStop = false;
             this.pictureBox78.Click += new System.EventHandler(this.pictureBox78_Click);
+            this.pictureBox78.MouseEnter += new System.EventHandler(this.pictureBox78_MouseEnter);
+            this.pictureBox78.MouseLeave += new System.EventHandler(this.pictureBox78_MouseLeave);
             // 
             // pictureBox77
             // 
@@ -511,6 +543,8 @@
             this.pictureBox77.TabIndex = 192;
             this.pictureBox77.TabStop = false;
             this.pictureBox77.Click += new System.EventHandler(this.pictureBox77_Click);
+            this.pictureBox77.MouseEnter += new System.EventHandler(this.pictureBox77_MouseEnter);
+            this.pictureBox77.MouseLeave += new System.EventHandler(this.pictureBox77_MouseLeave);
             // 
             // pictureBox76
             // 
@@ -521,6 +555,8 @@
             this.pictureBox76.TabIndex = 191;
             this.pictureBox76.TabStop = false;
             this.pictureBox76.Click += new System.EventHandler(this.pictureBox76_Click);
+            this.pictureBox76.MouseEnter += new System.EventHandler(this.pictureBox76_MouseEnter);
+            this.pictureBox76.MouseLeave += new System.EventHandler(this.pictureBox76_MouseLeave);
             // 
             // pictureBox75
             // 
@@ -531,6 +567,8 @@
             this.pictureBox75.TabIndex = 190;
             this.pictureBox75.TabStop = false;
             this.pictureBox75.Click += new System.EventHandler(this.pictureBox75_Click);
+            this.pictureBox75.MouseEnter += new System.EventHandler(this.pictureBox75_MouseEnter);
+            this.pictureBox75.MouseLeave += new System.EventHandler(this.pictureBox75_MouseLeave);
             // 
             // pictureBox74
             // 
@@ -541,6 +579,8 @@
             this.pictureBox74.TabIndex = 189;
             this.pictureBox74.TabStop = false;
             this.pictureBox74.Click += new System.EventHandler(this.pictureBox74_Click);
+            this.pictureBox74.MouseEnter += new System.EventHandler(this.pictureBox74_MouseEnter);
+            this.pictureBox74.MouseLeave += new System.EventHandler(this.pictureBox74_MouseLeave);
             // 
             // pictureBox73
             // 
@@ -551,6 +591,8 @@
             this.pictureBox73.TabIndex = 188;
             this.pictureBox73.TabStop = false;
             this.pictureBox73.Click += new System.EventHandler(this.pictureBox73_Click);
+            this.pictureBox73.MouseEnter += new System.EventHandler(this.pictureBox73_MouseEnter);
+            this.pictureBox73.MouseLeave += new System.EventHandler(this.pictureBox73_MouseLeave);
             // 
             // pictureBox72
             // 
@@ -561,6 +603,8 @@
             this.pictureBox72.TabIndex = 187;
             this.pictureBox72.TabStop = false;
             this.pictureBox72.Click += new System.EventHandler(this.pictureBox72_Click);
+            this.pictureBox72.MouseEnter += new System.EventHandler(this.pictureBox72_MouseEnter);
+            this.pictureBox72.MouseLeave += new System.EventHandler(this.pictureBox72_MouseLeave);
             // 
             // pictureBox71
             // 
@@ -571,6 +615,8 @@
             this.pictureBox71.TabIndex = 186;
             this.pictureBox71.TabStop = false;
             this.pictureBox71.Click += new System.EventHandler(this.pictureBox71_Click);
+            this.pictureBox71.MouseEnter += new System.EventHandler(this.pictureBox71_MouseEnter);
+            this.pictureBox71.MouseLeave += new System.EventHandler(this.pictureBox71_MouseLeave);
             // 
             // pictureBox70
             // 
@@ -581,6 +627,8 @@
             this.pictureBox70.TabIndex = 185;
             this.pictureBox70.TabStop = false;
             this.pictureBox70.Click += new System.EventHandler(this.pictureBox70_Click);
+            this.pictureBox70.MouseEnter += new System.EventHandler(this.pictureBox70_MouseEnter);
+            this.pictureBox70.MouseLeave += new System.EventHandler(this.pictureBox70_MouseLeave);
             // 
             // pictureBox69
             // 
@@ -591,6 +639,8 @@
             this.pictureBox69.TabIndex = 184;
             this.pictureBox69.TabStop = false;
             this.pictureBox69.Click += new System.EventHandler(this.pictureBox69_Click);
+            this.pictureBox69.MouseEnter += new System.EventHandler(this.pictureBox69_MouseEnter);
+            this.pictureBox69.MouseLeave += new System.EventHandler(this.pictureBox69_MouseLeave);
             // 
             // pictureBox68
             // 
@@ -601,6 +651,8 @@
             this.pictureBox68.TabIndex = 183;
             this.pictureBox68.TabStop = false;
             this.pictureBox68.Click += new System.EventHandler(this.pictureBox68_Click);
+            this.pictureBox68.MouseEnter += new System.EventHandler(this.pictureBox68_MouseEnter);
+            this.pictureBox68.MouseLeave += new System.EventHandler(this.pictureBox68_MouseLeave);
             // 
             // pictureBox67
             // 
@@ -611,6 +663,8 @@
             this.pictureBox67.TabIndex = 182;
             this.pictureBox67.TabStop = false;
             this.pictureBox67.Click += new System.EventHandler(this.pictureBox67_Click);
+            this.pictureBox67.MouseEnter += new System.EventHandler(this.pictureBox67_MouseEnter);
+            this.pictureBox67.MouseLeave += new System.EventHandler(this.pictureBox67_MouseLeave);
             // 
             // pictureBox66
             // 
@@ -621,6 +675,8 @@
             this.pictureBox66.TabIndex = 181;
             this.pictureBox66.TabStop = false;
             this.pictureBox66.Click += new System.EventHandler(this.pictureBox66_Click);
+            this.pictureBox66.MouseEnter += new System.EventHandler(this.pictureBox66_MouseEnter);
+            this.pictureBox66.MouseLeave += new System.EventHandler(this.pictureBox66_MouseLeave);
             // 
             // pictureBox65
             // 
@@ -631,6 +687,8 @@
             this.pictureBox65.TabIndex = 180;
             this.pictureBox65.TabStop = false;
             this.pictureBox65.Click += new System.EventHandler(this.pictureBox65_Click);
+            this.pictureBox65.MouseEnter += new System.EventHandler(this.pictureBox65_MouseEnter);
+            this.pictureBox65.MouseLeave += new System.EventHandler(this.pictureBox65_MouseLeave);
             // 
             // pictureBox64
             // 
@@ -642,6 +700,8 @@
             this.pictureBox64.TabIndex = 179;
             this.pictureBox64.TabStop = false;
             this.pictureBox64.Click += new System.EventHandler(this.pictureBox64_Click);
+            this.pictureBox64.MouseEnter += new System.EventHandler(this.pictureBox64_MouseEnter);
+            this.pictureBox64.MouseLeave += new System.EventHandler(this.pictureBox64_MouseLeave);
             // 
             // pictureBox63
             // 
@@ -652,6 +712,8 @@
             this.pictureBox63.TabIndex = 178;
             this.pictureBox63.TabStop = false;
             this.pictureBox63.Click += new System.EventHandler(this.pictureBox63_Click);
+            this.pictureBox63.MouseEnter += new System.EventHandler(this.pictureBox63_MouseEnter);
+            this.pictureBox63.MouseLeave += new System.EventHandler(this.pictureBox63_MouseLeave);
             // 
             // pictureBox62
             // 
@@ -662,6 +724,8 @@
             this.pictureBox62.TabIndex = 177;
             this.pictureBox62.TabStop = false;
             this.pictureBox62.Click += new System.EventHandler(this.pictureBox62_Click);
+            this.pictureBox62.MouseEnter += new System.EventHandler(this.pictureBox62_MouseEnter);
+            this.pictureBox62.MouseLeave += new System.EventHandler(this.pictureBox62_MouseLeave);
             // 
             // pictureBox61
             // 
@@ -672,6 +736,8 @@
             this.pictureBox61.TabIndex = 176;
             this.pictureBox61.TabStop = false;
             this.pictureBox61.Click += new System.EventHandler(this.pictureBox61_Click);
+            this.pictureBox61.MouseEnter += new System.EventHandler(this.pictureBox61_MouseEnter);
+            this.pictureBox61.MouseLeave += new System.EventHandler(this.pictureBox61_MouseLeave);
             // 
             // pictureBox60
             // 
@@ -682,6 +748,8 @@
             this.pictureBox60.TabIndex = 175;
             this.pictureBox60.TabStop = false;
             this.pictureBox60.Click += new System.EventHandler(this.pictureBox60_Click);
+            this.pictureBox60.MouseEnter += new System.EventHandler(this.pictureBox60_MouseEnter);
+            this.pictureBox60.MouseLeave += new System.EventHandler(this.pictureBox60_MouseLeave);
             // 
             // pictureBox59
             // 
@@ -692,6 +760,8 @@
             this.pictureBox59.TabIndex = 174;
             this.pictureBox59.TabStop = false;
             this.pictureBox59.Click += new System.EventHandler(this.pictureBox59_Click);
+            this.pictureBox59.MouseEnter += new System.EventHandler(this.pictureBox59_MouseEnter);
+            this.pictureBox59.MouseLeave += new System.EventHandler(this.pictureBox59_MouseLeave);
             // 
             // pictureBox58
             // 
@@ -702,6 +772,8 @@
             this.pictureBox58.TabIndex = 173;
             this.pictureBox58.TabStop = false;
             this.pictureBox58.Click += new System.EventHandler(this.pictureBox58_Click);
+            this.pictureBox58.MouseEnter += new System.EventHandler(this.pictureBox58_MouseEnter);
+            this.pictureBox58.MouseLeave += new System.EventHandler(this.pictureBox58_MouseLeave);
             // 
             // pictureBox57
             // 
@@ -712,6 +784,8 @@
             this.pictureBox57.TabIndex = 172;
             this.pictureBox57.TabStop = false;
             this.pictureBox57.Click += new System.EventHandler(this.pictureBox57_Click);
+            this.pictureBox57.MouseEnter += new System.EventHandler(this.pictureBox57_MouseEnter);
+            this.pictureBox57.MouseLeave += new System.EventHandler(this.pictureBox57_MouseLeave);
             // 
             // pictureBox56
             // 
@@ -722,6 +796,8 @@
             this.pictureBox56.TabIndex = 171;
             this.pictureBox56.TabStop = false;
             this.pictureBox56.Click += new System.EventHandler(this.pictureBox56_Click);
+            this.pictureBox56.MouseEnter += new System.EventHandler(this.pictureBox56_MouseEnter);
+            this.pictureBox56.MouseLeave += new System.EventHandler(this.pictureBox56_MouseLeave);
             // 
             // pictureBox55
             // 
@@ -732,6 +808,8 @@
             this.pictureBox55.TabIndex = 170;
             this.pictureBox55.TabStop = false;
             this.pictureBox55.Click += new System.EventHandler(this.pictureBox55_Click);
+            this.pictureBox55.MouseEnter += new System.EventHandler(this.pictureBox55_MouseEnter);
+            this.pictureBox55.MouseLeave += new System.EventHandler(this.pictureBox55_MouseLeave);
             // 
             // pictureBox54
             // 
@@ -742,6 +820,8 @@
             this.pictureBox54.TabIndex = 169;
             this.pictureBox54.TabStop = false;
             this.pictureBox54.Click += new System.EventHandler(this.pictureBox54_Click);
+            this.pictureBox54.MouseEnter += new System.EventHandler(this.pictureBox54_MouseEnter);
+            this.pictureBox54.MouseLeave += new System.EventHandler(this.pictureBox54_MouseLeave);
             // 
             // pictureBox53
             // 
@@ -752,6 +832,8 @@
             this.pictureBox53.TabIndex = 168;
             this.pictureBox53.TabStop = false;
             this.pictureBox53.Click += new System.EventHandler(this.pictureBox53_Click);
+            this.pictureBox53.MouseEnter += new System.EventHandler(this.pictureBox53_MouseEnter);
+            this.pictureBox53.MouseLeave += new System.EventHandler(this.pictureBox53_MouseLeave);
             // 
             // pictureBox52
             // 
@@ -762,6 +844,8 @@
             this.pictureBox52.TabIndex = 167;
             this.pictureBox52.TabStop = false;
             this.pictureBox52.Click += new System.EventHandler(this.pictureBox52_Click);
+            this.pictureBox52.MouseEnter += new System.EventHandler(this.pictureBox52_MouseEnter);
+            this.pictureBox52.MouseLeave += new System.EventHandler(this.pictureBox52_MouseLeave);
             // 
             // pictureBox51
             // 
@@ -772,6 +856,8 @@
             this.pictureBox51.TabIndex = 166;
             this.pictureBox51.TabStop = false;
             this.pictureBox51.Click += new System.EventHandler(this.pictureBox51_Click);
+            this.pictureBox51.MouseEnter += new System.EventHandler(this.pictureBox51_MouseEnter);
+            this.pictureBox51.MouseLeave += new System.EventHandler(this.pictureBox51_MouseLeave);
             // 
             // pictureBox50
             // 
@@ -782,6 +868,8 @@
             this.pictureBox50.TabIndex = 165;
             this.pictureBox50.TabStop = false;
             this.pictureBox50.Click += new System.EventHandler(this.pictureBox50_Click);
+            this.pictureBox50.MouseEnter += new System.EventHandler(this.pictureBox50_MouseEnter);
+            this.pictureBox50.MouseLeave += new System.EventHandler(this.pictureBox50_MouseLeave);
             // 
             // pictureBox49
             // 
@@ -792,6 +880,8 @@
             this.pictureBox49.TabIndex = 164;
             this.pictureBox49.TabStop = false;
             this.pictureBox49.Click += new System.EventHandler(this.pictureBox49_Click);
+            this.pictureBox49.MouseEnter += new System.EventHandler(this.pictureBox49_MouseEnter);
+            this.pictureBox49.MouseLeave += new System.EventHandler(this.pictureBox49_MouseLeave);
             // 
             // pictureBox48
             // 
@@ -802,6 +892,8 @@
             this.pictureBox48.TabIndex = 163;
             this.pictureBox48.TabStop = false;
             this.pictureBox48.Click += new System.EventHandler(this.pictureBox48_Click);
+            this.pictureBox48.MouseEnter += new System.EventHandler(this.pictureBox48_MouseEnter);
+            this.pictureBox48.MouseLeave += new System.EventHandler(this.pictureBox48_MouseLeave);
             // 
             // pictureBox47
             // 
@@ -812,6 +904,8 @@
             this.pictureBox47.TabIndex = 162;
             this.pictureBox47.TabStop = false;
             this.pictureBox47.Click += new System.EventHandler(this.pictureBox47_Click);
+            this.pictureBox47.MouseEnter += new System.EventHandler(this.pictureBox47_MouseEnter);
+            this.pictureBox47.MouseLeave += new System.EventHandler(this.pictureBox47_MouseLeave);
             // 
             // pictureBox46
             // 
@@ -822,6 +916,8 @@
             this.pictureBox46.TabIndex = 161;
             this.pictureBox46.TabStop = false;
             this.pictureBox46.Click += new System.EventHandler(this.pictureBox46_Click);
+            this.pictureBox46.MouseEnter += new System.EventHandler(this.pictureBox46_MouseEnter);
+            this.pictureBox46.MouseLeave += new System.EventHandler(this.pictureBox46_MouseLeave);
             // 
             // pictureBox45
             // 
@@ -832,6 +928,8 @@
             this.pictureBox45.TabIndex = 160;
             this.pictureBox45.TabStop = false;
             this.pictureBox45.Click += new System.EventHandler(this.pictureBox45_Click);
+            this.pictureBox45.MouseEnter += new System.EventHandler(this.pictureBox45_MouseEnter);
+            this.pictureBox45.MouseLeave += new System.EventHandler(this.pictureBox45_MouseLeave);
             // 
             // pictureBox44
             // 
@@ -842,6 +940,8 @@
             this.pictureBox44.TabIndex = 159;
             this.pictureBox44.TabStop = false;
             this.pictureBox44.Click += new System.EventHandler(this.pictureBox44_Click);
+            this.pictureBox44.MouseEnter += new System.EventHandler(this.pictureBox44_MouseEnter);
+            this.pictureBox44.MouseLeave += new System.EventHandler(this.pictureBox44_MouseLeave);
             // 
             // pictureBox43
             // 
@@ -852,6 +952,8 @@
             this.pictureBox43.TabIndex = 158;
             this.pictureBox43.TabStop = false;
             this.pictureBox43.Click += new System.EventHandler(this.pictureBox43_Click);
+            this.pictureBox43.MouseEnter += new System.EventHandler(this.pictureBox43_MouseEnter);
+            this.pictureBox43.MouseLeave += new System.EventHandler(this.pictureBox43_MouseLeave);
             // 
             // pictureBox42
             // 
@@ -862,6 +964,8 @@
             this.pictureBox42.TabIndex = 157;
             this.pictureBox42.TabStop = false;
             this.pictureBox42.Click += new System.EventHandler(this.pictureBox42_Click);
+            this.pictureBox42.MouseEnter += new System.EventHandler(this.pictureBox42_MouseEnter);
+            this.pictureBox42.MouseLeave += new System.EventHandler(this.pictureBox42_MouseLeave);
             // 
             // pictureBox41
             // 
@@ -872,6 +976,8 @@
             this.pictureBox41.TabIndex = 156;
             this.pictureBox41.TabStop = false;
             this.pictureBox41.Click += new System.EventHandler(this.pictureBox41_Click);
+            this.pictureBox41.MouseEnter += new System.EventHandler(this.pictureBox41_MouseEnter);
+            this.pictureBox41.MouseLeave += new System.EventHandler(this.pictureBox41_MouseLeave);
             // 
             // pictureBox40
             // 
@@ -882,6 +988,8 @@
             this.pictureBox40.TabIndex = 155;
             this.pictureBox40.TabStop = false;
             this.pictureBox40.Click += new System.EventHandler(this.pictureBox40_Click);
+            this.pictureBox40.MouseEnter += new System.EventHandler(this.pictureBox40_MouseEnter);
+            this.pictureBox40.MouseLeave += new System.EventHandler(this.pictureBox40_MouseLeave);
             // 
             // pictureBox39
             // 
@@ -892,6 +1000,8 @@
             this.pictureBox39.TabIndex = 154;
             this.pictureBox39.TabStop = false;
             this.pictureBox39.Click += new System.EventHandler(this.pictureBox39_Click);
+            this.pictureBox39.MouseEnter += new System.EventHandler(this.pictureBox39_MouseEnter);
+            this.pictureBox39.MouseLeave += new System.EventHandler(this.pictureBox39_MouseLeave);
             // 
             // pictureBox38
             // 
@@ -902,6 +1012,8 @@
             this.pictureBox38.TabIndex = 153;
             this.pictureBox38.TabStop = false;
             this.pictureBox38.Click += new System.EventHandler(this.pictureBox38_Click);
+            this.pictureBox38.MouseEnter += new System.EventHandler(this.pictureBox38_MouseEnter);
+            this.pictureBox38.MouseLeave += new System.EventHandler(this.pictureBox38_MouseLeave);
             // 
             // pictureBox37
             // 
@@ -912,6 +1024,8 @@
             this.pictureBox37.TabIndex = 152;
             this.pictureBox37.TabStop = false;
             this.pictureBox37.Click += new System.EventHandler(this.pictureBox37_Click);
+            this.pictureBox37.MouseEnter += new System.EventHandler(this.pictureBox37_MouseEnter);
+            this.pictureBox37.MouseLeave += new System.EventHandler(this.pictureBox37_MouseLeave);
             // 
             // pictureBox36
             // 
@@ -922,6 +1036,8 @@
             this.pictureBox36.TabIndex = 151;
             this.pictureBox36.TabStop = false;
             this.pictureBox36.Click += new System.EventHandler(this.pictureBox36_Click);
+            this.pictureBox36.MouseEnter += new System.EventHandler(this.pictureBox36_MouseEnter);
+            this.pictureBox36.MouseLeave += new System.EventHandler(this.pictureBox36_MouseLeave);
             // 
             // pictureBox35
             // 
@@ -932,6 +1048,8 @@
             this.pictureBox35.TabIndex = 150;
             this.pictureBox35.TabStop = false;
             this.pictureBox35.Click += new System.EventHandler(this.pictureBox35_Click);
+            this.pictureBox35.MouseEnter += new System.EventHandler(this.pictureBox35_MouseEnter);
+            this.pictureBox35.MouseLeave += new System.EventHandler(this.pictureBox35_MouseLeave);
             // 
             // pictureBox34
             // 
@@ -942,6 +1060,8 @@
             this.pictureBox34.TabIndex = 149;
             this.pictureBox34.TabStop = false;
             this.pictureBox34.Click += new System.EventHandler(this.pictureBox34_Click);
+            this.pictureBox34.MouseEnter += new System.EventHandler(this.pictureBox34_MouseEnter);
+            this.pictureBox34.MouseLeave += new System.EventHandler(this.pictureBox34_MouseLeave);
             // 
             // pictureBox33
             // 
@@ -979,6 +1099,8 @@
             this.pictureBox30.TabIndex = 145;
             this.pictureBox30.TabStop = false;
             this.pictureBox30.Click += new System.EventHandler(this.pictureBox30_Click);
+            this.pictureBox30.MouseEnter += new System.EventHandler(this.pictureBox30_MouseEnter);
+            this.pictureBox30.MouseLeave += new System.EventHandler(this.pictureBox30_MouseLeave);
             // 
             // pictureBox29
             // 
@@ -989,6 +1111,8 @@
             this.pictureBox29.TabIndex = 144;
             this.pictureBox29.TabStop = false;
             this.pictureBox29.Click += new System.EventHandler(this.pictureBox29_Click);
+            this.pictureBox29.MouseEnter += new System.EventHandler(this.pictureBox29_MouseEnter);
+            this.pictureBox29.MouseLeave += new System.EventHandler(this.pictureBox29_MouseLeave);
             // 
             // pictureBox28
             // 
@@ -999,6 +1123,8 @@
             this.pictureBox28.TabIndex = 143;
             this.pictureBox28.TabStop = false;
             this.pictureBox28.Click += new System.EventHandler(this.pictureBox28_Click);
+            this.pictureBox28.MouseEnter += new System.EventHandler(this.pictureBox28_MouseEnter);
+            this.pictureBox28.MouseLeave += new System.EventHandler(this.pictureBox28_MouseLeave);
             // 
             // pictureBox27
             // 
@@ -1009,6 +1135,8 @@
             this.pictureBox27.TabIndex = 142;
             this.pictureBox27.TabStop = false;
             this.pictureBox27.Click += new System.EventHandler(this.pictureBox27_Click);
+            this.pictureBox27.MouseEnter += new System.EventHandler(this.pictureBox27_MouseEnter);
+            this.pictureBox27.MouseLeave += new System.EventHandler(this.pictureBox27_MouseLeave);
             // 
             // pictureBox26
             // 
@@ -1019,6 +1147,8 @@
             this.pictureBox26.TabIndex = 141;
             this.pictureBox26.TabStop = false;
             this.pictureBox26.Click += new System.EventHandler(this.pictureBox26_Click);
+            this.pictureBox26.MouseEnter += new System.EventHandler(this.pictureBox26_MouseEnter);
+            this.pictureBox26.MouseLeave += new System.EventHandler(this.pictureBox26_MouseLeave);
             // 
             // pictureBox25
             // 
@@ -1029,6 +1159,8 @@
             this.pictureBox25.TabIndex = 140;
             this.pictureBox25.TabStop = false;
             this.pictureBox25.Click += new System.EventHandler(this.pictureBox25_Click);
+            this.pictureBox25.MouseEnter += new System.EventHandler(this.pictureBox25_MouseEnter);
+            this.pictureBox25.MouseLeave += new System.EventHandler(this.pictureBox25_MouseLeave);
             // 
             // pictureBox24
             // 
@@ -1066,6 +1198,8 @@
             this.pictureBox21.TabIndex = 136;
             this.pictureBox21.TabStop = false;
             this.pictureBox21.Click += new System.EventHandler(this.pictureBox21_Click);
+            this.pictureBox21.MouseEnter += new System.EventHandler(this.pictureBox21_MouseEnter);
+            this.pictureBox21.MouseLeave += new System.EventHandler(this.pictureBox21_MouseLeave);
             // 
             // pictureBox20
             // 
@@ -1076,6 +1210,8 @@
             this.pictureBox20.TabIndex = 135;
             this.pictureBox20.TabStop = false;
             this.pictureBox20.Click += new System.EventHandler(this.pictureBox20_Click);
+            this.pictureBox20.MouseEnter += new System.EventHandler(this.pictureBox20_MouseEnter);
+            this.pictureBox20.MouseLeave += new System.EventHandler(this.pictureBox20_MouseLeave);
             // 
             // pictureBox19
             // 
@@ -1086,6 +1222,8 @@
             this.pictureBox19.TabIndex = 134;
             this.pictureBox19.TabStop = false;
             this.pictureBox19.Click += new System.EventHandler(this.pictureBox19_Click);
+            this.pictureBox19.MouseEnter += new System.EventHandler(this.pictureBox19_MouseEnter);
+            this.pictureBox19.MouseLeave += new System.EventHandler(this.pictureBox19_MouseLeave);
             // 
             // pictureBox18
             // 

@@ -22,6 +22,8 @@ namespace WindowsFormsApplication1
         internal Boolean flag=false;//フラグ
         babooactive ba;//バブー行動（バトル用。これは別クラスで設定するかな
 
+        private List<point> traprange= new List<point>();
+
         music sound;
 
 
@@ -304,6 +306,178 @@ namespace WindowsFormsApplication1
             else
                 date.elect -= t.elect;
             this.label2.Text="残り電力："+(date.electmax-date.elect);
+        }
+
+        private void mouseEnter(int x, int y)
+        {
+            if (motimono.tfield[x, y] != null && motimono.tfield[x,y].range==true)
+            {
+                searchrange(motimono.tfield[x, y], x, y);
+                foreach (point p in traprange)
+                {
+                    rangedisplay(p);
+                }
+            }
+        }
+
+        private void rangedisplay(point p)
+        {
+            if (motimono.tfield[p.x, p.y] != null)
+            {
+                if (motimono.tfield[p.x, p.y].direct == true)//方向設置か
+                    piclist[p.x, p.y + 2].ImageLocation = "trap\\" + motimono.tfield[p.x, p.y].type + motimono.tfield[p.x, p.y].grade + motimono.tfield[p.x, p.y].direction + "a.bmp";
+                else
+                    piclist[p.x, p.y + 2].ImageLocation = "trap\\" + motimono.tfield[p.x, p.y].type + motimono.tfield[p.x, p.y].grade + "a.bmp";
+            }
+            else
+                piclist[p.x, p.y + 2].Image = global::WindowsFormsApplication1.Properties.Resources.direct;
+        }
+
+        private void rangeundisplay(point p)
+        {
+            if (motimono.tfield[p.x, p.y] != null)
+            {
+                if (motimono.tfield[p.x, p.y].direct == true)//方向設置か
+                    piclist[p.x, p.y + 2].ImageLocation = "trap\\" + motimono.tfield[p.x, p.y].type + motimono.tfield[p.x, p.y].grade + motimono.tfield[p.x, p.y].direction + ".bmp";
+                else
+                    piclist[p.x, p.y + 2].ImageLocation = "trap\\" + motimono.tfield[p.x, p.y].type + motimono.tfield[p.x, p.y].grade + ".bmp";
+            }
+            else
+                piclist[p.x, p.y + 2].Image = global::WindowsFormsApplication1.Properties.Resources._null ;
+        }
+
+        private void mouseLeave(int x, int y)
+        {
+            foreach (point p in traprange)
+                rangeundisplay(p);
+            traprange.Clear();
+        }
+
+        //範囲の座標を取得
+        private void searchrange(trap settrap, int x, int y)
+        {
+            if (settrap.type == 4)//ジャンプ台
+            {
+                if (settrap.grade < 2)//普通の
+                {
+                    switch (settrap.direction)
+                    {
+                        case 0:
+                            traprange.Add(new point(x + 1, y + 1));
+                            break;
+                        case 1:
+                            traprange.Add(new point(x + 1, y - 1));
+                            break;
+                        case 2:
+                            traprange.Add(new point(x - 1, y - 1));
+                            break;
+                        case 3:
+                            traprange.Add(new point(x - 1, y + 1));
+                            break;
+                    }
+                }
+                else if (settrap.grade < 4)//桂馬R
+                {
+                    switch (settrap.direction)
+                    {
+                        case 0:
+                            traprange.Add(new point(x + 1, y + 2));
+                            break;
+                        case 1:
+                            traprange.Add(new point(x + 2, y - 1));
+                            break;
+                        case 2:
+                            traprange.Add(new point(x - 1, y - 2));
+                            break;
+                        case 3:
+                            traprange.Add(new point(x - 2, y + 1));
+                            break;
+                    }
+                }
+                else//桂馬L
+                {
+                    switch (settrap.direction)
+                    {
+                        case 0:
+                            traprange.Add(new point(x - 1, y + 2));
+                            break;
+                        case 1:
+                            traprange.Add(new point(x + 2, y + 1));
+                            break;
+                        case 2:
+                            traprange.Add(new point(x + 1, y - 2));
+                            break;
+                        case 3:
+                            traprange.Add(new point(x - 2, y - 1));
+                            break;
+                    }
+                }
+            }
+            else if (settrap.type == 3)//扇風機
+            {
+                if (settrap.grade < 2)//2マス
+                {
+                    switch (settrap.direction)
+                    {
+                        case 0:
+                            traprange.Add(new point(x, y + 3));
+                            break;
+                        case 1:
+                            traprange.Add(new point(x + 3, y));
+                            break;
+                        case 2:
+                            traprange.Add(new point(x, y - 3));
+                            break;
+                        case 3:
+                            traprange.Add(new point(x - 3, y));
+                            break;
+                    }
+                }
+                else//3マス
+                {
+                    switch (settrap.direction)
+                    {
+                        case 0:
+                            traprange.Add(new point(x, y + 4));
+                            break;
+                        case 1:
+                            traprange.Add(new point(x + 4, y));
+                            break;
+                        case 2:
+                            traprange.Add(new point(x, y - 4));
+                            break;
+                        case 3:
+                            traprange.Add(new point(x - 4, y));
+                            break;
+                    }
+                }
+            }
+            else if (settrap.type == 6 || (settrap.type >= 9 && settrap.type <= 11) || ((settrap.type == 7 || settrap.type == 8) && settrap.grade == 0))
+            {
+                switch (settrap.direction)
+                {
+                    case 0:
+                        traprange.Add(new point(x, y + 1));
+                        break;
+                    case 1:
+                        traprange.Add(new point(x + 1, y));
+                        break;
+                    case 2:
+                        traprange.Add(new point(x, y - 1));
+                        break;
+                    case 3:
+                        traprange.Add(new point(x - 1, y));
+                        break;
+                }
+            }
+            else if ((settrap.type == 7 || settrap.type == 8) && settrap.grade == 1)
+            {
+                traprange.Add(new point(x, y + 1));
+                traprange.Add(new point(x + 1, y));
+                traprange.Add(new point(x, y - 1));
+                traprange.Add(new point(x - 1, y));
+            }
+
         }
     }
 }

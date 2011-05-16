@@ -32,6 +32,8 @@ namespace WindowsFormsApplication1
         public Boolean direct=false;//方向設定するか
         public int resist = 100;//強度
 
+        public Boolean range = false;//範囲があるか
+
         //トラップをセット
         public void trapset()
         {
@@ -112,6 +114,7 @@ namespace WindowsFormsApplication1
                     kotei = true;
                     happen = 2;
                     direct = true;
+                    range = true;
                     if (grade == 0)
                     {
                         name = "2マス扇風機";
@@ -143,6 +146,7 @@ namespace WindowsFormsApplication1
                 case 4:
                     happen = 1;
                     direct = true;
+                    range = true;
                     if (grade == 0)
                     {
                         name = "ジャンプ台";
@@ -226,6 +230,7 @@ namespace WindowsFormsApplication1
                     happen = 3;
                     kotei = true;
                     direct = true;
+                    range = true;
                     if (grade == 0)
                     {
                         name = "冷水ぶっかけ装置";
@@ -243,6 +248,7 @@ namespace WindowsFormsApplication1
                 case 7:
                     kotei = true;
                     happen = 3;
+                    range = true;
                     if (grade == 0)
                     {
                         direct = true;
@@ -261,6 +267,7 @@ namespace WindowsFormsApplication1
                 case 8:
                     kotei = true;
                     happen = 3;
+                    range = true;
                     if (grade == 0)
                     {
                         direct = true;
@@ -279,6 +286,7 @@ namespace WindowsFormsApplication1
                 case 9:
                     direct = true;
                     kotei = true;
+                    range = true;
                     happen = 2;
                     name = "風船サービス装置";
                     elect = 200;
@@ -287,6 +295,7 @@ namespace WindowsFormsApplication1
                 case 10:
                     direct=true;
                     kotei = true;
+                    range = true;
                     happen = 2;
                     name = "米俵サービス装置";
                     elect = 200;
@@ -295,6 +304,7 @@ namespace WindowsFormsApplication1
                 case 11:
                     direct =true;
                     kotei = true;
+                    range = true;
                     happen = 2;
                     name = "おめでとう装置";
                     elect = 200;
@@ -302,6 +312,7 @@ namespace WindowsFormsApplication1
                     break;
                 case 12:
                     kotei = true;
+                    range = true;
                     happen = 4;
                     if (grade == 0)
                     {
@@ -334,6 +345,7 @@ namespace WindowsFormsApplication1
                 case 13:
                     kotei = true;
                     direct =true;
+                    range = true;
                     happen = 4;
                     if (grade == 0)
                     {

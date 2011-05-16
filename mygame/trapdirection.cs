@@ -78,7 +78,7 @@ namespace WindowsFormsApplication1
                 {
                     if (x + i > -1 && y + j > -3 && x + i < 9 && y + j < 9)//はみ出してないか
                     {
-                        MessageBox.Show((x+i).ToString() + (y+j+2).ToString());
+                        //MessageBox.Show((x+i).ToString() + (y+j+2).ToString());
                         if (i == 0 && j == 0)//中心は配置トラップ
                             piclist[2 + i, 2 + j].ImageLocation = "trap\\" + settrap.type + settrap.grade + ".bmp";
                         else
@@ -102,8 +102,12 @@ namespace WindowsFormsApplication1
                                 enablepicset(i, j);
                             }
                         }
+                        else if (settrap.type == 13)//カカシ
+                        {
+
+                        }
                         //パンチングとかその他の方向とラップ
-                        else if ((settrap.type == 3 || (settrap.type > 5 && settrap.type < 12) || settrap.type == 13) && (y+j<0 || motimono.trapenable[x + i, y + j] == 0))
+                        else if ((settrap.type == 3 || (settrap.type > 5 && settrap.type < 12) || settrap.type == 13) && (y + j < 0 || motimono.trapenable[x + i, y + j] == 0))
                         {
                             if (Math.Abs(i + j) == 1 && (i == 0 || j == 0))
                             {

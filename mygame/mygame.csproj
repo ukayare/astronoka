@@ -111,6 +111,12 @@
     <Compile Include="trapbattle.Designer.cs">
       <DependentUpon>trapbattle.cs</DependentUpon>
     </Compile>
+    <Compile Include="trapfieldMouseEnter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="trapfieldmouseLeave.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="yasai.cs" />
     <Compile Include="trapdirection.cs">
       <SubType>Form</SubType>

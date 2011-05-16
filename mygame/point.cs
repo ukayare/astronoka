@@ -6,15 +6,15 @@ using System.Text;
 namespace WindowsFormsApplication1
 {
     //座標
-    class point
+    public class point
     {
         public point(int x, int y)
         {
-            x = this.x;
-            y = this.y;
+            this.x = x;
+            this.y = y;
         }
-        int x;
-        int y;
+        internal int x;
+        internal int y;
 
     }
 }
