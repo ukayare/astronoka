@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
+
 
 namespace WindowsFormsApplication1
 {
@@ -21,6 +23,7 @@ namespace WindowsFormsApplication1
         internal int direction;//方向
         internal Boolean flag=false;//フラグ
         babooactive ba;//バブー行動（バトル用。これは別クラスで設定するかな
+        trap selectedtrap;
 
         private List<point> traprange= new List<point>();
 
@@ -53,7 +56,7 @@ namespace WindowsFormsApplication1
             MessageBox.Show(x.ToString() + y.ToString());
             if (this.radioButton1.Checked == true)//設置モード
             {
-                if (this.listBox1.SelectedIndex != -1)//トラップは選択してあるか
+                if (selectedtrap!=null)//トラップは選択してあるか
                 {
                     if (motimono.trapenable[x, y] == 0 || motimono.tfield[x,y]!=null)
                     {
@@ -73,7 +76,7 @@ namespace WindowsFormsApplication1
                         //何もない場合
                         else if (motimono.traplist[i].elect > date.electmax - date.elect)
                             MessageBox.Show("電力が足りません");
-                        else if (MessageBox.Show(motimono.traplist[i].name + "を設置しますか？", "設置確認", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        else
                         {
                             tset(x, y, i);
                         }
@@ -188,6 +191,7 @@ namespace WindowsFormsApplication1
                 flag = false;//フラグは最後に折っておく
 
             }
+            selectedtrap = null;
         }
 
         //トラップの撤去
@@ -227,17 +231,22 @@ namespace WindowsFormsApplication1
             }
             electset(motimono.tfield[x, y], false);
             motimono.tfield[x, y] = null;//フィールドから消去
-            piclist[x, y + 2].ImageLocation = "trap\\null.bmp";//画像も戻す            
+            piclist[x, y + 2].ImageLocation = "trap\\null.bmp";//画像も戻す
+            motimono.trapsort();
         }
 
         //トラップ選択
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            this.trapextext.Text = "";
             //選択したものを取得
             if (this.listBox1.SelectedItem != null)
             {
                 int i = motimono.traplist.FindIndex(t => t.name == this.listBox1.SelectedItem.ToString());
                 this.label1.Text = motimono.traplist[i].items.ToString();
+                selectedtrap = motimono.traplist.Find(t => t.name == this.listBox1.SelectedItem.ToString());
+                StreamReader reader = new StreamReader("text\\trap\\"+selectedtrap.type.ToString() + selectedtrap.grade.ToString() + ".txt", System.Text.Encoding.GetEncoding("shift_jis"));
+                this.trapextext.AppendText(reader.ReadToEnd());
             }
         }
 
@@ -310,7 +319,19 @@ namespace WindowsFormsApplication1
 
         private void mouseEnter(int x, int y)
         {
-            if (motimono.tfield[x, y] != null && motimono.tfield[x,y].range==true)
+            if (selectedtrap != null)
+            {
+                if (selectedtrap.constrange == true)
+                {
+                    searchrange(selectedtrap, x, y);
+                    foreach (point p in traprange)
+                    {
+                        rangedisplay(p);
+                    }
+                }
+                piclist[x, y + 2].ImageLocation = "trap\\" + selectedtrap.type + selectedtrap.grade + ".bmp";
+            }
+            else if (motimono.tfield[x, y] != null && motimono.tfield[x, y].range == true)
             {
                 searchrange(motimono.tfield[x, y], x, y);
                 foreach (point p in traprange)
@@ -318,11 +339,16 @@ namespace WindowsFormsApplication1
                     rangedisplay(p);
                 }
             }
+            this.label3.Text = x.ToString() + y.ToString();
         }
 
         private void rangedisplay(point p)
         {
-            if (motimono.tfield[p.x, p.y] != null)
+            if (p.y < 0)
+            {
+                piclist[p.x, p.y + 2].Image = global::WindowsFormsApplication1.Properties.Resources.direct;
+            }
+            else if (motimono.tfield[p.x, p.y] != null)
             {
                 if (motimono.tfield[p.x, p.y].direct == true)//方向設置か
                     piclist[p.x, p.y + 2].ImageLocation = "trap\\" + motimono.tfield[p.x, p.y].type + motimono.tfield[p.x, p.y].grade + motimono.tfield[p.x, p.y].direction + "a.bmp";
@@ -335,7 +361,22 @@ namespace WindowsFormsApplication1
 
         private void rangeundisplay(point p)
         {
-            if (motimono.tfield[p.x, p.y] != null)
+            //最初に設置範囲外の処理
+            if (p.y == -1)
+            {
+                if(p.x==4)
+                    piclist[p.x, p.y + 2].Image = global::WindowsFormsApplication1.Properties.Resources.enter;
+                else
+                    piclist[p.x, p.y + 2].Image = global::WindowsFormsApplication1.Properties.Resources.shiba;
+            }
+            else if (p.y == -2)
+            {
+                if (p.x == 4)
+                    piclist[p.x, p.y + 2].Image = global::WindowsFormsApplication1.Properties.Resources.enter;
+                else
+                    piclist[p.x, p.y + 2].Image = global::WindowsFormsApplication1.Properties.Resources.river;
+            }
+            else if (motimono.tfield[p.x, p.y] != null)
             {
                 if (motimono.tfield[p.x, p.y].direct == true)//方向設置か
                     piclist[p.x, p.y + 2].ImageLocation = "trap\\" + motimono.tfield[p.x, p.y].type + motimono.tfield[p.x, p.y].grade + motimono.tfield[p.x, p.y].direction + ".bmp";
@@ -348,9 +389,20 @@ namespace WindowsFormsApplication1
 
         private void mouseLeave(int x, int y)
         {
-            foreach (point p in traprange)
-                rangeundisplay(p);
+            if (motimono.tfield[x, y] != null)
+            {
+                if (motimono.tfield[x, y].direct == true)
+                    piclist[x, y + 2].ImageLocation = "trap\\" + motimono.tfield[x, y].type + motimono.tfield[x, y].grade + +motimono.tfield[x, y].direction + ".bmp";
+                else
+                    piclist[x, y + 2].ImageLocation = "trap\\" + motimono.tfield[x, y].type + motimono.tfield[x, y].grade + ".bmp";
+            }
+            if(motimono.tfield[x,y]==null)
+                piclist[x, y + 2].ImageLocation = "trap\\null.bmp";
+            if (piclist != null)
+                foreach (point p in traprange)
+                    rangeundisplay(p);
             traprange.Clear();
+            this.label3.Text = "0";
         }
 
         //範囲の座標を取得
@@ -420,16 +472,28 @@ namespace WindowsFormsApplication1
                     switch (settrap.direction)
                     {
                         case 0:
-                            traprange.Add(new point(x, y + 3));
+                            if(y+3>8)
+                                traprange.Add(new point(x, 8));
+                            else
+                                traprange.Add(new point(x, y + 3));
                             break;
                         case 1:
-                            traprange.Add(new point(x + 3, y));
+                            if(x+3>8)
+                                traprange.Add(new point(8, y));
+                            else
+                                traprange.Add(new point(x + 3, y));
                             break;
                         case 2:
-                            traprange.Add(new point(x, y - 3));
+                            if(y-3<-2)
+                                traprange.Add(new point(x, -2));
+                            else
+                                traprange.Add(new point(x, y - 3));
                             break;
                         case 3:
-                            traprange.Add(new point(x - 3, y));
+                            if(x-3<0)
+                                traprange.Add(new point(0, y));
+                            else
+                                traprange.Add(new point(x - 3, y));
                             break;
                     }
                 }
@@ -438,16 +502,28 @@ namespace WindowsFormsApplication1
                     switch (settrap.direction)
                     {
                         case 0:
-                            traprange.Add(new point(x, y + 4));
+                            if(y+4>8)
+                                traprange.Add(new point(x, 8));
+                            else
+                                traprange.Add(new point(x, y + 4));
                             break;
                         case 1:
-                            traprange.Add(new point(x + 4, y));
+                            if(x+4>8)
+                                traprange.Add(new point(8, y));
+                            else
+                                traprange.Add(new point(x + 4, y));
                             break;
                         case 2:
-                            traprange.Add(new point(x, y - 4));
+                            if(y-4<-2)
+                                traprange.Add(new point(x, -2));
+                            else
+                                traprange.Add(new point(x, y - 4));
                             break;
                         case 3:
-                            traprange.Add(new point(x - 4, y));
+                            if(x-4<0)
+                                traprange.Add(new point(0, y));
+                            else
+                                traprange.Add(new point(x - 4, y));
                             break;
                     }
                 }
@@ -472,12 +548,21 @@ namespace WindowsFormsApplication1
             }
             else if ((settrap.type == 7 || settrap.type == 8) && settrap.grade == 1)
             {
-                traprange.Add(new point(x, y + 1));
-                traprange.Add(new point(x + 1, y));
+                if(y!=8)
+                    traprange.Add(new point(x, y + 1));
+                if(x!=8)
+                    traprange.Add(new point(x + 1, y));
                 traprange.Add(new point(x, y - 1));
-                traprange.Add(new point(x - 1, y));
+                if(x==0)
+                    traprange.Add(new point(x - 1, y));
             }
 
+        }
+
+        private void butunselect_Click(object sender, EventArgs e)
+        {
+            this.listBox1.SelectedIndex = -1;
+            selectedtrap = null;
         }
     }
 }

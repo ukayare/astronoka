@@ -33,6 +33,7 @@ namespace WindowsFormsApplication1
         public int resist = 100;//強度
 
         public Boolean range = false;//範囲があるか
+        public Boolean constrange = false;
 
         //トラップをセット
         public void trapset()
@@ -259,6 +260,7 @@ namespace WindowsFormsApplication1
                     }
                     else
                     {
+                        constrange = true;
                         name = "必殺パンチングマシン";
                         elect = 250;
                         price = 30000;
@@ -278,6 +280,7 @@ namespace WindowsFormsApplication1
                     }
                     else
                     {
+                        constrange = true;
                         name = "特別ビリビリマシン";
                         elect = 250;
                         price = 20000;
@@ -313,6 +316,7 @@ namespace WindowsFormsApplication1
                 case 12:
                     kotei = true;
                     range = true;
+                    constrange = true;
                     happen = 4;
                     if (grade == 0)
                     {

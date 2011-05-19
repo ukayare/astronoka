@@ -49,6 +49,8 @@
             this.bagpic5 = new System.Windows.Forms.PictureBox();
             this.bagpic6 = new System.Windows.Forms.PictureBox();
             this.butex = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.bagpic1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bagpic2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bagpic3)).BeginInit();
@@ -149,11 +151,11 @@
             // 
             // butst1
             // 
-            this.butst1.Location = new System.Drawing.Point(639, 125);
+            this.butst1.Location = new System.Drawing.Point(450, 194);
             this.butst1.Name = "butst1";
             this.butst1.Size = new System.Drawing.Size(75, 23);
             this.butst1.TabIndex = 14;
-            this.butst1.Text = "詳細1";
+            this.butst1.Text = "詳細";
             this.butst1.UseVisualStyleBackColor = true;
             this.butst1.Click += new System.EventHandler(this.butst1_Click);
             // 
@@ -161,7 +163,7 @@
             // 
             this.namebox1.FormattingEnabled = true;
             this.namebox1.ItemHeight = 12;
-            this.namebox1.Location = new System.Drawing.Point(139, 12);
+            this.namebox1.Location = new System.Drawing.Point(44, 12);
             this.namebox1.Name = "namebox1";
             this.namebox1.Size = new System.Drawing.Size(120, 136);
             this.namebox1.TabIndex = 13;
@@ -180,7 +182,7 @@
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 12;
-            this.listBox1.Location = new System.Drawing.Point(344, 12);
+            this.listBox1.Location = new System.Drawing.Point(168, 12);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(274, 136);
             this.listBox1.TabIndex = 11;
@@ -195,7 +197,7 @@
             "A科",
             "B科",
             "C科"});
-            this.depbox1.Location = new System.Drawing.Point(53, 12);
+            this.depbox1.Location = new System.Drawing.Point(12, 12);
             this.depbox1.Name = "depbox1";
             this.depbox1.Size = new System.Drawing.Size(26, 52);
             this.depbox1.TabIndex = 15;
@@ -251,7 +253,7 @@
             // 
             // butex
             // 
-            this.butex.Location = new System.Drawing.Point(697, 22);
+            this.butex.Location = new System.Drawing.Point(677, 527);
             this.butex.Name = "butex";
             this.butex.Size = new System.Drawing.Size(75, 23);
             this.butex.TabIndex = 22;
@@ -259,12 +261,32 @@
             this.butex.UseVisualStyleBackColor = true;
             this.butex.Click += new System.EventHandler(this.butex_Click);
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(485, 12);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(123, 136);
+            this.richTextBox1.TabIndex = 23;
+            this.richTextBox1.Text = "";
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.Location = new System.Drawing.Point(614, 12);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.ReadOnly = true;
+            this.richTextBox2.Size = new System.Drawing.Size(158, 136);
+            this.richTextBox2.TabIndex = 24;
+            this.richTextBox2.Text = "";
+            // 
             // hatake
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(784, 562);
+            this.Controls.Add(this.richTextBox2);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.butex);
             this.Controls.Add(this.bagpic6);
             this.Controls.Add(this.bagpic5);
@@ -325,5 +347,7 @@
         private System.Windows.Forms.PictureBox bagpic5;
         private System.Windows.Forms.PictureBox bagpic6;
         private System.Windows.Forms.Button butex;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox richTextBox2;
     }
 }

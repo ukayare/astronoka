@@ -133,8 +133,10 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.butunselect = new System.Windows.Forms.Button();
+            this.trapextext = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox99)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox98)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox97)).BeginInit();
@@ -1390,22 +1392,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 366);
+            this.label1.Location = new System.Drawing.Point(33, 430);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 12);
             this.label1.TabIndex = 215;
             this.label1.Text = "label1";
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(35, 59);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(71, 16);
-            this.radioButton3.TabIndex = 216;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "範囲確認";
-            this.radioButton3.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -1417,13 +1408,43 @@
             this.label2.TabIndex = 217;
             this.label2.Text = "label2";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(33, 458);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 12);
+            this.label3.TabIndex = 218;
+            this.label3.Text = "label3";
+            // 
+            // butunselect
+            // 
+            this.butunselect.Location = new System.Drawing.Point(59, 364);
+            this.butunselect.Name = "butunselect";
+            this.butunselect.Size = new System.Drawing.Size(75, 23);
+            this.butunselect.TabIndex = 219;
+            this.butunselect.Text = "選択解除";
+            this.butunselect.UseVisualStyleBackColor = true;
+            this.butunselect.Click += new System.EventHandler(this.butunselect_Click);
+            // 
+            // trapextext
+            // 
+            this.trapextext.Location = new System.Drawing.Point(609, 88);
+            this.trapextext.Name = "trapextext";
+            this.trapextext.ReadOnly = true;
+            this.trapextext.Size = new System.Drawing.Size(163, 270);
+            this.trapextext.TabIndex = 220;
+            this.trapextext.Text = "";
+            // 
             // trapfield
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 562);
+            this.Controls.Add(this.trapextext);
+            this.Controls.Add(this.butunselect);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.radioButton3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox99);
             this.Controls.Add(this.pictureBox98);
@@ -1744,7 +1765,9 @@
         private System.Windows.Forms.PictureBox pictureBox98;
         private System.Windows.Forms.PictureBox pictureBox99;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button butunselect;
+        private System.Windows.Forms.RichTextBox trapextext;
     }
 }
