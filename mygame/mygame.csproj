@@ -94,6 +94,9 @@
     <Compile Include="busmove.Designer.cs">
       <DependentUpon>busmove.cs</DependentUpon>
     </Compile>
+    <Compile Include="hatakepic.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Flag.cs" />
     <Compile Include="nform.cs">
       <SubType>Form</SubType>
@@ -102,6 +105,7 @@
     <Compile Include="date.cs" />
     <Compile Include="item.cs" />
     <Compile Include="motimono.cs" />
+    <Compile Include="stringcreate.cs" />
     <Compile Include="traobattlepic.cs">
       <SubType>Form</SubType>
     </Compile>

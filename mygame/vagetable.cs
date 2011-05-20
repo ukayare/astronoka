@@ -9,7 +9,6 @@ namespace WindowsFormsApplication1
     public class vagetable : yasai
     {
         public int status = 1;//0-injured 1-normal 2-good 3-better 4-best
-        public int days=0;//成長日数
 
         public int mat = 0;//0発芽前　1発芽　2成長中　3成熟　4種1つ　5種2つ　6種3つ　7完全成熟　8枯れてる
 
@@ -30,6 +29,9 @@ namespace WindowsFormsApplication1
             bonusp = s.bonusp;
             price = s.price;
             rank = s.rank;
+
+            mut1 = s.mut1;
+            mut2 = s.mut2;
             
             info = s.info;
 

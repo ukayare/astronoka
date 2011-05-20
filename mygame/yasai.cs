@@ -31,7 +31,7 @@ namespace WindowsFormsApplication1
         public int mut1 = 0;//変異属性その１
         public int mut2 = 0;//変異属性その２
 
-        public int rank=0;//なんだっけこれ
+        public int rank=0;//等級
 
 
         //0 high,1 heavy,2 pattern,3 nour,4 sugar,5 texture,6 shape,7 flavor,8 smell,9 sound
@@ -49,6 +49,7 @@ namespace WindowsFormsApplication1
         public int bonusp = 0;//属性ボーナス価格
         public int sell;//実際の値段
 
+        public int days = 0;//成長日数
 
         public Boolean[,] info = new Boolean[10, 8];//遺伝情報
 

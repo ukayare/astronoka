@@ -90,6 +90,8 @@ namespace WindowsFormsApplication1
         //リストボックス初期化
         private void boxset()
         {
+            stringcreate.infoclear(this.yasaiextext, this.ele1, this.info1, this.eleval1, this.elename1);
+            stringcreate.infoclear(this.yasaiextext, this.ele2, this.info2, this.eleval2, this.elename2);
             this.depbox1.Items.Clear(); 
             this.depbox2.Items.Clear();
             this.listBox1.Items.Clear();
@@ -137,7 +139,7 @@ namespace WindowsFormsApplication1
         {
             if (this.listBox1.SelectedIndex != -1 && this.listBox1.SelectedItem != null)
             {
-                s1 = motimono.seedlist.Find(s => s.finname == this.listBox1.SelectedItem.ToString());
+                s1 = stringcreate.seed_listBox_changed(this.listBox1, this.label1, this.yasaiextext, this.ele1, this.info1, this.eleval1, this.elename1);
                 this.label1.Text = s1.items.ToString();
             }
         }
@@ -145,7 +147,7 @@ namespace WindowsFormsApplication1
         {
             if (this.listBox2.SelectedIndex != -1 && this.listBox2.SelectedItem != null)
             {
-                s2 = motimono.seedlist.Find(s => s.finname == this.listBox2.SelectedItem.ToString());
+                s2 = stringcreate.seed_listBox_changed(this.listBox2, this.label2, this.yasaiextext2, this.ele2, this.info2, this.eleval2, this.elename2);
                 this.label2.Text = s2.items.ToString();
             }
         }
@@ -153,92 +155,28 @@ namespace WindowsFormsApplication1
         //どの科を選んだ？
         private void depbox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (this.depbox1.SelectedItem != null)//ちゃんと選んでるか
-            {
-                listset(this.depbox1.SelectedItem.ToString(), listBox1, namebox1);
-            }
+            stringcreate.infoclear(this.yasaiextext, this.ele1, this.info1, this.eleval1, this.elename1);
+            stringcreate.depbox_change(this.depbox1, listBox1, namebox1, "seed");
         }
+
         private void depbox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (this.depbox2.SelectedItem != null)
-            {
-                listset(this.depbox2.SelectedItem.ToString(), listBox2, namebox2);
-            }
-        }
-        private void listset(string str, ListBox listbox, ListBox namebox)
-        {
-            //まずクリアー    
-            listbox.Items.Clear();
-            namebox.Items.Clear();
-            List<seed> curseed = new List<seed>();
-
-            //選んだ項目にあったリストを取得
-            if (str == "全て")
-                curseed = motimono.seedlist;
-            else if (str == "A科")
-                curseed = motimono.seedlist.FindAll(s => s.department == -1);
-            else if (str == "B科")
-                curseed = motimono.seedlist.FindAll(s => s.department == 0);
-            else if (str == "C科")
-                curseed = motimono.seedlist.FindAll(s => s.department == 1);
-            else if (str == "強化種")
-                curseed = motimono.seedlist.FindAll(s => s.department == 2);
-
-            foreach (seed s in curseed)
-            {
-                Boolean same = false;//同じフラグ
-                for (int j = 0; j < namebox.Items.Count; j++)
-                    if (s.name == namebox.Items[j].ToString())
-                        same = true;
-                if (same == false)//かぶってなかったら種類追加
-                    namebox.Items.Add(s.name);
-                listbox.Items.Add(s.finname);
-            }
+            stringcreate.infoclear(this.yasaiextext2, this.ele2, this.info2, this.eleval2, this.elename2);
+            stringcreate.depbox_change(this.depbox2, listBox2, namebox2, "seed");
         }
 
         //種類選択
         private void namebox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (this.namebox1.SelectedItem != null)
-            {
-                nameboxselect(this.namebox1.SelectedItem.ToString(), this.listBox1);
-            }
+            stringcreate.infoclear(this.yasaiextext, this.ele1, this.info1, this.eleval1, this.elename1);
+            stringcreate.namebox_change(this.namebox1, this.listBox1, "seed");
         }
         private void namebox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (this.namebox2.SelectedItem != null)
-            {
-                nameboxselect(this.namebox1.SelectedItem.ToString(), this.listBox2);
-            }
-        }
-        private void nameboxselect(string x,ListBox listbox)
-        {
-            listbox.Items.Clear();//まずクリアー
-            List<seed> curseed = motimono.seedlist.FindAll(s => s.name == x);//選んだ種類のリストを取得
-            foreach (seed s in curseed)
-                this.listBox1.Items.Add(s.finname);//追加
+            stringcreate.infoclear(this.yasaiextext2, this.ele2, this.info2, this.eleval2, this.elename2);
+            stringcreate.namebox_change(this.namebox2, this.listBox2, "seed");
         }
 
-        private void butst1_Click(object sender, EventArgs e)
-        {
-            if (this.listBox1.SelectedIndex == -1)
-            {
-                MessageBox.Show("種を選んでください");
-                return;
-            }
-            seedst=new seedstatus(s1);
-            seedst.ShowDialog();
-        }
-        private void butst2_Click(object sender, EventArgs e)
-        {
-            if (this.listBox2.SelectedIndex == -1)
-            {
-                MessageBox.Show("種を選んでください");
-                return;
-            }
-            seedst = new seedstatus(s2);
-            seedst.ShowDialog();
-        }
 
         //ピート君の予想
         private string peetex(seed s)

@@ -34,12 +34,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
-            this.butsyou = new System.Windows.Forms.Button();
+            this.ele1 = new System.Windows.Forms.RichTextBox();
+            this.info1 = new System.Windows.Forms.RichTextBox();
+            this.eleval1 = new System.Windows.Forms.RichTextBox();
+            this.elename1 = new System.Windows.Forms.RichTextBox();
+            this.yasaiextext = new System.Windows.Forms.RichTextBox();
+            this.bagpic3 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.bagpic3)).BeginInit();
             this.SuspendLayout();
             // 
             // butclose
             // 
-            this.butclose.Location = new System.Drawing.Point(345, 194);
+            this.butclose.Location = new System.Drawing.Point(272, 427);
             this.butclose.Name = "butclose";
             this.butclose.Size = new System.Drawing.Size(75, 23);
             this.butclose.TabIndex = 0;
@@ -51,9 +57,9 @@
             // 
             this.namebox1.FormattingEnabled = true;
             this.namebox1.ItemHeight = 12;
-            this.namebox1.Location = new System.Drawing.Point(208, 40);
+            this.namebox1.Location = new System.Drawing.Point(141, 12);
             this.namebox1.Name = "namebox1";
-            this.namebox1.Size = new System.Drawing.Size(120, 136);
+            this.namebox1.Size = new System.Drawing.Size(120, 172);
             this.namebox1.TabIndex = 12;
             this.namebox1.SelectedIndexChanged += new System.EventHandler(this.namebox1_SelectedIndexChanged);
             // 
@@ -67,7 +73,7 @@
             "B科",
             "C科",
             "強化種"});
-            this.depbox1.Location = new System.Drawing.Point(130, 40);
+            this.depbox1.Location = new System.Drawing.Point(72, 12);
             this.depbox1.Name = "depbox1";
             this.depbox1.Size = new System.Drawing.Size(45, 64);
             this.depbox1.TabIndex = 11;
@@ -86,9 +92,9 @@
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 12;
-            this.listBox1.Location = new System.Drawing.Point(378, 40);
+            this.listBox1.Location = new System.Drawing.Point(286, 12);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(274, 136);
+            this.listBox1.Size = new System.Drawing.Size(274, 172);
             this.listBox1.TabIndex = 9;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -102,28 +108,76 @@
             "野菜",
             "賞品",
             "倉庫"});
-            this.listBox2.Location = new System.Drawing.Point(43, 40);
+            this.listBox2.Location = new System.Drawing.Point(12, 12);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(40, 64);
             this.listBox2.TabIndex = 13;
             this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
             // 
-            // butsyou
+            // ele1
             // 
-            this.butsyou.Location = new System.Drawing.Point(678, 153);
-            this.butsyou.Name = "butsyou";
-            this.butsyou.Size = new System.Drawing.Size(75, 23);
-            this.butsyou.TabIndex = 14;
-            this.butsyou.Text = "詳細";
-            this.butsyou.UseVisualStyleBackColor = true;
-            this.butsyou.Click += new System.EventHandler(this.butsyou_Click);
+            this.ele1.Location = new System.Drawing.Point(212, 236);
+            this.ele1.Name = "ele1";
+            this.ele1.ReadOnly = true;
+            this.ele1.Size = new System.Drawing.Size(39, 172);
+            this.ele1.TabIndex = 34;
+            this.ele1.Text = "";
+            // 
+            // info1
+            // 
+            this.info1.Location = new System.Drawing.Point(249, 236);
+            this.info1.Name = "info1";
+            this.info1.ReadOnly = true;
+            this.info1.Size = new System.Drawing.Size(104, 172);
+            this.info1.TabIndex = 33;
+            this.info1.Text = "";
+            // 
+            // eleval1
+            // 
+            this.eleval1.Location = new System.Drawing.Point(351, 236);
+            this.eleval1.Name = "eleval1";
+            this.eleval1.ReadOnly = true;
+            this.eleval1.Size = new System.Drawing.Size(32, 172);
+            this.eleval1.TabIndex = 35;
+            this.eleval1.Text = "";
+            // 
+            // elename1
+            // 
+            this.elename1.Location = new System.Drawing.Point(381, 236);
+            this.elename1.Name = "elename1";
+            this.elename1.ReadOnly = true;
+            this.elename1.Size = new System.Drawing.Size(80, 172);
+            this.elename1.TabIndex = 36;
+            this.elename1.Text = "";
+            // 
+            // yasaiextext
+            // 
+            this.yasaiextext.Location = new System.Drawing.Point(7, 205);
+            this.yasaiextext.Name = "yasaiextext";
+            this.yasaiextext.ReadOnly = true;
+            this.yasaiextext.Size = new System.Drawing.Size(198, 203);
+            this.yasaiextext.TabIndex = 32;
+            this.yasaiextext.Text = "";
+            // 
+            // bagpic3
+            // 
+            this.bagpic3.Location = new System.Drawing.Point(472, 236);
+            this.bagpic3.Name = "bagpic3";
+            this.bagpic3.Size = new System.Drawing.Size(100, 100);
+            this.bagpic3.TabIndex = 37;
+            this.bagpic3.TabStop = false;
             // 
             // itemlist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 262);
-            this.Controls.Add(this.butsyou);
+            this.ClientSize = new System.Drawing.Size(584, 462);
+            this.Controls.Add(this.bagpic3);
+            this.Controls.Add(this.ele1);
+            this.Controls.Add(this.info1);
+            this.Controls.Add(this.eleval1);
+            this.Controls.Add(this.elename1);
+            this.Controls.Add(this.yasaiextext);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.namebox1);
             this.Controls.Add(this.depbox1);
@@ -133,6 +187,7 @@
             this.Name = "itemlist";
             this.Text = "itemlist";
             this.Load += new System.EventHandler(this.itemlist_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.bagpic3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -146,6 +201,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.Button butsyou;
+        private System.Windows.Forms.RichTextBox ele1;
+        private System.Windows.Forms.RichTextBox info1;
+        private System.Windows.Forms.RichTextBox eleval1;
+        private System.Windows.Forms.RichTextBox elename1;
+        private System.Windows.Forms.RichTextBox yasaiextext;
+        private System.Windows.Forms.PictureBox bagpic3;
     }
 }

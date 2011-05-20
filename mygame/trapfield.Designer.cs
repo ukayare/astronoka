@@ -1432,7 +1432,7 @@
             this.trapextext.Location = new System.Drawing.Point(609, 88);
             this.trapextext.Name = "trapextext";
             this.trapextext.ReadOnly = true;
-            this.trapextext.Size = new System.Drawing.Size(163, 270);
+            this.trapextext.Size = new System.Drawing.Size(163, 307);
             this.trapextext.TabIndex = 220;
             this.trapextext.Text = "";
             // 

@@ -364,7 +364,7 @@ namespace WindowsFormsApplication1
             //最初に設置範囲外の処理
             if (p.y == -1)
             {
-                if(p.x==4)
+                if (p.x == 4)
                     piclist[p.x, p.y + 2].Image = global::WindowsFormsApplication1.Properties.Resources.enter;
                 else
                     piclist[p.x, p.y + 2].Image = global::WindowsFormsApplication1.Properties.Resources.shiba;
@@ -384,7 +384,7 @@ namespace WindowsFormsApplication1
                     piclist[p.x, p.y + 2].ImageLocation = "trap\\" + motimono.tfield[p.x, p.y].type + motimono.tfield[p.x, p.y].grade + ".bmp";
             }
             else
-                piclist[p.x, p.y + 2].Image = global::WindowsFormsApplication1.Properties.Resources._null ;
+                piclist[p.x, p.y + 2].Image = global::WindowsFormsApplication1.Properties.Resources._null;
         }
 
         private void mouseLeave(int x, int y)
