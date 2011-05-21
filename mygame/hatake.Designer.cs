@@ -211,6 +211,7 @@
             // 
             // yasaiextext
             // 
+            this.yasaiextext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.yasaiextext.Location = new System.Drawing.Point(349, 12);
             this.yasaiextext.Name = "yasaiextext";
             this.yasaiextext.ReadOnly = true;
@@ -220,6 +221,7 @@
             // 
             // info1
             // 
+            this.info1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.info1.Location = new System.Drawing.Point(570, 40);
             this.info1.Name = "info1";
             this.info1.ReadOnly = true;
@@ -229,15 +231,17 @@
             // 
             // yasaiextext2
             // 
+            this.yasaiextext2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.yasaiextext2.Location = new System.Drawing.Point(349, 255);
             this.yasaiextext2.Name = "yasaiextext2";
             this.yasaiextext2.ReadOnly = true;
-            this.yasaiextext2.Size = new System.Drawing.Size(180, 206);
+            this.yasaiextext2.Size = new System.Drawing.Size(180, 243);
             this.yasaiextext2.TabIndex = 25;
             this.yasaiextext2.Text = "";
             // 
             // info2
             // 
+            this.info2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.info2.Location = new System.Drawing.Point(570, 289);
             this.info2.Name = "info2";
             this.info2.ReadOnly = true;
@@ -247,6 +251,7 @@
             // 
             // ele1
             // 
+            this.ele1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.ele1.Location = new System.Drawing.Point(533, 40);
             this.ele1.Name = "ele1";
             this.ele1.ReadOnly = true;
@@ -256,6 +261,7 @@
             // 
             // ele2
             // 
+            this.ele2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.ele2.Location = new System.Drawing.Point(533, 289);
             this.ele2.Name = "ele2";
             this.ele2.ReadOnly = true;
@@ -265,6 +271,7 @@
             // 
             // eleval1
             // 
+            this.eleval1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.eleval1.Location = new System.Drawing.Point(672, 40);
             this.eleval1.Name = "eleval1";
             this.eleval1.ReadOnly = true;
@@ -274,6 +281,7 @@
             // 
             // elename1
             // 
+            this.elename1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.elename1.Location = new System.Drawing.Point(702, 40);
             this.elename1.Name = "elename1";
             this.elename1.ReadOnly = true;
@@ -283,6 +291,7 @@
             // 
             // eleval2
             // 
+            this.eleval2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.eleval2.Location = new System.Drawing.Point(672, 289);
             this.eleval2.Name = "eleval2";
             this.eleval2.ReadOnly = true;
@@ -292,6 +301,7 @@
             // 
             // elename2
             // 
+            this.elename2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.elename2.Location = new System.Drawing.Point(702, 289);
             this.elename2.Name = "elename2";
             this.elename2.ReadOnly = true;

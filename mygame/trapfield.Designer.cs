@@ -31,8 +31,6 @@
             this.butclose = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.pictureBox99 = new System.Windows.Forms.PictureBox();
             this.pictureBox98 = new System.Windows.Forms.PictureBox();
             this.pictureBox97 = new System.Windows.Forms.PictureBox();
@@ -137,6 +135,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.butunselect = new System.Windows.Forms.Button();
             this.trapextext = new System.Windows.Forms.RichTextBox();
+            this.trapextext2 = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox99)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox98)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox97)).BeginInit();
@@ -252,7 +251,7 @@
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(35, 88);
+            this.comboBox1.Location = new System.Drawing.Point(35, 16);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 20);
             this.comboBox1.TabIndex = 100;
@@ -262,33 +261,11 @@
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 12;
-            this.listBox1.Location = new System.Drawing.Point(35, 138);
+            this.listBox1.Location = new System.Drawing.Point(35, 42);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(121, 220);
             this.listBox1.TabIndex = 101;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(35, 16);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(47, 16);
-            this.radioButton1.TabIndex = 111;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "設置";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(35, 38);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(47, 16);
-            this.radioButton2.TabIndex = 112;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "撤去";
-            this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // pictureBox99
             // 
@@ -1392,7 +1369,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 430);
+            this.label1.Location = new System.Drawing.Point(187, 519);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 12);
             this.label1.TabIndex = 215;
@@ -1411,7 +1388,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(33, 458);
+            this.label3.Location = new System.Drawing.Point(187, 547);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 12);
             this.label3.TabIndex = 218;
@@ -1419,7 +1396,7 @@
             // 
             // butunselect
             // 
-            this.butunselect.Location = new System.Drawing.Point(59, 364);
+            this.butunselect.Location = new System.Drawing.Point(58, 268);
             this.butunselect.Name = "butunselect";
             this.butunselect.Size = new System.Drawing.Size(75, 23);
             this.butunselect.TabIndex = 219;
@@ -1429,18 +1406,28 @@
             // 
             // trapextext
             // 
-            this.trapextext.Location = new System.Drawing.Point(609, 88);
+            this.trapextext.Location = new System.Drawing.Point(8, 264);
             this.trapextext.Name = "trapextext";
             this.trapextext.ReadOnly = true;
-            this.trapextext.Size = new System.Drawing.Size(163, 307);
+            this.trapextext.Size = new System.Drawing.Size(169, 289);
             this.trapextext.TabIndex = 220;
             this.trapextext.Text = "";
+            // 
+            // trapextext2
+            // 
+            this.trapextext2.Location = new System.Drawing.Point(604, 108);
+            this.trapextext2.Name = "trapextext2";
+            this.trapextext2.ReadOnly = true;
+            this.trapextext2.Size = new System.Drawing.Size(169, 289);
+            this.trapextext2.TabIndex = 221;
+            this.trapextext2.Text = "";
             // 
             // trapfield
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 562);
+            this.Controls.Add(this.trapextext2);
             this.Controls.Add(this.trapextext);
             this.Controls.Add(this.butunselect);
             this.Controls.Add(this.label3);
@@ -1545,8 +1532,6 @@
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.butclose);
@@ -1663,8 +1648,6 @@
         private System.Windows.Forms.Button butclose;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
@@ -1769,5 +1752,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button butunselect;
         private System.Windows.Forms.RichTextBox trapextext;
+        private System.Windows.Forms.RichTextBox trapextext2;
     }
 }

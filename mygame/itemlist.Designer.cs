@@ -39,8 +39,8 @@
             this.eleval1 = new System.Windows.Forms.RichTextBox();
             this.elename1 = new System.Windows.Forms.RichTextBox();
             this.yasaiextext = new System.Windows.Forms.RichTextBox();
-            this.bagpic3 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.bagpic3)).BeginInit();
+            this.bagpic = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.bagpic)).BeginInit();
             this.SuspendLayout();
             // 
             // butclose
@@ -116,6 +116,7 @@
             // 
             // ele1
             // 
+            this.ele1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.ele1.Location = new System.Drawing.Point(212, 236);
             this.ele1.Name = "ele1";
             this.ele1.ReadOnly = true;
@@ -125,6 +126,7 @@
             // 
             // info1
             // 
+            this.info1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.info1.Location = new System.Drawing.Point(249, 236);
             this.info1.Name = "info1";
             this.info1.ReadOnly = true;
@@ -134,6 +136,7 @@
             // 
             // eleval1
             // 
+            this.eleval1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.eleval1.Location = new System.Drawing.Point(351, 236);
             this.eleval1.Name = "eleval1";
             this.eleval1.ReadOnly = true;
@@ -143,6 +146,7 @@
             // 
             // elename1
             // 
+            this.elename1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.elename1.Location = new System.Drawing.Point(381, 236);
             this.elename1.Name = "elename1";
             this.elename1.ReadOnly = true;
@@ -152,6 +156,7 @@
             // 
             // yasaiextext
             // 
+            this.yasaiextext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.yasaiextext.Location = new System.Drawing.Point(7, 205);
             this.yasaiextext.Name = "yasaiextext";
             this.yasaiextext.ReadOnly = true;
@@ -159,20 +164,21 @@
             this.yasaiextext.TabIndex = 32;
             this.yasaiextext.Text = "";
             // 
-            // bagpic3
+            // bagpic
             // 
-            this.bagpic3.Location = new System.Drawing.Point(472, 236);
-            this.bagpic3.Name = "bagpic3";
-            this.bagpic3.Size = new System.Drawing.Size(100, 100);
-            this.bagpic3.TabIndex = 37;
-            this.bagpic3.TabStop = false;
+            this.bagpic.Location = new System.Drawing.Point(472, 236);
+            this.bagpic.Name = "bagpic";
+            this.bagpic.Size = new System.Drawing.Size(100, 100);
+            this.bagpic.TabIndex = 37;
+            this.bagpic.TabStop = false;
             // 
             // itemlist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(584, 462);
-            this.Controls.Add(this.bagpic3);
+            this.Controls.Add(this.bagpic);
             this.Controls.Add(this.ele1);
             this.Controls.Add(this.info1);
             this.Controls.Add(this.eleval1);
@@ -187,7 +193,7 @@
             this.Name = "itemlist";
             this.Text = "itemlist";
             this.Load += new System.EventHandler(this.itemlist_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.bagpic3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bagpic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,6 +212,6 @@
         private System.Windows.Forms.RichTextBox eleval1;
         private System.Windows.Forms.RichTextBox elename1;
         private System.Windows.Forms.RichTextBox yasaiextext;
-        private System.Windows.Forms.PictureBox bagpic3;
+        private System.Windows.Forms.PictureBox bagpic;
     }
 }

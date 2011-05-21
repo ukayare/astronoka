@@ -2,11 +2,176 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
 
 namespace WindowsFormsApplication1
 {
     public static class stringcreate
     {
+        //トラップ選択
+        public static trap trap_listBox_changed(System.Windows.Forms.ListBox listBox,System.Windows.Forms.RichTextBox trapextext)
+        {
+            trap selectedtrap=null;
+            trapextext.Text = "";
+            //選択したものを取得
+            if (listBox.SelectedItem != null)
+            {
+                int i = motimono.traplist.FindIndex(t => t.name == listBox.SelectedItem.ToString());
+                selectedtrap = motimono.traplist.Find(t => t.name == listBox.SelectedItem.ToString());
+                StreamReader reader = new StreamReader("text\\trap\\" + selectedtrap.type.ToString() + selectedtrap.grade.ToString() + ".txt", System.Text.Encoding.GetEncoding("shift_jis"));
+                trapextext.AppendText(reader.ReadToEnd());
+            }
+            return selectedtrap;
+        }
+
+
+        //どの個体を選んだか
+        public static seedvagtrap listBox_change(System.Windows.Forms.ListBox itemBox, System.Windows.Forms.ListBox listBox,
+            System.Windows.Forms.Label label1,System.Windows.Forms.RichTextBox yasaiextext,System.Windows.Forms.RichTextBox ele,System.Windows.Forms.RichTextBox info,
+            System.Windows.Forms.RichTextBox eleval,System.Windows.Forms.RichTextBox elename)
+        {
+            seedvagtrap svt = new seedvagtrap();
+            //選んでるかを確認
+            if (itemBox.SelectedIndex != -1)
+            {
+                if (itemBox.SelectedItem.ToString() == "種")
+                {
+                    if (listBox.SelectedIndex != -1)
+                    {
+                        //選んだ個体を取得
+                        svt.s = stringcreate.seed_listBox_changed(listBox, label1, yasaiextext, ele, info, eleval, elename);
+                        label1.Text = svt.s.items.ToString();
+
+                    }
+                }
+                else if (itemBox.SelectedItem.ToString() == "野菜")
+                {
+                    if (listBox.SelectedIndex != -1)
+                    {
+                        svt.v = stringcreate.vag_listBox_changed(listBox, label1, yasaiextext, ele, info, eleval, elename);
+                        label1.Text = svt.v.items.ToString();
+                    }
+                }
+                else if (itemBox.SelectedItem.ToString() == "トラップ")
+                {
+                    if (listBox.SelectedIndex != -1)
+                    {
+                        svt.t = stringcreate.trap_listBox_changed(listBox, yasaiextext);
+                        label1.Text = svt.t.items.ToString();
+                    }
+                }
+
+            }
+            return svt;
+        }
+
+
+        public static void namebox_change(System.Windows.Forms.ListBox itemBox, System.Windows.Forms.ListBox namebox, System.Windows.Forms.ListBox listBox)
+        {
+            listBox.Items.Clear();
+            if (itemBox.SelectedIndex != -1 && namebox.SelectedItem != null)
+            {
+                //野菜か種かトラップか
+                string x = namebox.SelectedItem.ToString();
+                if (itemBox.SelectedItem.ToString() == "種")
+                {
+                    stringcreate.namebox_change(namebox, listBox, "seed");
+                }
+                //以下もおんなじ処理（なんとかまとれねーかなー
+                else if (itemBox.SelectedItem.ToString() == "野菜")
+                {
+                    stringcreate.namebox_change(namebox, listBox, "vag");
+                }
+                else if (itemBox.SelectedItem.ToString() == "トラップ")
+                {
+                    int j;
+                    for (j = 0; j < Flag.tlist.Length; j++)
+                        if (namebox.SelectedItem.ToString() == Flag.tname[j])
+                            break;
+                    List<trap> curtrap = new List<trap>();
+                    curtrap = motimono.traplist.FindAll(t => t.type == j);
+                    foreach (trap t in curtrap)
+                        listBox.Items.Add(t.name);
+                }
+            }
+        }
+
+
+        public static void depbox_change(System.Windows.Forms.ListBox itemBox, System.Windows.Forms.ListBox depbox, System.Windows.Forms.ListBox namebox, System.Windows.Forms.ListBox listBox)
+        {
+            //いったんクリアー
+            listBox.Items.Clear();
+            namebox.Items.Clear();
+            //以下どの科を選んだかでまずリストをとってきてそれについて表示させる
+            if (itemBox.SelectedIndex != -1)
+            {
+                if (itemBox.SelectedItem.ToString() == "種")
+                {
+                    stringcreate.depbox_change(depbox, listBox, namebox, "seed");
+                }
+                else if (itemBox.SelectedItem.ToString() == "野菜")
+                {
+                    stringcreate.depbox_change(depbox, listBox, namebox, "vag");
+                }
+                else if (itemBox.SelectedItem.ToString() == "トラップ")
+                {
+                    for (int i = 0; i < Flag.tlist.Length; i++)
+                    {
+                        if (Flag.tlist[i] == true)
+                            namebox.Items.Add(Flag.tname[i]);
+                    }
+                    foreach (trap t in motimono.traplist)
+                        listBox.Items.Add(t.name);
+                }
+            }
+        }
+
+
+        //トラップ種野菜どれ選んだ？
+        public static void itemBox_change(System.Windows.Forms.ListBox itemBox, System.Windows.Forms.ListBox depbox, System.Windows.Forms.ListBox namebox, System.Windows.Forms.ListBox listBox)
+        {
+            if (itemBox.SelectedItem != null)
+            {
+
+                listBox.Items.Clear();
+                namebox.Items.Clear();
+                depbox.Items.Clear();
+                depbox.Items.Add("全て");
+
+                if (itemBox.SelectedItem.ToString() == "種")
+                {
+
+                    //各科あるかどうか判別
+                    if (motimono.seedlist.Exists(s => s.department == -1) == true)
+                        depbox.Items.Add("A科");
+                    if (motimono.seedlist.Exists(s => s.department == -0) == true)
+                        depbox.Items.Add("B科");
+                    if (motimono.seedlist.Exists(s => s.department == 1) == true)
+                        depbox.Items.Add("C科");
+                    if (motimono.seedlist.Exists(s => s.department == 2) == true)
+                        depbox.Items.Add("強化種");
+
+                }
+                else if (itemBox.SelectedItem.ToString() == "野菜")
+                {
+                    if (motimono.vaglist.Exists(s => s.department == -1) == true)
+                        depbox.Items.Add("A科");
+                    if (motimono.vaglist.Exists(s => s.department == -0) == true)
+                        depbox.Items.Add("B科");
+                    if (motimono.vaglist.Exists(s => s.department == 1) == true)
+                        depbox.Items.Add("C科");
+                }
+                else if (itemBox.SelectedItem.ToString() == "トラップ")
+                {
+                    for (int i = 0; i < Flag.tlist.Length; i++)
+                    {
+                        if (motimono.traplist.Exists(t => t.type == i) == true)
+                            namebox.Items.Add(Flag.tname[i]);
+                    }
+                }
+            }
+        }
+
         //科の選択
         public static void depbox_change(System.Windows.Forms.ListBox depbox, System.Windows.Forms.ListBox listBox, System.Windows.Forms.ListBox namebox,string mode)
         {
@@ -306,34 +471,34 @@ namespace WindowsFormsApplication1
             switch (s.mut2)
             {
                 case 1:
-                    rets += "と大きさ";
+                    rets += "、大きさ";
                     break;
                 case 2:
-                    rets += "と重さ";
+                    rets += "、重さ";
                     break;
                 case 3:
-                    rets += "と模様";
+                    rets += "、模様";
                     break;
                 case 4:
-                    rets += "と栄養";
+                    rets += "、栄養";
                     break;
                 case 5:
-                    rets += "と糖度";
+                    rets += "、糖度";
                     break;
                 case 6:
-                    rets += "と食感";
+                    rets += "、食感";
                     break;
                 case 7:
-                    rets += "と形状";
+                    rets += "、形状";
                     break;
                 case 8:
-                    rets += "と風味";
+                    rets += "、風味";
                     break;
                 case 9:
-                    rets += "と匂い";
+                    rets += "、匂い";
                     break;
                 case 10:
-                    rets += "と音色";
+                    rets += "、音色";
                     break;
             }
 
@@ -341,57 +506,65 @@ namespace WindowsFormsApplication1
 
             switch (s.rank)
             {
-                case 14:
+                case 15:
+                    rets += "宇宙広しといえど、これ以上の野菜はありえません。ついに辿りつきましたね。\n";
                     break;
+                case 14:
                 case 13:
+                    rets += "これはもはや神の領域です。見ているだけで感動の涙が止まりません……。\n";
                     break;
                 case 12:
-                    break;
                 case 11:
+                    rets += "こんなに素晴らしい野菜は見たことがありません！まさに食べる芸術品です！。\n";
                     break;
                 case 10:
-                    break;
                 case 9:
+                    rets += "うーん、床の間に飾って鑑賞したいほど見事な出来栄えですね。\n";
                     break;
                 case 8:
-                    break;
                 case 7:
+                    rets += "かなり素晴らしい野菜です。\nこれほどの質のものはなかなかありません。\n";
                     break;
                 case 6:
-                    break;
                 case 5:
+                    rets += "品質としてはかなりのものです。\nこれなら自信を持って売れますね。\n";
                     break;
                 case 4:
-                    break;
                 case 3:
+                    rets += "それなりにいい出来の野菜です。\n市場でもりっぱに通用しますよ。\n";
                     break;
                 case 2:
-                    break;
                 case 1:
+                    rets += "品質は可もなく不可もなく、平均より少しだけ上という感じですね。\n";
                     break;
                 case 0:
-                    break;
                 case -1:
+                    rets += "品質の点でちょっと物足りないですね。\n交配で質を上げる努力が必要です。\n";
                     break;
                 case -2:
+                    rets += "品質は、あまり良くありません。\n売って売れないことはないという野菜です。\n";
                     break;
                 case -3:
+                    rets += "うーん、品質が悪すぎますね。\nこれではほとんど価値はありません。\n";
                     break;
                 case -4:
-                    break;
                 case -5:
+                    rets += "品質が悪いのを通りこして、毒としての価値が出てきてしまっていますよ。。\n";
                     break;
                 case -6:
-                    break;
                 case -7:
+                    rets += "絶対に食べてはいけない、危険きわまりない野菜ですよ。\n";
                     break;
                 case -8:
-                    break;
                 case -9:
+                    rets += "ボクたち、おそろしいものを作ってしまいましたよ……。触るのも危険です。\n";
                     break;
                 case -10:
-                    break;
                 case -11:
+                    rets += "うう……。これはもう、野菜の形を借りた悪魔ですね……。。\n";
+                    break;
+                case -12:
+                    rets += "ああ……。銀河広しといえど、これ以上、邪悪な野菜はありませんよ……。\n";
                     break;
             }
 

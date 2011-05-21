@@ -105,6 +105,7 @@
     <Compile Include="date.cs" />
     <Compile Include="item.cs" />
     <Compile Include="motimono.cs" />
+    <Compile Include="seedvagtrap.cs" />
     <Compile Include="stringcreate.cs" />
     <Compile Include="traobattlepic.cs">
       <SubType>Form</SubType>

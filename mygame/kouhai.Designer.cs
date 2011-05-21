@@ -172,6 +172,7 @@
             // 
             // ele1
             // 
+            this.ele1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.ele1.Location = new System.Drawing.Point(531, 57);
             this.ele1.Name = "ele1";
             this.ele1.ReadOnly = true;
@@ -181,6 +182,7 @@
             // 
             // info1
             // 
+            this.info1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.info1.Location = new System.Drawing.Point(568, 57);
             this.info1.Name = "info1";
             this.info1.ReadOnly = true;
@@ -190,6 +192,7 @@
             // 
             // eleval1
             // 
+            this.eleval1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.eleval1.Location = new System.Drawing.Point(670, 57);
             this.eleval1.Name = "eleval1";
             this.eleval1.ReadOnly = true;
@@ -199,6 +202,7 @@
             // 
             // elename1
             // 
+            this.elename1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.elename1.Location = new System.Drawing.Point(700, 57);
             this.elename1.Name = "elename1";
             this.elename1.ReadOnly = true;
@@ -208,6 +212,7 @@
             // 
             // yasaiextext
             // 
+            this.yasaiextext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.yasaiextext.Location = new System.Drawing.Point(368, 26);
             this.yasaiextext.Name = "yasaiextext";
             this.yasaiextext.ReadOnly = true;
@@ -217,6 +222,7 @@
             // 
             // ele2
             // 
+            this.ele2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.ele2.Location = new System.Drawing.Point(531, 315);
             this.ele2.Name = "ele2";
             this.ele2.ReadOnly = true;
@@ -226,6 +232,7 @@
             // 
             // info2
             // 
+            this.info2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.info2.Location = new System.Drawing.Point(568, 315);
             this.info2.Name = "info2";
             this.info2.ReadOnly = true;
@@ -235,6 +242,7 @@
             // 
             // eleval2
             // 
+            this.eleval2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.eleval2.Location = new System.Drawing.Point(670, 315);
             this.eleval2.Name = "eleval2";
             this.eleval2.ReadOnly = true;
@@ -244,6 +252,7 @@
             // 
             // elename2
             // 
+            this.elename2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.elename2.Location = new System.Drawing.Point(700, 315);
             this.elename2.Name = "elename2";
             this.elename2.ReadOnly = true;
@@ -253,6 +262,7 @@
             // 
             // yasaiextext2
             // 
+            this.yasaiextext2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.yasaiextext2.Location = new System.Drawing.Point(368, 284);
             this.yasaiextext2.Name = "yasaiextext2";
             this.yasaiextext2.ReadOnly = true;
@@ -272,6 +282,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(784, 562);
             this.Controls.Add(this.ele2);
             this.Controls.Add(this.info2);

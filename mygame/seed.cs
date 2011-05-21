@@ -429,37 +429,37 @@ namespace WindowsFormsApplication1
         {
             if (sum == 3000)
             {
-                rank = 14;
+                rank = 15;
                 return "最終";
             }
             else if (sum > 2700)
             {
-                rank = 13;
+                rank = 14;
                 return "奇跡";
             }
             else if (sum > 2300)
             {
-                rank = 12;
+                rank = 13;
                 return "偉大";
             }
             else if (sum > 2000)
             {
-                rank = 11;
+                rank = 12;
                 return "超絶";
             }
             else if (sum > 1800)
             {
-                rank = 10;
+                rank = 11;
                 return "秘宝";
             }
             else if (sum > 1600)
             {
-                rank = 9;
+                rank = 10;
                 return "名品";
             }
             else if (sum > 1450)
             {
-                rank = 8;
+                rank = 9;
                 return "珠玉";
             }
             else if (sum > 1300)

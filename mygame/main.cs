@@ -351,6 +351,7 @@ namespace WindowsFormsApplication1
                 trap t = new trap(i, 0);
                 motimono.gettrap(t, 3);
             }
+            Flag.trapsearch();
         }
 
 

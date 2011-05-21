@@ -38,7 +38,6 @@ namespace WindowsFormsApplication1
             musicstart();
             comboset();
 
-            this.radioButton1.Select();
             makepiclist();
             setpic();
             this.label2.Text = "残り電力：" + (date.electmax - date.elect);
@@ -53,56 +52,54 @@ namespace WindowsFormsApplication1
         //指定した座標にトラップを設置
         private void trapset(int x, int y)
         {
-            MessageBox.Show(x.ToString() + y.ToString());
-            if (this.radioButton1.Checked == true)//設置モード
+            if (selectedtrap != null)//トラップは選択してあるか
             {
-                if (selectedtrap!=null)//トラップは選択してあるか
+                if (motimono.trapenable[x, y] == 0 || motimono.tfield[x, y] != null)
                 {
-                    if (motimono.trapenable[x, y] == 0 || motimono.tfield[x,y]!=null)
+                    int i = motimono.traplist.FindIndex(t => t.name == this.listBox1.SelectedItem.ToString());
+                    if (motimono.tfield[x, y] != null)
                     {
-                        int i = motimono.traplist.FindIndex(t => t.name == this.listBox1.SelectedItem.ToString());
-                        if (motimono.tfield[x, y] != null)
+                        //すでに設置されている場合
+                        if (motimono.traplist[i].elect > date.electmax - date.elect + motimono.tfield[x, y].elect)
+                            MessageBox.Show("そのトラップを入れ替えても電力が足りません");
+                        else if (MessageBox.Show("すでに" + motimono.tfield[x, y].name + "が設置されています。\n入れ替えて" + motimono.traplist[i].name + "を設置しますか？", "設置確認", MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
-                            //すでに設置されている場合
-                            if (motimono.traplist[i].elect > date.electmax - date.elect + motimono.tfield[x, y].elect)
-                                MessageBox.Show("そのトラップを入れ替えても電力が足りません");
-                            else if (MessageBox.Show("すでに" + motimono.tfield[x, y].name + "が設置されています。\n入れ替えて" + motimono.traplist[i].name + "を設置しますか？", "設置確認", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                            {
-                                tremove(x, y);
-                                tset(x, y, i);
-                            }
+                            trap swaptrap = motimono.tfield[x, y];
+                            tremove(x, y);
+                            i = motimono.traplist.FindIndex(t => t.name == this.listBox1.SelectedItem.ToString());
+                            tset(x, y, i);
+                            selectedtrap = swaptrap;
+                            i = motimono.traplist.FindIndex(t => t.name == selectedtrap.name);
+                            this.listBox1.SelectedIndex = i;
 
                         }
-                        //何もない場合
-                        else if (motimono.traplist[i].elect > date.electmax - date.elect)
-                            MessageBox.Show("電力が足りません");
-                        else
-                        {
-                            tset(x, y, i);
-                        }
+
                     }
+                    //何もない場合
+                    else if (motimono.traplist[i].elect > date.electmax - date.elect)
+                        MessageBox.Show("電力が足りません");
                     else
-                        MessageBox.Show("起動範囲が重なっているため設置できません");
+                    {
+                        tset(x, y, i);
+                    }
                 }
                 else
-                    MessageBox.Show("設置するトラップを選んでください");
+                    MessageBox.Show("起動範囲が重なっているため設置できません");
             }
-            else if(this.radioButton2.Checked==true)//撤去モード
+            else
             {
                 if (motimono.tfield[x, y] != null)//設置されてるか
                 {
-                    //撤去確認
-                    if (MessageBox.Show(motimono.tfield[x, y].name + "を撤去しますか？", "撤去確認", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                    {
-                        tremove(x, y);
-                        this.listBox1.Items.Clear();
-                        this.comboBox1.SelectedIndex = -1;
-                        this.comboBox1.SelectedIndex = 0;
-                        Flag.trapsearch();
-                    }
+                    selectedtrap = motimono.tfield[x, y];
+                    tremove(x, y);
+                    this.listBox1.Items.Clear();
+                    this.comboBox1.SelectedIndex = -1;
+                    this.comboBox1.SelectedIndex = 0;
+                    Flag.trapsearch();
+                    
+                    int i = motimono.traplist.FindIndex(t => t.name == selectedtrap.name);
+                    this.listBox1.SelectedIndex = i;
                 }
-                else
-                    MessageBox.Show("トラップが設置されていません");
             }
         }
 
@@ -192,6 +189,7 @@ namespace WindowsFormsApplication1
 
             }
             selectedtrap = null;
+            this.trapextext.Text = "";
         }
 
         //トラップの撤去
@@ -233,21 +231,15 @@ namespace WindowsFormsApplication1
             motimono.tfield[x, y] = null;//フィールドから消去
             piclist[x, y + 2].ImageLocation = "trap\\null.bmp";//画像も戻す
             motimono.trapsort();
+            this.trapextext2.Text = "";
+            mouseLeave(x, y);
+            mouseEnter(x, y);
         }
 
         //トラップ選択
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.trapextext.Text = "";
-            //選択したものを取得
-            if (this.listBox1.SelectedItem != null)
-            {
-                int i = motimono.traplist.FindIndex(t => t.name == this.listBox1.SelectedItem.ToString());
-                this.label1.Text = motimono.traplist[i].items.ToString();
-                selectedtrap = motimono.traplist.Find(t => t.name == this.listBox1.SelectedItem.ToString());
-                StreamReader reader = new StreamReader("text\\trap\\"+selectedtrap.type.ToString() + selectedtrap.grade.ToString() + ".txt", System.Text.Encoding.GetEncoding("shift_jis"));
-                this.trapextext.AppendText(reader.ReadToEnd());
-            }
+            selectedtrap = stringcreate.trap_listBox_changed(this.listBox1, this.trapextext);
         }
 
         //種類選択
@@ -319,6 +311,14 @@ namespace WindowsFormsApplication1
 
         private void mouseEnter(int x, int y)
         {
+            trapextext2.Text = "";
+            //選択したものを取得
+            if (motimono.tfield[x,y] != null)
+            {
+                StreamReader reader = new StreamReader("text\\trap\\" + motimono.tfield[x, y].type.ToString() + motimono.tfield[x, y].grade.ToString() + ".txt", System.Text.Encoding.GetEncoding("shift_jis"));
+                trapextext2.AppendText(reader.ReadToEnd());
+            }
+
             if (selectedtrap != null)
             {
                 if (selectedtrap.constrange == true)
@@ -340,6 +340,7 @@ namespace WindowsFormsApplication1
                 }
             }
             this.label3.Text = x.ToString() + y.ToString();
+            
         }
 
         private void rangedisplay(point p)
@@ -376,6 +377,8 @@ namespace WindowsFormsApplication1
                 else
                     piclist[p.x, p.y + 2].Image = global::WindowsFormsApplication1.Properties.Resources.river;
             }
+            else if(((p.y>=0 && p.y<=1)||(p.y>=7 && p.y<=8))&& (p.x>=3 && p.x<=5))
+                piclist[p.x, p.y + 2].Image = global::WindowsFormsApplication1.Properties.Resources.entering;
             else if (motimono.tfield[p.x, p.y] != null)
             {
                 if (motimono.tfield[p.x, p.y].direct == true)//方向設置か
@@ -389,6 +392,7 @@ namespace WindowsFormsApplication1
 
         private void mouseLeave(int x, int y)
         {
+            this.trapextext2.Text = "";
             if (motimono.tfield[x, y] != null)
             {
                 if (motimono.tfield[x, y].direct == true)

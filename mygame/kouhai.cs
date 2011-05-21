@@ -91,7 +91,7 @@ namespace WindowsFormsApplication1
         private void boxset()
         {
             stringcreate.infoclear(this.yasaiextext, this.ele1, this.info1, this.eleval1, this.elename1);
-            stringcreate.infoclear(this.yasaiextext, this.ele2, this.info2, this.eleval2, this.elename2);
+            stringcreate.infoclear(this.yasaiextext2, this.ele2, this.info2, this.eleval2, this.elename2);
             this.depbox1.Items.Clear(); 
             this.depbox2.Items.Clear();
             this.listBox1.Items.Clear();
