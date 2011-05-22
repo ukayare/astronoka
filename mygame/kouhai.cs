@@ -90,8 +90,8 @@ namespace WindowsFormsApplication1
         //リストボックス初期化
         private void boxset()
         {
-            stringcreate.infoclear(this.yasaiextext, this.ele1, this.info1, this.eleval1, this.elename1);
-            stringcreate.infoclear(this.yasaiextext2, this.ele2, this.info2, this.eleval2, this.elename2);
+            stringcreate.infoclear(this.yasaiextext, this.ele1, this.info1, this.eleval1, this.elename1,this.label2);
+            stringcreate.infoclear(this.yasaiextext2, this.ele2, this.info2, this.eleval2, this.elename2,this.label2);
             this.depbox1.Items.Clear(); 
             this.depbox2.Items.Clear();
             this.listBox1.Items.Clear();
@@ -155,25 +155,25 @@ namespace WindowsFormsApplication1
         //どの科を選んだ？
         private void depbox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            stringcreate.infoclear(this.yasaiextext, this.ele1, this.info1, this.eleval1, this.elename1);
+            stringcreate.infoclear(this.yasaiextext, this.ele1, this.info1, this.eleval1, this.elename1,this.label1);
             stringcreate.depbox_change(this.depbox1, listBox1, namebox1, "seed");
         }
 
         private void depbox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            stringcreate.infoclear(this.yasaiextext2, this.ele2, this.info2, this.eleval2, this.elename2);
+            stringcreate.infoclear(this.yasaiextext2, this.ele2, this.info2, this.eleval2, this.elename2, this.label1);
             stringcreate.depbox_change(this.depbox2, listBox2, namebox2, "seed");
         }
 
         //種類選択
         private void namebox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            stringcreate.infoclear(this.yasaiextext, this.ele1, this.info1, this.eleval1, this.elename1);
+            stringcreate.infoclear(this.yasaiextext, this.ele1, this.info1, this.eleval1, this.elename1, this.label1);
             stringcreate.namebox_change(this.namebox1, this.listBox1, "seed");
         }
         private void namebox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            stringcreate.infoclear(this.yasaiextext2, this.ele2, this.info2, this.eleval2, this.elename2);
+            stringcreate.infoclear(this.yasaiextext2, this.ele2, this.info2, this.eleval2, this.elename2, this.label2);
             stringcreate.namebox_change(this.namebox2, this.listBox2, "seed");
         }
 

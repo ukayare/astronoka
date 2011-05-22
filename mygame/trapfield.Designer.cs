@@ -251,7 +251,7 @@
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(35, 16);
+            this.comboBox1.Location = new System.Drawing.Point(35, 12);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 20);
             this.comboBox1.TabIndex = 100;
@@ -261,9 +261,9 @@
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 12;
-            this.listBox1.Location = new System.Drawing.Point(35, 42);
+            this.listBox1.Location = new System.Drawing.Point(35, 34);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(121, 220);
+            this.listBox1.Size = new System.Drawing.Size(121, 196);
             this.listBox1.TabIndex = 101;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -1369,11 +1369,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(187, 519);
+            this.label1.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label1.Location = new System.Drawing.Point(12, 544);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 12);
+            this.label1.Size = new System.Drawing.Size(63, 16);
             this.label1.TabIndex = 215;
-            this.label1.Text = "label1";
+            this.label1.Text = "所持数:";
             // 
             // label2
             // 
@@ -1396,9 +1397,9 @@
             // 
             // butunselect
             // 
-            this.butunselect.Location = new System.Drawing.Point(58, 268);
+            this.butunselect.Location = new System.Drawing.Point(35, 232);
             this.butunselect.Name = "butunselect";
-            this.butunselect.Size = new System.Drawing.Size(75, 23);
+            this.butunselect.Size = new System.Drawing.Size(121, 23);
             this.butunselect.TabIndex = 219;
             this.butunselect.Text = "選択解除";
             this.butunselect.UseVisualStyleBackColor = true;
@@ -1406,10 +1407,10 @@
             // 
             // trapextext
             // 
-            this.trapextext.Location = new System.Drawing.Point(8, 264);
+            this.trapextext.Location = new System.Drawing.Point(8, 261);
             this.trapextext.Name = "trapextext";
             this.trapextext.ReadOnly = true;
-            this.trapextext.Size = new System.Drawing.Size(169, 289);
+            this.trapextext.Size = new System.Drawing.Size(169, 279);
             this.trapextext.TabIndex = 220;
             this.trapextext.Text = "";
             // 

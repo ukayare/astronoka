@@ -19,7 +19,6 @@ namespace WindowsFormsApplication1
         }
 
         seed s;//植える種
-        seedstatus seedst;//種情報
         int hatanum = 0;//畑番号
         int num = 0;//区画
         PictureBox[] bagpic = new PictureBox[6];//野菜の画像表示
@@ -60,7 +59,7 @@ namespace WindowsFormsApplication1
         //種の種類選択
         private void namebox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            stringcreate.infoclear(this.yasaiextext, this.ele1, this.info1, this.eleval1, this.elename1);
+            stringcreate.infoclear(this.yasaiextext, this.ele1, this.info1, this.eleval1, this.elename1,this.label1);
             stringcreate.namebox_change(this.namebox1, this.listBox1,"seed");
         }
 
@@ -73,7 +72,7 @@ namespace WindowsFormsApplication1
         //科の選択
         private void depbox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            stringcreate.infoclear(this.yasaiextext, this.ele1, this.info1, this.eleval1, this.elename1);
+            stringcreate.infoclear(this.yasaiextext, this.ele1, this.info1, this.eleval1, this.elename1, this.label1);
             stringcreate.depbox_change(this.depbox1, this.listBox1, this.namebox1,"seed");
         }
 
@@ -112,7 +111,6 @@ namespace WindowsFormsApplication1
                             v.set(s);//植える種から野菜を生成
                             motimono.vaghatake[hatanum, num] = v;//植える
                             MessageBox.Show("完全成熟して種が3つできるまで\n" + v.grow + "日かかります");//成長日数を表示
-                            MessageBox.Show(motimono.vaghatake[hatanum, num].finname);
 
                             //植えた分種を減らす
                             int find = motimono.seedlist.FindIndex(se => se == s);
@@ -129,61 +127,51 @@ namespace WindowsFormsApplication1
                     else//季節野菜のチェックにはじかれた
                         MessageBox.Show(date.season + "にこの野菜は植えることはできません");
                 }
-                else//そもそも種を選んでいない
-                    MessageBox.Show("植える種を選んでください");
             }
             //なんか植わってるとき
             else
             {
-                //植わってる野菜の情報を表示
-                vagstatus vs = new vagstatus(motimono.vaghatake[hatanum, num]);
-                vs.ShowDialog();
-
-                //引き抜くフラグがたった
-                if (vs.get == true)
+                vagetable v = motimono.vaghatake[hatanum, num];
+                if (v.mat > 2 && v.mat < 8)//ちゃんと収穫できる状態
                 {
-                    vagetable v = motimono.vaghatake[hatanum, num];
-                    if (v.mat > 2 && v.mat < 8)//ちゃんと収穫できる状態
+                    //収穫確認
+                    if (MessageBox.Show("収穫します。\nよろしいですか？", "確認", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
-                        //収穫確認
-                        if (MessageBox.Show("収穫します。\nよろしいですか？", "確認", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                        {
-                            int find = motimono.vaglist.FindIndex(getv => getv.yasaicheck(v));//もうその野菜あるかチェック
+                        int find = motimono.vaglist.FindIndex(getv => getv.yasaicheck(v));//もうその野菜あるかチェック
 
-                            if(find!=-1)//あった場合
-                                motimono.vaglist[find].items += v.items;
-                            else//なかった場合
-                            {
-                                if (v.syoki == false)//初期フラグあるかどうか
-                                    v.finname = v.title + v.repele + v.name + v.id;
-                                else
-                                    v.finname = v.title + v.repele + v.name;
-                                motimono.vaglist.Add(v);
-                            }
-
-                            //種取れるときは種もとる
-                            if (v.mat > 3 && v.mat < 8)
-                            {
-                                seed ns = new seed();
-                                ns.getseed(v);
-                                motimono.getseed(ns);
-                            }
-                            motimono.vaghatake[hatanum, num] = null;//空っぽにする
-                            hatapic(hatanum, num);//画像もかえる
-                        }
-                    }
-                    //まだ収穫できない
-                    else
-                    {
-                        if (MessageBox.Show("整地します。\nよろしいですか？", "確認", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        if (find != -1)//あった場合
+                            motimono.vaglist[find].items += v.items;
+                        else//なかった場合
                         {
-                            motimono.vaghatake[hatanum, num] = null;
-                            hatapic(hatanum, num);
+                            v.get = true;
+                            if (v.syoki == false)//初期フラグあるかどうか
+                                v.finname = v.title + v.repele + v.name + v.id;
+                            else
+                                v.finname = v.title + v.repele + v.name;
+                            motimono.vaglist.Add(v);
                         }
 
+                        //種取れるときは種もとる
+                        if (v.mat > 3 && v.mat < 8)
+                        {
+                            seed ns = new seed();
+                            ns.getseed(v);
+                            motimono.getseed(ns);
+                        }
+                        motimono.vaghatake[hatanum, num] = null;//空っぽにする
+                        hatapic(hatanum, num);//画像もかえる
                     }
                 }
-                vs.Dispose();
+                //まだ収穫できない
+                else
+                {
+                    if (MessageBox.Show("整地します。\nよろしいですか？", "確認", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        motimono.vaghatake[hatanum, num] = null;
+                        hatapic(hatanum, num);
+                    }
+
+                }
             }
         }
 
@@ -276,7 +264,7 @@ namespace WindowsFormsApplication1
         private void hatainfo(int num)
         {
             if (motimono.vaghatake[hatanum, num] != null)
-                stringcreate.infoshow(motimono.vaghatake[hatanum, num], this.yasaiextext2, this.ele2, this.info2, this.eleval2, this.elename2);
+                stringcreate.infoshow(motimono.vaghatake[hatanum, num], this.yasaiextext2, this.ele2, this.info2, this.eleval2, this.elename2,this.label2);
         }
     }
 }

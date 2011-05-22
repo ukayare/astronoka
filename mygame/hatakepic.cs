@@ -9,32 +9,32 @@ namespace WindowsFormsApplication1
     {
         private void bagpic1_MouseLeave(object sender, EventArgs e)
         {
-            stringcreate.infoclear(this.yasaiextext2, this.ele2, this.info2, this.eleval2, this.elename2);
+            stringcreate.infoclear(this.yasaiextext2, this.ele2, this.info2, this.eleval2, this.elename2,this.label2);
         }
 
         private void bagpic2_MouseLeave(object sender, EventArgs e)
         {
-            stringcreate.infoclear(this.yasaiextext2, this.ele2, this.info2, this.eleval2, this.elename2);
+            stringcreate.infoclear(this.yasaiextext2, this.ele2, this.info2, this.eleval2, this.elename2, this.label2);
         }
 
         private void bagpic3_MouseLeave(object sender, EventArgs e)
         {
-            stringcreate.infoclear(this.yasaiextext2, this.ele2, this.info2, this.eleval2, this.elename2);
+            stringcreate.infoclear(this.yasaiextext2, this.ele2, this.info2, this.eleval2, this.elename2, this.label2);
         }
 
         private void bagpic4_MouseLeave(object sender, EventArgs e)
         {
-            stringcreate.infoclear(this.yasaiextext2, this.ele2, this.info2, this.eleval2, this.elename2);
+            stringcreate.infoclear(this.yasaiextext2, this.ele2, this.info2, this.eleval2, this.elename2, this.label2);
         }
 
         private void bagpic5_MouseLeave(object sender, EventArgs e)
         {
-            stringcreate.infoclear(this.yasaiextext2, this.ele2, this.info2, this.eleval2, this.elename2);
+            stringcreate.infoclear(this.yasaiextext2, this.ele2, this.info2, this.eleval2, this.elename2, this.label2);
         }
 
         private void bagpic6_MouseLeave(object sender, EventArgs e)
         {
-            stringcreate.infoclear(this.yasaiextext2, this.ele2, this.info2, this.eleval2, this.elename2);
+            stringcreate.infoclear(this.yasaiextext2, this.ele2, this.info2, this.eleval2, this.elename2, this.label2);
         }
 
         private void bagpic1_Click(object sender, EventArgs e)

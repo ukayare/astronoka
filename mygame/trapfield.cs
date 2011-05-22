@@ -239,7 +239,7 @@ namespace WindowsFormsApplication1
         //トラップ選択
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            selectedtrap = stringcreate.trap_listBox_changed(this.listBox1, this.trapextext);
+            selectedtrap = stringcreate.trap_listBox_changed(this.listBox1, this.trapextext,this.label1);
         }
 
         //種類選択

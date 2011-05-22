@@ -33,6 +33,7 @@ namespace WindowsFormsApplication1
 
         public int rank=0;//等級
 
+        public int mat = 0;//0発芽前　1発芽　2成長中　3成熟　4種1つ　5種2つ　6種3つ　7完全成熟　8枯れてる
 
         //0 high,1 heavy,2 pattern,3 nour,4 sugar,5 texture,6 shape,7 flavor,8 smell,9 sound
         public int[] element = new int[10];//属性地
@@ -49,11 +50,13 @@ namespace WindowsFormsApplication1
         public int bonusp = 0;//属性ボーナス価格
         public int sell;//実際の値段
 
-        public int days = 0;//成長日数
+        public int days = -1;//成長日数
 
         public Boolean[,] info = new Boolean[10, 8];//遺伝情報
 
         public int[] fix = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };//固定値
+
+        public Boolean get = false;
 
         //idのセット（finnameがかぶっててステータスが違う場合の判別）
         public Boolean idset(yasai y)

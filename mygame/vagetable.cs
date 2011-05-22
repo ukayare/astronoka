@@ -10,8 +10,6 @@ namespace WindowsFormsApplication1
     {
         public int status = 1;//0-injured 1-normal 2-good 3-better 4-best
 
-        public int mat = 0;//0発芽前　1発芽　2成長中　3成熟　4種1つ　5種2つ　6種3つ　7完全成熟　8枯れてる
-
         //種から野菜を生成（コンストラクタにしてないのは・・・あとでするかも）
         public void set(seed s)
         {
@@ -34,6 +32,8 @@ namespace WindowsFormsApplication1
             mut2 = s.mut2;
             
             info = s.info;
+
+            days = 0;
 
             fix = s.fix;
             element = s.element;

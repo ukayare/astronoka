@@ -29,7 +29,7 @@ namespace WindowsFormsApplication1
         //どの種類を選んだか
         private void namebox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            stringcreate.infoclear(this.yasaiextext, this.ele1, this.info1, this.eleval1, this.elename1);
+            stringcreate.infoclear(this.yasaiextext, this.ele1, this.info1, this.eleval1, this.elename1,this.label1);
             this.bagpic.Image = null;
             stringcreate.namebox_change(this.listBox2,this.namebox1,this.listBox1);
         }
@@ -37,7 +37,7 @@ namespace WindowsFormsApplication1
 
         private void depbox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            stringcreate.infoclear(this.yasaiextext, this.ele1, this.info1, this.eleval1, this.elename1);
+            stringcreate.infoclear(this.yasaiextext, this.ele1, this.info1, this.eleval1, this.elename1, this.label1);
             this.bagpic.Image = null;
             stringcreate.depbox_change(this.listBox2, this.depbox1, this.namebox1, this.listBox1);
         }
@@ -85,7 +85,7 @@ namespace WindowsFormsApplication1
         //トラップ種野菜どれ選んだ？
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            stringcreate.infoclear(this.yasaiextext, this.ele1, this.info1, this.eleval1, this.elename1);
+            stringcreate.infoclear(this.yasaiextext, this.ele1, this.info1, this.eleval1, this.elename1, this.label1);
             this.bagpic.Image = null;
             stringcreate.itemBox_change(this.listBox2,this.depbox1,this.namebox1,this.listBox1);
         }

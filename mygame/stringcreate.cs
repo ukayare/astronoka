@@ -9,7 +9,7 @@ namespace WindowsFormsApplication1
     public static class stringcreate
     {
         //トラップ選択
-        public static trap trap_listBox_changed(System.Windows.Forms.ListBox listBox,System.Windows.Forms.RichTextBox trapextext)
+        public static trap trap_listBox_changed(System.Windows.Forms.ListBox listBox,System.Windows.Forms.RichTextBox trapextext,System.Windows.Forms.Label itemlabel)
         {
             trap selectedtrap=null;
             trapextext.Text = "";
@@ -20,6 +20,7 @@ namespace WindowsFormsApplication1
                 selectedtrap = motimono.traplist.Find(t => t.name == listBox.SelectedItem.ToString());
                 StreamReader reader = new StreamReader("text\\trap\\" + selectedtrap.type.ToString() + selectedtrap.grade.ToString() + ".txt", System.Text.Encoding.GetEncoding("shift_jis"));
                 trapextext.AppendText(reader.ReadToEnd());
+                itemlabel.Text = "所持数:" + selectedtrap.items;
             }
             return selectedtrap;
         }
@@ -56,7 +57,7 @@ namespace WindowsFormsApplication1
                 {
                     if (listBox.SelectedIndex != -1)
                     {
-                        svt.t = stringcreate.trap_listBox_changed(listBox, yasaiextext);
+                        svt.t = stringcreate.trap_listBox_changed(listBox, yasaiextext,label1);
                         label1.Text = svt.t.items.ToString();
                     }
                 }
@@ -132,7 +133,6 @@ namespace WindowsFormsApplication1
         {
             if (itemBox.SelectedItem != null)
             {
-
                 listBox.Items.Clear();
                 namebox.Items.Clear();
                 depbox.Items.Clear();
@@ -140,7 +140,6 @@ namespace WindowsFormsApplication1
 
                 if (itemBox.SelectedItem.ToString() == "種")
                 {
-
                     //各科あるかどうか判別
                     if (motimono.seedlist.Exists(s => s.department == -1) == true)
                         depbox.Items.Add("A科");
@@ -239,8 +238,7 @@ namespace WindowsFormsApplication1
             if (listBox.SelectedIndex != -1 && listBox.SelectedItem != null)
             {
                 s = motimono.seedlist.Find(se => se.finname == listBox.SelectedItem.ToString());
-                label1.Text = s.items.ToString();
-                stringcreate.infoshow(s, yasaiextext, ele, info, eleval, elename);
+                stringcreate.infoshow(s, yasaiextext, ele, info, eleval, elename, label1);
             }
             return s;
         }
@@ -253,8 +251,7 @@ namespace WindowsFormsApplication1
             if (listBox.SelectedIndex != -1 && listBox.SelectedItem != null)
             {
                 s = motimono.vaglist.Find(se => se.finname == listBox.SelectedItem.ToString());
-                label1.Text = s.items.ToString();
-                stringcreate.infoshow(s, yasaiextext, ele, info, eleval, elename);
+                stringcreate.infoshow(s, yasaiextext, ele, info, eleval, elename,label1);
             }
             return s;
         }
@@ -273,9 +270,9 @@ namespace WindowsFormsApplication1
             return ret;
         }
 
-        public static void infoclear(System.Windows.Forms.RichTextBox extext, System.Windows.Forms.RichTextBox eletext, System.Windows.Forms.RichTextBox infotext, System.Windows.Forms.RichTextBox elevaltext, System.Windows.Forms.RichTextBox elenametext)
+        public static void infoclear(System.Windows.Forms.RichTextBox extext, System.Windows.Forms.RichTextBox eletext, System.Windows.Forms.RichTextBox infotext, System.Windows.Forms.RichTextBox elevaltext, System.Windows.Forms.RichTextBox elenametext,System.Windows.Forms.Label itemlabel)
         {
-            extext.Text = ""; eletext.Text = ""; infotext.Text = ""; elevaltext.Text = ""; elenametext.Text = "";
+            extext.Text = ""; eletext.Text = ""; infotext.Text = ""; elevaltext.Text = ""; elenametext.Text = ""; itemlabel.Text = "";
         }
 
 
@@ -307,11 +304,13 @@ namespace WindowsFormsApplication1
             listBox.Items.Add(s.finname);
         }
 
-        public static void infoshow(yasai s, System.Windows.Forms.RichTextBox extext, System.Windows.Forms.RichTextBox eletext, System.Windows.Forms.RichTextBox infotext, System.Windows.Forms.RichTextBox elevaltext, System.Windows.Forms.RichTextBox elenametext)
+        public static void infoshow(yasai s, System.Windows.Forms.RichTextBox extext, System.Windows.Forms.RichTextBox eletext, System.Windows.Forms.RichTextBox infotext, System.Windows.Forms.RichTextBox elevaltext, System.Windows.Forms.RichTextBox elenametext,System.Windows.Forms.Label itemlabel)
         {
-            extext.Text = ""; eletext.Text = ""; infotext.Text = ""; elevaltext.Text = ""; elenametext.Text = "";
+            extext.Text = ""; eletext.Text = ""; infotext.Text = ""; elevaltext.Text = ""; elenametext.Text = ""; itemlabel.Text = "";
 
             extext.Text = stringcreate.yasaiex(s);
+
+            itemlabel.Text = "所持数:" + s.items;
 
             eletext.Text = "大きさ\n重さ\n模様\n栄養\n糖度\n食感\n";
 
@@ -372,6 +371,10 @@ namespace WindowsFormsApplication1
         public static string yasaiex(yasai s)
         {
             string rets = s.finname+"\n";
+
+            if (s.days >= 0)
+                rets += s.mat + "期 " + s.days + "日目\n";
+
             switch (s.department)
             {
                 case -1:
@@ -568,7 +571,42 @@ namespace WindowsFormsApplication1
                     break;
             }
 
-            rets += "完全成熟し、種が3つ収穫できるまで、" + (s.grow-s.days) + "日かかりますね。";
+            if (s.days >= 0 && s.get==false)
+            {
+                switch (s.mat)
+                {
+                    case 0:
+                        rets += "まだ、植えたばかりです。\n芽も出ていませんね。\n";
+                        break;
+                    case 1:
+                        rets += "かわいい芽が出たところです。\n無事に育ってくれるといいですね。\n";
+                        break;
+                    case 2:
+                        rets += "成長をしはじめたばかりですね。\nまだ食用にはなりませんよ。\n";
+                        break;
+                    case 3:
+                        rets += "収穫はでき、売ることもできますが、まだ種は取れない段階です。\n";
+                        break;
+                    case 4:
+                        rets += "もう収穫して売ることができますが、まだ種は1コしか取れません。\n";
+                        break;
+                    case 5:
+                        rets += "収穫して売ることができます。取れる種は2コですね。\n";
+                        break;
+                    case 6:
+                    case 7:
+                        rets += "もう完全に成熟していますね。\n収穫するなら今ですよ。\n";
+                        break;
+                    case 8:
+                        rets += "残念ながら、もう枯れてますね……。\n";
+                        break;
+                }
+
+                if(s.mat>5)
+                    rets += "完全成熟し、種が3つ収穫できるまで、あと" + (s.grow - s.days) + "日かかりますね。";
+            }
+            else if(s.get==false)
+                rets += "完全成熟し、種が3つ収穫できるまで、" + s.grow + "日かかりますね。";
             return rets;
         }
     }

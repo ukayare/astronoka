@@ -41,7 +41,7 @@ namespace WindowsFormsApplication1
         //
         private void depbox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            stringcreate.infoclear(this.yasaiextext2, this.ele2, this.info2, this.eleval2, this.elename2);
+            stringcreate.infoclear(this.yasaiextext2, this.ele2, this.info2, this.eleval2, this.elename2, this.label1);
             this.buyBox2.Items.Clear();
             this.buyBox2.SelectedIndex=-1;
             stringcreate.depbox_change(this.itembox, this.depbox, this.namebox, this.listBox);
@@ -50,7 +50,7 @@ namespace WindowsFormsApplication1
         //種類選んだ
         private void namebox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            stringcreate.infoclear(this.yasaiextext2, this.ele2, this.info2, this.eleval2, this.elename2);
+            stringcreate.infoclear(this.yasaiextext2, this.ele2, this.info2, this.eleval2, this.elename2, this.label1);
             this.buyBox2.Items.Clear();
             this.buyBox2.SelectedIndex = -1;
             stringcreate.namebox_change(this.itembox,this.namebox,this.listBox);
@@ -59,7 +59,7 @@ namespace WindowsFormsApplication1
         //種野菜とラップ選ぶ
         private void itembox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            stringcreate.infoclear(this.yasaiextext2, this.ele2, this.info2, this.eleval2, this.elename2);
+            stringcreate.infoclear(this.yasaiextext2, this.ele2, this.info2, this.eleval2, this.elename2,this.label1);
             this.buyBox2.Items.Clear();
             this.buyBox2.SelectedIndex = -1;
             stringcreate.itemBox_change(this.itembox, this.depbox, this.namebox, this.listBox);
@@ -218,7 +218,7 @@ namespace WindowsFormsApplication1
                 if (this.bitemBox1.SelectedItem.ToString() == "種")
                 {
                     selectedseed = motimono.pedroseed.Find(s => s.finname == this.listBox2.SelectedItem.ToString());
-                    stringcreate.infoshow(selectedseed, this.yasaiextext, this.ele1, this.info1, this.eleval1, this.elename1);
+                    stringcreate.infoshow(selectedseed, this.yasaiextext, this.ele1, this.info1, this.eleval1, this.elename1, this.label1);
 
                 }
                 else if (this.bitemBox1.SelectedItem.ToString() == "トラップ")

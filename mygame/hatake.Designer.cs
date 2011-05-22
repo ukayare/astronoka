@@ -52,6 +52,7 @@
             this.elename1 = new System.Windows.Forms.RichTextBox();
             this.eleval2 = new System.Windows.Forms.RichTextBox();
             this.elename2 = new System.Windows.Forms.RichTextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bagpic1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bagpic2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bagpic3)).BeginInit();
@@ -103,10 +104,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(637, 52);
+            this.label1.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label1.Location = new System.Drawing.Point(572, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 12);
+            this.label1.Size = new System.Drawing.Size(63, 16);
             this.label1.TabIndex = 12;
+            this.label1.Text = "所持数:";
             // 
             // listBox1
             // 
@@ -212,10 +215,10 @@
             // yasaiextext
             // 
             this.yasaiextext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.yasaiextext.Location = new System.Drawing.Point(349, 12);
+            this.yasaiextext.Location = new System.Drawing.Point(333, 12);
             this.yasaiextext.Name = "yasaiextext";
             this.yasaiextext.ReadOnly = true;
-            this.yasaiextext.Size = new System.Drawing.Size(180, 200);
+            this.yasaiextext.Size = new System.Drawing.Size(196, 200);
             this.yasaiextext.TabIndex = 23;
             this.yasaiextext.Text = "";
             // 
@@ -232,10 +235,10 @@
             // yasaiextext2
             // 
             this.yasaiextext2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.yasaiextext2.Location = new System.Drawing.Point(349, 255);
+            this.yasaiextext2.Location = new System.Drawing.Point(333, 230);
             this.yasaiextext2.Name = "yasaiextext2";
             this.yasaiextext2.ReadOnly = true;
-            this.yasaiextext2.Size = new System.Drawing.Size(180, 243);
+            this.yasaiextext2.Size = new System.Drawing.Size(196, 277);
             this.yasaiextext2.TabIndex = 25;
             this.yasaiextext2.Text = "";
             // 
@@ -309,12 +312,24 @@
             this.elename2.TabIndex = 33;
             this.elename2.Text = "";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label2.Location = new System.Drawing.Point(572, 264);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 16);
+            this.label2.TabIndex = 34;
+            this.label2.Text = "所持数:";
+            this.label2.Visible = false;
+            // 
             // hatake
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(784, 562);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.ele2);
             this.Controls.Add(this.info2);
             this.Controls.Add(this.eleval2);
@@ -381,5 +396,6 @@
         private System.Windows.Forms.RichTextBox elename1;
         private System.Windows.Forms.RichTextBox eleval2;
         private System.Windows.Forms.RichTextBox elename2;
+        private System.Windows.Forms.Label label2;
     }
 }

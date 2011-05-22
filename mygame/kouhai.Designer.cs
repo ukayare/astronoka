@@ -33,7 +33,6 @@
             this.butmix = new System.Windows.Forms.Button();
             this.butfin = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.depbox1 = new System.Windows.Forms.ListBox();
             this.depbox2 = new System.Windows.Forms.ListBox();
             this.namebox1 = new System.Windows.Forms.ListBox();
@@ -49,7 +48,7 @@
             this.eleval2 = new System.Windows.Forms.RichTextBox();
             this.elename2 = new System.Windows.Forms.RichTextBox();
             this.yasaiextext2 = new System.Windows.Forms.RichTextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listBox1
@@ -58,7 +57,7 @@
             this.listBox1.ItemHeight = 12;
             this.listBox1.Location = new System.Drawing.Point(151, 26);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(211, 196);
+            this.listBox1.Size = new System.Drawing.Size(188, 196);
             this.listBox1.TabIndex = 0;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -68,7 +67,7 @@
             this.listBox2.ItemHeight = 12;
             this.listBox2.Location = new System.Drawing.Point(151, 284);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(211, 196);
+            this.listBox2.Size = new System.Drawing.Size(188, 196);
             this.listBox2.TabIndex = 1;
             this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
             // 
@@ -95,18 +94,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(648, 211);
+            this.label1.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label1.Location = new System.Drawing.Point(566, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 12);
+            this.label1.Size = new System.Drawing.Size(63, 16);
             this.label1.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(648, 395);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 12);
-            this.label2.TabIndex = 5;
+            this.label1.Text = "所持数:";
             // 
             // depbox1
             // 
@@ -270,13 +263,15 @@
             this.yasaiextext2.TabIndex = 43;
             this.yasaiextext2.Text = "";
             // 
-            // label3
+            // label2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(648, 469);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 12);
-            this.label3.TabIndex = 42;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label2.Location = new System.Drawing.Point(566, 284);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 16);
+            this.label2.TabIndex = 48;
+            this.label2.Text = "所持数:";
             // 
             // kouhai
             // 
@@ -284,12 +279,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(784, 562);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.ele2);
             this.Controls.Add(this.info2);
             this.Controls.Add(this.eleval2);
             this.Controls.Add(this.elename2);
             this.Controls.Add(this.yasaiextext2);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.ele1);
             this.Controls.Add(this.info1);
             this.Controls.Add(this.eleval1);
@@ -300,7 +295,6 @@
             this.Controls.Add(this.namebox1);
             this.Controls.Add(this.depbox2);
             this.Controls.Add(this.depbox1);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.butfin);
             this.Controls.Add(this.butmix);
@@ -321,7 +315,6 @@
         private System.Windows.Forms.Button butmix;
         private System.Windows.Forms.Button butfin;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListBox depbox1;
         private System.Windows.Forms.ListBox depbox2;
         private System.Windows.Forms.ListBox namebox1;
@@ -337,6 +330,6 @@
         private System.Windows.Forms.RichTextBox eleval2;
         private System.Windows.Forms.RichTextBox elename2;
         private System.Windows.Forms.RichTextBox yasaiextext2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
     }
 }
