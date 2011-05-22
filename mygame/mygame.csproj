@@ -122,6 +122,7 @@
     <Compile Include="trapfieldmouseLeave.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="trappoint.cs" />
     <Compile Include="yasai.cs" />
     <Compile Include="trapdirection.cs">
       <SubType>Form</SubType>

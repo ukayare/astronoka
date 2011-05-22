@@ -27,7 +27,217 @@ namespace WindowsFormsApplication1
         internal static int mode = 0;//移動位置
         internal static int hatakemax = 0;//畑の数
 
-
+        public static trappoint[,] tpoint = new trappoint[9, 9];
+        public static trappoint[,] tpointd = new trappoint[9, 9];
+        
+        public static List<point> trappointset(trap settrap,int x,int y)
+        {
+            List<point> traprange = new List<point>();
+            if (settrap.type == 4)//ジャンプ台
+            {
+                if (settrap.grade < 2)//普通の
+                {
+                    switch (settrap.direction)
+                    {
+                        case 0:
+                            traprange.Add(new point(x + 1, y + 1));
+                            break;
+                        case 1:
+                            traprange.Add(new point(x + 1, y - 1));
+                            break;
+                        case 2:
+                            traprange.Add(new point(x - 1, y - 1));
+                            break;
+                        case 3:
+                            traprange.Add(new point(x - 1, y + 1));
+                            break;
+                    }
+                }
+                else if (settrap.grade < 4)//桂馬R
+                {
+                    switch (settrap.direction)
+                    {
+                        case 0:
+                            traprange.Add(new point(x + 1, y + 2));
+                            break;
+                        case 1:
+                            traprange.Add(new point(x + 2, y - 1));
+                            break;
+                        case 2:
+                            traprange.Add(new point(x - 1, y - 2));
+                            break;
+                        case 3:
+                            traprange.Add(new point(x - 2, y + 1));
+                            break;
+                    }
+                }
+                else//桂馬L
+                {
+                    switch (settrap.direction)
+                    {
+                        case 0:
+                            traprange.Add(new point(x - 1, y + 2));
+                            break;
+                        case 1:
+                            traprange.Add(new point(x + 2, y + 1));
+                            break;
+                        case 2:
+                            traprange.Add(new point(x + 1, y - 2));
+                            break;
+                        case 3:
+                            traprange.Add(new point(x - 2, y - 1));
+                            break;
+                    }
+                }
+            }
+            else if (settrap.type == 3)//扇風機
+            {
+                if (settrap.grade < 2)//2マス
+                {
+                    switch (settrap.direction)
+                    {
+                        case 0:
+                            if (y + 3 > 8)
+                                traprange.Add(new point(x, 8));
+                            else
+                                traprange.Add(new point(x, y + 3));
+                            break;
+                        case 1:
+                            if (x + 3 > 8)
+                                traprange.Add(new point(8, y));
+                            else
+                                traprange.Add(new point(x + 3, y));
+                            break;
+                        case 2:
+                            if (y - 3 < -2)
+                                traprange.Add(new point(x, -2));
+                            else
+                                traprange.Add(new point(x, y - 3));
+                            break;
+                        case 3:
+                            if (x - 3 < 0)
+                                traprange.Add(new point(0, y));
+                            else
+                                traprange.Add(new point(x - 3, y));
+                            break;
+                    }
+                }
+                else//3マス
+                {
+                    switch (settrap.direction)
+                    {
+                        case 0:
+                            if (y + 4 > 8)
+                                traprange.Add(new point(x, 8));
+                            else
+                                traprange.Add(new point(x, y + 4));
+                            break;
+                        case 1:
+                            if (x + 4 > 8)
+                                traprange.Add(new point(8, y));
+                            else
+                                traprange.Add(new point(x + 4, y));
+                            break;
+                        case 2:
+                            if (y - 4 < -2)
+                                traprange.Add(new point(x, -2));
+                            else
+                                traprange.Add(new point(x, y - 4));
+                            break;
+                        case 3:
+                            if (x - 4 < 0)
+                                traprange.Add(new point(0, y));
+                            else
+                                traprange.Add(new point(x - 4, y));
+                            break;
+                    }
+                }
+            }
+            else if (settrap.type == 6 || (settrap.type >= 9 && settrap.type <= 11) || ((settrap.type == 7 || settrap.type == 8) && settrap.grade == 0))
+            {
+                switch (settrap.direction)
+                {
+                    case 0:
+                        traprange.Add(new point(x, y + 1));
+                        break;
+                    case 1:
+                        traprange.Add(new point(x + 1, y));
+                        break;
+                    case 2:
+                        traprange.Add(new point(x, y - 1));
+                        break;
+                    case 3:
+                        traprange.Add(new point(x - 1, y));
+                        break;
+                }
+            }
+            else if ((settrap.type == 7 || settrap.type == 8) && settrap.grade == 1)
+            {
+                if (y != 8)
+                    traprange.Add(new point(x, y + 1));
+                if (x != 8)
+                    traprange.Add(new point(x + 1, y));
+                traprange.Add(new point(x, y - 1));
+                if (x == 0)
+                    traprange.Add(new point(x - 1, y));
+            }
+            else if (settrap.type == 12)
+            {
+                switch (settrap.grade)
+                {
+                    case 0:
+                    case 1:
+                        for (int i = 1; i <= 2; i++)
+                        {
+                            if (x + i < 9)
+                            {
+                                traprange.Add(new point(x + i, y));
+                            }
+                            if (x - i >= 0)
+                            {
+                                traprange.Add(new point(x - i, y));
+                            }
+                            if (y + i < 9)
+                            {
+                                traprange.Add(new point(x, y+i));
+                            }
+                            if (y - i >= 0)
+                            {
+                                traprange.Add(new point(x, y-i));
+                            }
+                        }
+                        break;
+                    case 2:
+                    case 3:
+                        for (int i = 1; i <= 3; i++)
+                        {
+                            if (x + i < 9)
+                            {
+                                motimono.tpoint[x + i, y].tplist.Add(new point(x, y));
+                                motimono.tpointd[x, y].tplist.Add(new point(x + i, y));
+                            }
+                            if (x - i >= 0)
+                            {
+                                motimono.tpoint[x - i, y].tplist.Add(new point(x, y));
+                                motimono.tpointd[x, y].tplist.Add(new point(x - i, y));
+                            }
+                            if (y + i < 9)
+                            {
+                                motimono.tpoint[x, y + i].tplist.Add(new point(x, y));
+                                motimono.tpointd[x, y].tplist.Add(new point(x, y + i));
+                            }
+                            if (y - i >= 0)
+                            {
+                                motimono.tpoint[x, y - i].tplist.Add(new point(x, y));
+                                motimono.tpointd[x, y].tplist.Add(new point(x, y - i));
+                            }
+                        }
+                        break;
+                }
+            }
+            return traprange;
+        }
+        
 
         //種のソート
         public static void seedsort()

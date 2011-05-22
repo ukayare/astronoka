@@ -131,11 +131,11 @@ namespace WindowsFormsApplication1
                 electset(motimono.tfield[x, y], true);
 
                 motimono.trapenable[x, y] = 1;
-                if (flag == true)//方向設置の場合directionを設定
+                if (t.direct == true)//方向設置の場合directionを設定
                 {
                     //設定して画像配置
                     motimono.tfield[x, y].direction = direction;
-                    piclist[x, y + 2].ImageLocation = "trap\\" + motimono.tfield[x, y].type + motimono.tfield[x, y].grade + +motimono.tfield[x,y].direction+".bmp";
+                    piclist[x, y + 2].ImageLocation = "trap\\" + motimono.tfield[x, y].type + motimono.tfield[x, y].grade + +motimono.tfield[x, y].direction + ".bmp";
 
                     //enableの設定(値の詳細はmotimono参照
                     if (t.happen == 2)
@@ -184,9 +184,17 @@ namespace WindowsFormsApplication1
                     }
                 }
                 else
+                {
                     piclist[x, y + 2].ImageLocation = "trap\\" + motimono.tfield[x, y].type + motimono.tfield[x, y].grade + ".bmp";
+                }
                 flag = false;//フラグは最後に折っておく
 
+            }
+            if (motimono.trappointset(motimono.tfield[x, y], x, y).Count >0)
+            {
+                if (motimono.tpointd[x, y] == null)
+                    motimono.tpointd[x, y] = new trappoint();
+                motimono.tpointd[x, y].tplist.AddRange(motimono.trappointset(motimono.tfield[x, y], x, y));
             }
             selectedtrap = null;
             this.trapextext.Text = "";
@@ -227,8 +235,17 @@ namespace WindowsFormsApplication1
                         break;
                 }
             }
+            if (motimono.tfield[x, y].type == 12)
+            {
+                foreach (point p in motimono.tpointd[x,y].tplist)
+                {
+                    int i = motimono.tpoint[p.x, p.y].tplist.FindIndex(pt => (pt.x == x && pt.y == y));
+                    motimono.tpoint[p.x, p.y].tplist.RemoveAt(i);
+                }
+            }
             electset(motimono.tfield[x, y], false);
             motimono.tfield[x, y] = null;//フィールドから消去
+            motimono.tpointd[x, y] = null;
             piclist[x, y + 2].ImageLocation = "trap\\null.bmp";//画像も戻す
             motimono.trapsort();
             this.trapextext2.Text = "";
@@ -312,6 +329,7 @@ namespace WindowsFormsApplication1
         private void mouseEnter(int x, int y)
         {
             trapextext2.Text = "";
+            traprange.Clear();
             //選択したものを取得
             if (motimono.tfield[x,y] != null)
             {
@@ -323,7 +341,7 @@ namespace WindowsFormsApplication1
             {
                 if (selectedtrap.constrange == true)
                 {
-                    searchrange(selectedtrap, x, y);
+                    traprange = motimono.trappointset(selectedtrap, x, y);
                     foreach (point p in traprange)
                     {
                         rangedisplay(p);
@@ -333,7 +351,7 @@ namespace WindowsFormsApplication1
             }
             else if (motimono.tfield[x, y] != null && motimono.tfield[x, y].range == true)
             {
-                searchrange(motimono.tfield[x, y], x, y);
+                traprange.AddRange(motimono.tpointd[x, y].tplist);
                 foreach (point p in traprange)
                 {
                     rangedisplay(p);
@@ -400,168 +418,23 @@ namespace WindowsFormsApplication1
                 else
                     piclist[x, y + 2].ImageLocation = "trap\\" + motimono.tfield[x, y].type + motimono.tfield[x, y].grade + ".bmp";
             }
-            if(motimono.tfield[x,y]==null)
+            else
                 piclist[x, y + 2].ImageLocation = "trap\\null.bmp";
             if (piclist != null)
-                foreach (point p in traprange)
+            {
+                while (traprange.Count > 0)
+                {
+                    rangeundisplay(traprange[0]);
+                    traprange.RemoveAt(0);
+                }
+                /*foreach (point p in traprange)
+                {
                     rangeundisplay(p);
-            traprange.Clear();
+                }*/
+            }
             this.label3.Text = "0";
         }
 
-        //範囲の座標を取得
-        private void searchrange(trap settrap, int x, int y)
-        {
-            if (settrap.type == 4)//ジャンプ台
-            {
-                if (settrap.grade < 2)//普通の
-                {
-                    switch (settrap.direction)
-                    {
-                        case 0:
-                            traprange.Add(new point(x + 1, y + 1));
-                            break;
-                        case 1:
-                            traprange.Add(new point(x + 1, y - 1));
-                            break;
-                        case 2:
-                            traprange.Add(new point(x - 1, y - 1));
-                            break;
-                        case 3:
-                            traprange.Add(new point(x - 1, y + 1));
-                            break;
-                    }
-                }
-                else if (settrap.grade < 4)//桂馬R
-                {
-                    switch (settrap.direction)
-                    {
-                        case 0:
-                            traprange.Add(new point(x + 1, y + 2));
-                            break;
-                        case 1:
-                            traprange.Add(new point(x + 2, y - 1));
-                            break;
-                        case 2:
-                            traprange.Add(new point(x - 1, y - 2));
-                            break;
-                        case 3:
-                            traprange.Add(new point(x - 2, y + 1));
-                            break;
-                    }
-                }
-                else//桂馬L
-                {
-                    switch (settrap.direction)
-                    {
-                        case 0:
-                            traprange.Add(new point(x - 1, y + 2));
-                            break;
-                        case 1:
-                            traprange.Add(new point(x + 2, y + 1));
-                            break;
-                        case 2:
-                            traprange.Add(new point(x + 1, y - 2));
-                            break;
-                        case 3:
-                            traprange.Add(new point(x - 2, y - 1));
-                            break;
-                    }
-                }
-            }
-            else if (settrap.type == 3)//扇風機
-            {
-                if (settrap.grade < 2)//2マス
-                {
-                    switch (settrap.direction)
-                    {
-                        case 0:
-                            if(y+3>8)
-                                traprange.Add(new point(x, 8));
-                            else
-                                traprange.Add(new point(x, y + 3));
-                            break;
-                        case 1:
-                            if(x+3>8)
-                                traprange.Add(new point(8, y));
-                            else
-                                traprange.Add(new point(x + 3, y));
-                            break;
-                        case 2:
-                            if(y-3<-2)
-                                traprange.Add(new point(x, -2));
-                            else
-                                traprange.Add(new point(x, y - 3));
-                            break;
-                        case 3:
-                            if(x-3<0)
-                                traprange.Add(new point(0, y));
-                            else
-                                traprange.Add(new point(x - 3, y));
-                            break;
-                    }
-                }
-                else//3マス
-                {
-                    switch (settrap.direction)
-                    {
-                        case 0:
-                            if(y+4>8)
-                                traprange.Add(new point(x, 8));
-                            else
-                                traprange.Add(new point(x, y + 4));
-                            break;
-                        case 1:
-                            if(x+4>8)
-                                traprange.Add(new point(8, y));
-                            else
-                                traprange.Add(new point(x + 4, y));
-                            break;
-                        case 2:
-                            if(y-4<-2)
-                                traprange.Add(new point(x, -2));
-                            else
-                                traprange.Add(new point(x, y - 4));
-                            break;
-                        case 3:
-                            if(x-4<0)
-                                traprange.Add(new point(0, y));
-                            else
-                                traprange.Add(new point(x - 4, y));
-                            break;
-                    }
-                }
-            }
-            else if (settrap.type == 6 || (settrap.type >= 9 && settrap.type <= 11) || ((settrap.type == 7 || settrap.type == 8) && settrap.grade == 0))
-            {
-                switch (settrap.direction)
-                {
-                    case 0:
-                        traprange.Add(new point(x, y + 1));
-                        break;
-                    case 1:
-                        traprange.Add(new point(x + 1, y));
-                        break;
-                    case 2:
-                        traprange.Add(new point(x, y - 1));
-                        break;
-                    case 3:
-                        traprange.Add(new point(x - 1, y));
-                        break;
-                }
-            }
-            else if ((settrap.type == 7 || settrap.type == 8) && settrap.grade == 1)
-            {
-                if(y!=8)
-                    traprange.Add(new point(x, y + 1));
-                if(x!=8)
-                    traprange.Add(new point(x + 1, y));
-                traprange.Add(new point(x, y - 1));
-                if(x==0)
-                    traprange.Add(new point(x - 1, y));
-            }
-
-        }
 
         private void butunselect_Click(object sender, EventArgs e)
         {
