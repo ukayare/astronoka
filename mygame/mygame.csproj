@@ -98,6 +98,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Flag.cs" />
+    <Compile Include="kakashidirect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kakashidirect.Designer.cs">
+      <DependentUpon>kakashidirect.cs</DependentUpon>
+    </Compile>
     <Compile Include="nform.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -272,6 +278,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="busmove.resx">
       <DependentUpon>busmove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kakashidirect.resx">
+      <DependentUpon>kakashidirect.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="trapbattle.resx">
       <DependentUpon>trapbattle.cs</DependentUpon>

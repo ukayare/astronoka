@@ -593,18 +593,46 @@ namespace WindowsFormsApplication1
             }
         }
 
+        private void destructpointset()
+        {
+            switch(direction){
+                case 0:
+                    destructpoint = new point(x, y + 1);
+                    break;
+                case 1:
+                    destructpoint = new point(x + 1, y);
+                    break;
+                case 2:
+                    destructpoint = new point(x, y - 1);
+                    break;
+                case 3:
+                    destructpoint = new point(x - 1, y);
+                    break;
+            }
+        }
+
         public Boolean attack(trap t)//攻撃（パンチだけなんで後で増やす
         {
             if (t.type == 12)
             {
                 MessageBox.Show("もぐもぐ");
-                motimono.trappointremove(goalpoint.x, goalpoint.y);
-                motimono.tfield[goalpoint.x, goalpoint.y] = null;
-                destructpoint = goalpoint;
+                destructpointset();
+                motimono.trappointremove(destructpoint.x, destructpoint.y);
+                motimono.tfield[destructpoint.x, destructpoint.y] = null;
                 destruction = true;
-                goalpoint = pointlist[0];
-                distcalcstart(goalpoint.x, goalpoint.y);
-                pointlist.RemoveAt(0);
+                if (goalpoint.x == destructpoint.x && goalpoint.y == destructpoint.y)
+                {
+                    MessageBox.Show(goalpoint.x.ToString() + goalpoint.y.ToString());
+                    goalpoint = pointlist[0];
+                    MessageBox.Show(goalpoint.x.ToString() + goalpoint.y.ToString());
+                    distcalcstart(goalpoint.x, goalpoint.y);
+                    pointlist.RemoveAt(0);
+                }
+                else
+                {
+                    MessageBox.Show(goalpoint.x.ToString() + goalpoint.y.ToString());
+                    pointlist.RemoveAll(p => p.x == destructpoint.x && p.y == destructpoint.y);
+                }
                 return true;
             }
             MessageBox.Show("バブーパンチ！");

@@ -231,6 +231,159 @@ namespace WindowsFormsApplication1
                         break;
                 }
             }
+            else if (settrap.type == 13)
+            {
+                switch (settrap.grade)
+                {
+                    case 0:
+                        if (x + 1 < 9)
+                        {
+                            traprange.Add(new point(x + 1, y));
+                        }
+                        if (x - 1 >= 0)
+                        {
+                            traprange.Add(new point(x - 1, y));
+                        }
+                        if (y + 1 < 9)
+                        {
+                            traprange.Add(new point(x, y + 1));
+                        }
+                        if (y - 1 >= 0)
+                        {
+                            traprange.Add(new point(x, y - 1));
+                        }
+
+                        if (settrap.direction == 1 && x + 2 < 9)
+                        {
+                            traprange.Add(new point(x + 2, y));
+                        }
+                        else if (settrap.direction == 3 && x - 2 >= 0)
+                        {
+                            traprange.Add(new point(x - 2, y));
+                        }
+                        else if (settrap.direction == 0 && y + 2 < 9)
+                        {
+                            traprange.Add(new point(x, y + 2));
+                        }
+                        else if (settrap.direction == 2 && y - 2 >= 0)
+                        {
+                            traprange.Add(new point(x, y - 2));
+                        }
+                        break;
+                    case 1:
+                        if (x + 1 < 9)
+                        {
+                            traprange.Add(new point(x + 1, y));
+                        }
+                        if (x - 1 >= 0)
+                        {
+                            traprange.Add(new point(x - 1, y));
+                        }
+                        if (y + 1 < 9)
+                        {
+                            traprange.Add(new point(x, y + 1));
+                        }
+                        if (y - 1 >= 0)
+                        {
+                            traprange.Add(new point(x, y - 1));
+                        }
+
+                        if (settrap.direction == 1)
+                        {
+                            for (int i = 2; i <= 3; i++)
+                            {
+                                if (x + i < 9)
+                                {
+                                    traprange.Add(new point(x + i, y));
+                                }
+                                if (x - i >= 0 && i == 2)
+                                {
+                                    traprange.Add(new point(x - i, y));
+                                }
+                            }
+                        }
+                        else if (settrap.direction == 3)
+                        {
+                            for (int i = 2; i <= 3; i++)
+                            {
+                                if (x + i < 9 && i == 2)
+                                {
+                                    traprange.Add(new point(x + i, y));
+                                }
+                                if (x - i >= 0)
+                                {
+                                    traprange.Add(new point(x - i, y));
+                                }
+                            }
+                        }
+                        else if (settrap.direction == 0)
+                        {
+                            for (int i = 2; i <= 3; i++)
+                            {
+                                if (y + i < 9)
+                                {
+                                    traprange.Add(new point(x, y + i));
+                                }
+                                if (y - i >= 0 && i == 2)
+                                {
+                                    traprange.Add(new point(x, y - i));
+                                }
+                            }
+                        }
+                        else if (settrap.direction == 2)
+                        {
+                            for (int i = 2; i <= 3; i++)
+                            {
+                                if (y + i < 9 && i == 2)
+                                {
+                                    traprange.Add(new point(x, y + i));
+                                }
+                                if (y - i >= 0)
+                                {
+                                    traprange.Add(new point(x, y - i));
+                                }
+                            }
+                        }
+                        break;
+                    case 2:
+                        for (int i = 1; i <= 2; i++)
+                        {
+                            if (x + i < 9)
+                            {
+                                traprange.Add(new point(x + i, y));
+                            }
+                            if (x - i >= 0)
+                            {
+                                traprange.Add(new point(x - i, y));
+                            }
+                            if (y + i < 9)
+                            {
+                                traprange.Add(new point(x, y + i));
+                            }
+                            if (y - i >= 0)
+                            {
+                                traprange.Add(new point(x, y - i));
+                            }
+                        }
+                        if (settrap.direction == 1 && x + 3 < 9)
+                        {
+                            traprange.Add(new point(x + 3, y));
+                        }
+                        else if (settrap.direction == 3 && x - 3 >= 0)
+                        {
+                            traprange.Add(new point(x - 3, y));
+                        }
+                        else if (settrap.direction == 0 && y + 3 < 9)
+                        {
+                            traprange.Add(new point(x, y + 3));
+                        }
+                        else if (settrap.direction == 2 && y - 3 >= 0)
+                        {
+                            traprange.Add(new point(x, y - 3));
+                        }
+                        break;
+                }
+            }
             return traprange;
         }
 

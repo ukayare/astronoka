@@ -47,14 +47,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="mygame.exe" size="475648">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="mygame.exe" size="479744">
       <assemblyIdentity name="mygame" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>bpm5aqsgWppUs7j5E6YpxcM0mC0=</dsig:DigestValue>
+        <dsig:DigestValue>QsZ8tqXbjjeNliRCxplS8Ks/iBs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

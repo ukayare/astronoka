@@ -19,7 +19,6 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
 
-        public trapdirection td;//方向の決定
         internal int direction;//方向
         internal Boolean flag=false;//フラグ
         babooactive ba;//バブー行動（バトル用。これは別クラスで設定するかな
@@ -106,10 +105,16 @@ namespace WindowsFormsApplication1
         //トラップ設置の処理
         private void tset(int x, int y, int i)
         {
-            //方向設定する場合
-            if (motimono.traplist[i].direct == true)
+            if (motimono.traplist[i].type == 13)
             {
-                td = new trapdirection(motimono.traplist[i], x, y);
+                kakashidirect kd = new kakashidirect(motimono.traplist[i]);
+                kd.pointer = this;
+                kd.ShowDialog();
+            }
+            //方向設定する場合
+            else if (motimono.traplist[i].direct == true)
+            {
+                trapdirection td = new trapdirection(motimono.traplist[i], x, y);
                 td.pointer = this;
                 td.ShowDialog();
             }
@@ -188,17 +193,16 @@ namespace WindowsFormsApplication1
                     piclist[x, y + 2].ImageLocation = "trap\\" + motimono.tfield[x, y].type + motimono.tfield[x, y].grade + ".bmp";
                 }
                 flag = false;//フラグは最後に折っておく
-
+                if (motimono.trappointdset(motimono.tfield[x, y], x, y).Count > 0)
+                {
+                    if (motimono.tpointd[x, y] == null)
+                        motimono.tpointd[x, y] = new trappoint();
+                    motimono.tpointd[x, y].tplist.AddRange(motimono.trappointdset(motimono.tfield[x, y], x, y));
+                    motimono.trappointset(x, y);
+                }
+                selectedtrap = null;
+                this.trapextext.Text = "";
             }
-            if (motimono.trappointdset(motimono.tfield[x, y], x, y).Count >0)
-            {
-                if (motimono.tpointd[x, y] == null)
-                    motimono.tpointd[x, y] = new trappoint();
-                motimono.tpointd[x, y].tplist.AddRange(motimono.trappointdset(motimono.tfield[x, y], x, y));
-                motimono.trappointset(x, y);
-            }
-            selectedtrap = null;
-            this.trapextext.Text = "";
         }
 
         //トラップの撤去
@@ -411,7 +415,7 @@ namespace WindowsFormsApplication1
                 else
                     piclist[x, y + 2].ImageLocation = "trap\\" + motimono.tfield[x, y].type + motimono.tfield[x, y].grade + ".bmp";
             }
-            else
+            else if(selectedtrap!=null)
                 piclist[x, y + 2].ImageLocation = "trap\\null.bmp";
             if (piclist != null)
             {
