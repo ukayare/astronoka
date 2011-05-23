@@ -91,6 +91,19 @@ namespace WindowsFormsApplication1
         private void butnext_Click(object sender, EventArgs e)
         {
             MessageBox.Show(motimono.trapenable[ba.x, ba.y].ToString());
+            if (motimono.tpoint[ba.x, ba.y] != null)
+            {
+                foreach (point p in motimono.tpoint[ba.x, ba.y].tplist)
+                {
+                    if (motimono.tfield[p.x, p.y].type == 12 && ba.happen[p.x, p.y] == false)
+                    {
+                        MessageBox.Show("エサ");
+                        ba.esaeffect(p);
+                        MessageBox.Show(ba.goalpoint.x.ToString() + ba.goalpoint.y.ToString());
+                    }
+                }
+            }
+
             //触ったら起動するタイプが起動する場合
             if (ba.actioednfrag == true && ba.happen[ba.x, ba.y] == false)
             {
@@ -108,6 +121,12 @@ namespace WindowsFormsApplication1
             {
                 MessageBox.Show("");
                 ba.move();
+                if (ba.destruction == true)
+                {
+                    piclist[ba.destructpoint.x, ba.destructpoint.y + 2].Image = global::WindowsFormsApplication1.Properties.Resources._null;
+                    ba.destruction = false;
+                    ba.destructpoint = null;
+                }
             }
             //扇風機起動しているとき
             else if (ba.sennpufrag == true && ba.happeningcount[ba.x, ba.y] < 10)

@@ -30,7 +30,7 @@ namespace WindowsFormsApplication1
         public static trappoint[,] tpoint = new trappoint[9, 9];
         public static trappoint[,] tpointd = new trappoint[9, 9];
         
-        public static List<point> trappointset(trap settrap,int x,int y)
+        public static List<point> trappointdset(trap settrap,int x,int y)
         {
             List<point> traprange = new List<point>();
             if (settrap.type == 4)//ジャンプ台
@@ -213,23 +213,19 @@ namespace WindowsFormsApplication1
                         {
                             if (x + i < 9)
                             {
-                                motimono.tpoint[x + i, y].tplist.Add(new point(x, y));
-                                motimono.tpointd[x, y].tplist.Add(new point(x + i, y));
+                                traprange.Add(new point(x + i, y));
                             }
                             if (x - i >= 0)
                             {
-                                motimono.tpoint[x - i, y].tplist.Add(new point(x, y));
-                                motimono.tpointd[x, y].tplist.Add(new point(x - i, y));
+                                traprange.Add(new point(x - i, y));
                             }
                             if (y + i < 9)
                             {
-                                motimono.tpoint[x, y + i].tplist.Add(new point(x, y));
-                                motimono.tpointd[x, y].tplist.Add(new point(x, y + i));
+                                traprange.Add(new point(x, y+i));
                             }
                             if (y - i >= 0)
                             {
-                                motimono.tpoint[x, y - i].tplist.Add(new point(x, y));
-                                motimono.tpointd[x, y].tplist.Add(new point(x, y - i));
+                                traprange.Add(new point(x, y-i));
                             }
                         }
                         break;
@@ -237,8 +233,23 @@ namespace WindowsFormsApplication1
             }
             return traprange;
         }
-        
 
+        public static void trappointset(int x, int y)
+        {
+            foreach (point p in motimono.tpointd[x, y].tplist)
+            {
+                if (motimono.tpoint[p.x, p.y] == null)
+                    motimono.tpoint[p.x, p.y] = new trappoint();
+                motimono.tpoint[p.x, p.y].tplist.Add(new point(x, y));
+            }
+        }
+
+        public static void trappointremove(int x, int y)
+        {
+            foreach (point p in motimono.tpointd[x, y].tplist)
+                motimono.tpoint[p.x, p.y].tplist.RemoveAt( motimono.tpoint[p.x, p.y].tplist.FindIndex(pt => (pt.x == x && pt.y == y)));
+            motimono.tpointd[x, y].tplist.Clear();
+        }
         //種のソート
         public static void seedsort()
         {

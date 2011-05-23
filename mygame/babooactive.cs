@@ -28,7 +28,7 @@ namespace WindowsFormsApplication1
         public int y = 0;
 
 
-        point goalpoint;
+        public point goalpoint;
         List<point> pointlist = new List<point>();//目標地点のリスト（エサ使用時の保持のため
 
         //方向0 up 1 right 2 down 3 left
@@ -54,6 +54,8 @@ namespace WindowsFormsApplication1
         public int[,] happeningcount = new int[9, 9];//何回起動した？（扇風機の限界設定
 
         public Boolean actioednfrag = false;//触った？
+        public Boolean destruction = false;//破壊?
+        public point destructpoint;
 
         public int farcount=0;
 
@@ -421,6 +423,14 @@ namespace WindowsFormsApplication1
             walked[x, y] = true;
         }
 
+        public void esaeffect(point p)
+        {
+            pointset(goalpoint);
+            goalpointset(p.x, p.y);
+            distcalcstart(p.x, p.y);
+            happen[p.x, p.y] = true;
+        }
+
         //トラップの効果
         public void effect(trap t)
         {
@@ -443,7 +453,6 @@ namespace WindowsFormsApplication1
                             sennpufrag = true;
                             senpucount = 3;
                         }
-
                         senpumove();//とりあえず一回起動（これしないとかかりっぱになっちゃう
                         break;
                     case 4://ジャンプ台
@@ -559,9 +568,6 @@ namespace WindowsFormsApplication1
                             baboo.hate[i] -= 10;
                         break;
                     case 12://エサ
-                        pointset(goalpoint);
-                        goalpointset(x, y);
-                        distcalcstart(x, y);
                         break;
                     case 15://とりもち
                         if (toricount == 0 && torifrag == false)//引っかかった瞬間
@@ -587,8 +593,20 @@ namespace WindowsFormsApplication1
             }
         }
 
-        public void attack(trap t)//攻撃（パンチだけなんで後で増やす
+        public Boolean attack(trap t)//攻撃（パンチだけなんで後で増やす
         {
+            if (t.type == 12)
+            {
+                MessageBox.Show("もぐもぐ");
+                motimono.trappointremove(goalpoint.x, goalpoint.y);
+                motimono.tfield[goalpoint.x, goalpoint.y] = null;
+                destructpoint = goalpoint;
+                destruction = true;
+                goalpoint = pointlist[0];
+                distcalcstart(goalpoint.x, goalpoint.y);
+                pointlist.RemoveAt(0);
+                return true;
+            }
             MessageBox.Show("バブーパンチ！");
             if (t.happen == 3)
             {
@@ -601,6 +619,7 @@ namespace WindowsFormsApplication1
                     actioednfrag = true;                    
                 }
             }
+            return false;
         }
 
         //ダイクストラで目標までの距離をセット

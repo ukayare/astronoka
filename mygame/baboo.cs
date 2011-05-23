@@ -13,7 +13,7 @@ namespace WindowsFormsApplication1
             //嫌い度の設定
             for (int i = 0; i < this.hate.Length; i++)
             {
-                if(!(i==4 || i==15 || i==6 || i==5))
+                if(!(i==4 || i==15 || i==6 || i==5 || i==12))
                     this.hate[i] = 100;
             }
         }
@@ -43,6 +43,5 @@ namespace WindowsFormsApplication1
         int[] happen = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};//引っかかった回数
 
         public Boolean leftright = false;//回転方向（false時計回りtrue反時計）
-
     }
 }

@@ -190,11 +190,12 @@ namespace WindowsFormsApplication1
                 flag = false;//フラグは最後に折っておく
 
             }
-            if (motimono.trappointset(motimono.tfield[x, y], x, y).Count >0)
+            if (motimono.trappointdset(motimono.tfield[x, y], x, y).Count >0)
             {
                 if (motimono.tpointd[x, y] == null)
                     motimono.tpointd[x, y] = new trappoint();
-                motimono.tpointd[x, y].tplist.AddRange(motimono.trappointset(motimono.tfield[x, y], x, y));
+                motimono.tpointd[x, y].tplist.AddRange(motimono.trappointdset(motimono.tfield[x, y], x, y));
+                motimono.trappointset(x, y);
             }
             selectedtrap = null;
             this.trapextext.Text = "";
@@ -235,17 +236,9 @@ namespace WindowsFormsApplication1
                         break;
                 }
             }
-            if (motimono.tfield[x, y].type == 12)
-            {
-                foreach (point p in motimono.tpointd[x,y].tplist)
-                {
-                    int i = motimono.tpoint[p.x, p.y].tplist.FindIndex(pt => (pt.x == x && pt.y == y));
-                    motimono.tpoint[p.x, p.y].tplist.RemoveAt(i);
-                }
-            }
             electset(motimono.tfield[x, y], false);
             motimono.tfield[x, y] = null;//フィールドから消去
-            motimono.tpointd[x, y] = null;
+            motimono.trappointremove(x, y);
             piclist[x, y + 2].ImageLocation = "trap\\null.bmp";//画像も戻す
             motimono.trapsort();
             this.trapextext2.Text = "";
@@ -341,7 +334,7 @@ namespace WindowsFormsApplication1
             {
                 if (selectedtrap.constrange == true)
                 {
-                    traprange = motimono.trappointset(selectedtrap, x, y);
+                    traprange = motimono.trappointdset(selectedtrap, x, y);
                     foreach (point p in traprange)
                     {
                         rangedisplay(p);
@@ -422,15 +415,10 @@ namespace WindowsFormsApplication1
                 piclist[x, y + 2].ImageLocation = "trap\\null.bmp";
             if (piclist != null)
             {
-                while (traprange.Count > 0)
-                {
-                    rangeundisplay(traprange[0]);
-                    traprange.RemoveAt(0);
-                }
-                /*foreach (point p in traprange)
+                foreach (point p in traprange)
                 {
                     rangeundisplay(p);
-                }*/
+                }
             }
             this.label3.Text = "0";
         }
