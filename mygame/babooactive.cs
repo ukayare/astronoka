@@ -24,9 +24,7 @@ namespace WindowsFormsApplication1
         internal baboo baboo;//動くバブー
 
         //座標
-        public int x = 4;
-        public int y = 0;
-
+        public point now = new point(4, 0);
 
         public point goalpoint;
         List<point> pointlist = new List<point>();//目標地点のリスト（エサ使用時の保持のため
@@ -63,9 +61,10 @@ namespace WindowsFormsApplication1
         public void start()
         {
             //ゴール座標にいくまで動く
-            while (!(x == 4 && y == 8))
+            while (!(now.x == 4 && now.y == 8))
             {
                 move();
+                
             }
         }
 
@@ -84,23 +83,23 @@ namespace WindowsFormsApplication1
             switch (senpudirection)
             {//端っこなら動かない、んでカウント減らす
                 case 0:
-                    if (y != tatemax - 1)
-                        y++;
+                    if (now.y != tatemax - 1)
+                        now.y++;
                     senpucount--;
                     break;
                 case 1:
-                    if (x != yokomax - 1)
-                        x++;
+                    if (now.x != yokomax - 1)
+                        now.x++;
                     senpucount--;
                     break;
                 case 2:
-                    if (y != 0)
-                        y--;
+                    if (now.y != 0)
+                        now.y--;
                     senpucount--;
                     break;
                 case 3:
-                    if (x != 0)
-                        x--;
+                    if (now.x != 0)
+                        now.x--;
                     senpucount--;
                     break;
             }
@@ -113,33 +112,33 @@ namespace WindowsFormsApplication1
         //方向転換
         private void turn()
         {
-            staying[x, y]++;
+            staying[now.x, now.y]++;
             actioednfrag = false;//起動フラグを折る（これしないとたってた場合なぜか起動してしまうため
             switch (direction)
             {
                 case 0:
-                    if (y==tatemax-1 || distance[x, y] > distance[x, y + 1])
+                    if (now.y == tatemax - 1 || distance[now.x, now.y] > distance[now.x, now.y + 1])
                         farcount++;
                     break;
                 case 1:
-                    if (x==yokomax-1 || distance[x, y] > distance[x + 1, y])
+                    if (now.x == yokomax - 1 || distance[now.x, now.y] > distance[now.x + 1, now.y])
                         farcount++;
                     break;
                 case 2:
-                    if (y==0 || distance[x, y] > distance[x, y - 1])
+                    if (now.y == 0 || distance[now.x, now.y] > distance[now.x, now.y - 1])
                         farcount++;
                     break;
                 case 3:
-                    if (x==0 || distance[x, y] > distance[x - 1, y])
+                    if (now.x == 0 || distance[now.x, now.y] > distance[now.x - 1, now.y])
                         farcount++;
                     break;
             }
-            if(baboo.leftright==false)
+            if (baboo.leftright == false)
                 direction = (direction + 1) % 4;//時計回りに方向転換
             else
                 direction = (direction - 1) % 4;//時計回りに方向転換
 
-            staying[x, y]++;
+            staying[now.x, now.y]++;
         }
 
 
@@ -156,16 +155,16 @@ namespace WindowsFormsApplication1
             {
                 case 0:
                     //はじっこかすでに滞在しているところ、長期滞在しているところは行かない
-                    if (y == tatemax - 1 || staying[x, y + 1] >= baboo.pointhate)
+                    if (now.y == tatemax - 1 || staying[now.x, now.y + 1] >= baboo.pointhate)
                     {
                         MessageBox.Show("test");
                         turn();
                     }
                     //なんか目の前にある場合
-                    else if (field[x, y + 1] != null)
+                    else if (field[now.x, now.y + 1] != null)
                     {
                         //嫌いならよける
-                        if (baboo.hate[field[x, y + 1].type] >= 100)
+                        if (baboo.hate[field[now.x, now.y + 1].type] >= 100)
                         {
                             MessageBox.Show("");
                             turn();
@@ -176,14 +175,14 @@ namespace WindowsFormsApplication1
                             if (baboo.vitality < 100)
                             {
                                 //固定物ならよける
-                                if (field[x, y + 1].kotei == true)
+                                if (field[now.x, now.y + 1].kotei == true)
                                 {
                                     turn();
                                 }
                                 //そのまま直進
                                 else
                                 {
-                                    y++;
+                                    now.y++;
                                     fragreset();
                                 }
                             }
@@ -191,14 +190,14 @@ namespace WindowsFormsApplication1
                             else
                             {
                                 //固定物
-                                if (field[x, y + 1].kotei == true)
+                                if (field[now.x, now.y + 1].kotei == true)
                                 {
                                     //あきらめてないならぶん殴る
-                                    if (giveup[x, y + 1] < 100)
+                                    if (giveup[now.x, now.y + 1] < 100)
                                     {
-                                        giveup[x, y + 1] += 30;//あきらめ度増加
-                                        attack(field[x, y + 1]);
-                                        staying[x, y]++;
+                                        giveup[now.x, now.y + 1] += 30;//あきらめ度増加
+                                        attack(field[now.x, now.y + 1]);
+                                        staying[now.x, now.y]++;
                                     }
                                     //あきらめてたらもうよける
                                     else
@@ -209,39 +208,39 @@ namespace WindowsFormsApplication1
                                 else
                                 {
                                     //ここはジャンプすべきかもね
-                                    y++;
+                                    now.y++;
                                     fragreset();
                                 }
                             }
                         }
                     }
                     //もう滞在したくなかったら動く
-                    else if (staying[x, y] >= baboo.pointhate)
+                    else if (staying[now.x, now.y] >= baboo.pointhate)
                     {
-                        y++;
+                        now.y++;
                         fragreset();
                     }
                     //距離が近くならないんだったら回る
-                    else if (distance[x, y + 1] >= distance[x, y])
+                    else if (distance[now.x, now.y + 1] >= distance[now.x, now.y])
                     {
                         turn();
                     }
                     //何もなければ直進
                     else
                     {
-                        y++;
+                        now.y++;
                         fragreset();
                     }
                     break;
                 //以下同じ処理してる（同じ関数で渡せねーかなー方向ってのが意外とネック
                 case 1:
-                    if (x == yokomax - 1 || staying[x + 1, y] >= baboo.pointhate)
+                    if (now.x == yokomax - 1 || staying[now.x + 1, now.y] >= baboo.pointhate)
                     {
                         turn();
                     }
-                    else if (field[x + 1, y] != null)
+                    else if (field[now.x + 1, now.y] != null)
                     {
-                        if (baboo.hate[field[x + 1, y].type] >= 100)
+                        if (baboo.hate[field[now.x + 1, now.y].type] >= 100)
                         {
                             MessageBox.Show("");
                             turn();
@@ -250,60 +249,60 @@ namespace WindowsFormsApplication1
                         {
                             if (baboo.vitality < 100)
                             {
-                                if (field[x + 1, y].kotei == true)
+                                if (field[now.x + 1, now.y].kotei == true)
                                 {
                                     turn();
                                 }
                                 else
                                 {
-                                    x++;
+                                    now.x++;
                                     fragreset();
                                 }
                             }
                             else
                             {
-                                if (field[x + 1, y].kotei == true)
+                                if (field[now.x + 1, now.y].kotei == true)
                                 {
-                                    if (giveup[x + 1, y] < 100)
+                                    if (giveup[now.x + 1, now.y] < 100)
                                     {
-                                        giveup[x + 1, y] += 30;
-                                        attack(field[x + 1, y]);
-                                        staying[x, y]++;
+                                        giveup[now.x + 1, now.y] += 30;
+                                        attack(field[now.x + 1, now.y]);
+                                        staying[now.x, now.y]++;
                                     }
                                     else
                                         turn();
                                 }
                                 else
                                 {
-                                    x++;
+                                    now.x++;
                                     fragreset();
                                 }
                             }
                         }
                     }
-                    else if (staying[x, y] >= baboo.pointhate)
+                    else if (staying[now.x, now.y] >= baboo.pointhate)
                     {
-                        x++;
+                        now.x++;
                         fragreset();
                     }
-                    else if (distance[x + 1, y] >= distance[x, y])
+                    else if (distance[now.x + 1, now.y] >= distance[now.x, now.y])
                     {
                         turn();
                     }
                     else
                     {
-                        x++;
+                        now.x++;
                         fragreset();
                     }
                     break;
                 case 2:
-                    if (y == 0 || staying[x, y - 1] >= baboo.pointhate)
+                    if (now.y == 0 || staying[now.x, now.y - 1] >= baboo.pointhate)
                     {
                         turn();
                     }
-                    else if (field[x, y - 1] != null)
+                    else if (field[now.x, now.y - 1] != null)
                     {
-                        if (baboo.hate[field[x, y - 1].type] >= 100)
+                        if (baboo.hate[field[now.x, now.y - 1].type] >= 100)
                         {
                             turn();
                         }
@@ -311,61 +310,61 @@ namespace WindowsFormsApplication1
                         {
                             if (baboo.vitality < 100)
                             {
-                                if (field[x, y - 1].kotei == true)
+                                if (field[now.x, now.y - 1].kotei == true)
                                 {
                                     turn();
                                 }
                                 else
                                 {
-                                    y--;
+                                    now.y--;
                                     fragreset();
                                 }
                             }
                             else
                             {
-                                if (field[x, y - 1].kotei == true)
+                                if (field[now.x, now.y - 1].kotei == true)
                                 {
-                                    if (giveup[x, y - 1] < 100)
+                                    if (giveup[now.x, now.y - 1] < 100)
                                     {
-                                        giveup[x, y - 1] += 30;
-                                        attack(field[x, y - 1]);
-                                        staying[x, y]++;
+                                        giveup[now.x, now.y - 1] += 30;
+                                        attack(field[now.x, now.y - 1]);
+                                        staying[now.x, now.y]++;
                                     }
                                     else
                                         turn();
                                 }
                                 else
                                 {
-                                    y--;
+                                    now.y--;
                                     fragreset();
                                 }
 
                             }
                         }
                     }
-                    else if (staying[x, y] >= baboo.pointhate)
+                    else if (staying[now.x, now.y] >= baboo.pointhate)
                     {
-                        y--;
+                        now.y--;
                         fragreset();
                     }
-                    else if (distance[x, y - 1] >= distance[x, y])
+                    else if (distance[now.x, now.y - 1] >= distance[now.x, now.y])
                     {
                         turn();
                     }
                     else
                     {
-                        y--;
+                        now.y--;
                         fragreset();
                     }
                     break;
                 case 3:
-                    if (x == 0 || staying[x - 1, y] >= baboo.pointhate)
+                    if (now.x == 0 || staying[now.x - 1, now.y] >= baboo.pointhate)
                     {
                         turn();
                     }
-                    else if (field[x - 1, y] != null)
+                    else if (field[now.x - 1, now.y] != null)
                     {
-                        if (baboo.hate[field[x - 1, y].type] >= 100)
+                        if (baboo.hate[field[now.x - 1, now.y].type] >= 100)
                         {
                             turn();
                         }
@@ -373,54 +372,54 @@ namespace WindowsFormsApplication1
                         {
                             if (baboo.vitality < 100)
                             {
-                                if (field[x - 1, y].kotei == true)
+                                if (field[now.x - 1, now.y].kotei == true)
                                 {
                                     turn();
                                 }
                                 else
                                 {
-                                    x--;
+                                    now.x--;
                                     fragreset();
                                 }
                             }
                             else
                             {
-                                if (field[x - 1, y].kotei == true)
+                                if (field[now.x - 1, now.y].kotei == true)
                                 {
-                                    if (giveup[x - 1, y] < 100)
+                                    if (giveup[now.x - 1, now.y] < 100)
                                     {
-                                        giveup[x - 1, y] += 30;
-                                        attack(field[x - 1, y]);
-                                        staying[x, y]++;
+                                        giveup[now.x - 1, now.y] += 30;
+                                        attack(field[now.x - 1, now.y]);
+                                        staying[now.x, now.y]++;
                                     }
                                     else
                                         turn();
                                 }
                                 else
                                 {
-                                    x--;
+                                    now.x--;
                                     fragreset();
                                 }
                             }
                         }
                     }
-                    else if (staying[x, y] >= baboo.pointhate)
+                    else if (staying[now.x, now.y] >= baboo.pointhate)
                     {
-                        x--;
+                        now.x--;
                         fragreset();
                     }
-                    else if (distance[x - 1, y] >= distance[x, y])
+                    else if (distance[now.x - 1, now.y] >= distance[now.x, now.y])
                     {
                         turn();
                     }
                     else
                     {
-                        x--;
+                        now.x--;
                         fragreset();
                     }
                     break;
             }
-            walked[x, y] = true;
+            walked[now.x, now.y] = true;
         }
 
         public void esaeffect(point p)
@@ -435,9 +434,9 @@ namespace WindowsFormsApplication1
         public void effect(trap t)
         {
             //起動回数が１０以上はもう起動しない（これ扇風機だけだなあとで変えよう
-            if (happeningcount[x, y] < 10)
+            if (happeningcount[now.x, now.y] < 10)
             {
-                happeningcount[x, y]++;
+                happeningcount[now.x, now.y]++;
                 switch (t.type)
                 {
                     case 3://扇風機
@@ -456,81 +455,11 @@ namespace WindowsFormsApplication1
                         senpumove();//とりあえず一回起動（これしないとかかりっぱになっちゃう
                         break;
                     case 4://ジャンプ台
-                        happen[x, y] = true;//起動したフラグ立てる
-                        if (t.grade < 2)//ただの斜め移動
-                        {
-                            //方向で飛ぶ位置決定
-                            if (t.direction == 0)
-                            {
-                                x++;
-                                y++;
-                            }
-                            else if (t.direction == 1)
-                            {
-                                x++;
-                                y--;
-                            }
-                            else if (t.direction == 2)
-                            {
-                                x--;
-                                y--;
-                            }
-                            else if (t.direction == 3)
-                            {
-                                x--;
-                                y++;
-                            }
-
-                        }
-                        else if (t.grade < 4)//桂馬R
-                        {
-                            if (t.direction == 0)
-                            {
-                                x++;
-                                y += 2;
-                            }
-                            else if (t.direction == 1)
-                            {
-                                x += 2;
-                                y--;
-                            }
-                            else if (t.direction == 2)
-                            {
-                                x--;
-                                y += 2;
-                            }
-                            else if (t.direction == 3)
-                            {
-                                x -= 2;
-                                y++;
-                            }
-                        }
-                        else//桂馬L
-                        {
-                            if (t.direction == 0)
-                            {
-                                x--;
-                                y += 2;
-                            }
-                            else if (t.direction == 1)
-                            {
-                                x += 2;
-                                y++;
-                            }
-                            else if (t.direction == 2)
-                            {
-                                x++;
-                                y += 2;
-                            }
-                            else if (t.direction == 3)
-                            {
-                                x -= 2;
-                                y--;
-                            }
-                        }
+                        happen[now.x, now.y] = true;//起動したフラグ立てる
+                        now = motimono.tpointd[now.x, now.y].tplist[0];
                         break;
                     case 5://ぐるぐる
-                        happen[x, y] = true;//起動したフラグ立て
+                        happen[now.x, now.y] = true;//起動したフラグ立て
                         if (t.grade == 0 || t.grade == 3)//R
                         {
                             fakedirection = direction;
@@ -550,20 +479,20 @@ namespace WindowsFormsApplication1
                     case 6://冷水
                     case 7://パンチ
                     case 8://ビリビリ
-                        happen[x, y] = true;//起動フラグ
+                        happen[now.x, now.y] = true;//起動フラグ
                         baboo.stamina -= 10;//スタミナ減少（これはここでまた変更しよう
                         fragreset();//フラグリセット（しないと永遠にかかる
                         break;
                     case 9://風船サービス
-                        happen[x, y] = true;//起動フラグ
+                        happen[now.x, now.y] = true;//起動フラグ
                         baboo.heavy -= 50;
                         break;
                     case 10://米俵サービス
-                        happen[x, y] = true;
+                        happen[now.x, now.y] = true;
                         baboo.heavy += 50;
                         break;
                     case 11://おめでとう
-                        happen[x, y] = true;
+                        happen[now.x, now.y] = true;
                         for (int i = 0; i < baboo.hate.Length; i++)
                             baboo.hate[i] -= 10;
                         break;
@@ -597,16 +526,16 @@ namespace WindowsFormsApplication1
         {
             switch(direction){
                 case 0:
-                    destructpoint = new point(x, y + 1);
+                    destructpoint = new point(now.x, now.y + 1);
                     break;
                 case 1:
-                    destructpoint = new point(x + 1, y);
+                    destructpoint = new point(now.x + 1, now.y);
                     break;
                 case 2:
-                    destructpoint = new point(x, y - 1);
+                    destructpoint = new point(now.x, now.y - 1);
                     break;
                 case 3:
-                    destructpoint = new point(x - 1, y);
+                    destructpoint = new point(now.x - 1, now.y);
                     break;
             }
         }

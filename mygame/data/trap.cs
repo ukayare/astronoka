@@ -418,9 +418,6 @@ namespace WindowsFormsApplication1
                     price = 20000;
                     break;
             }
-
-        }
-
-        
+        }        
     }
 }

@@ -46,8 +46,8 @@ namespace WindowsFormsApplication1
             this.Top = (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2;
             this.Left = (Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2;
 
-            this.datelabel.Text = date.year + "年目 " + date.month + "月 " + date.day + "日" + date.week + date.season;
-            this.moneylabel.Text = "羽：" + date.fin + "枚" + date.money + "z";
+            this.datelabel.Text = date.datedisplay;
+            this.moneylabel.Text = date.moneyfindisplay;
             this.namelabel.Text = "名前：" + date.name;
 
             musicstart();
@@ -100,6 +100,17 @@ namespace WindowsFormsApplication1
         {
             text t = new text("test","");
             t.ShowDialog();
+        }
+
+        private void butend_Click(object sender, EventArgs e)
+        {
+            astronet an = new astronet();
+            this.Hide();
+            musicstop();
+            an.ShowDialog();
+            this.Show();
+            musicstart();
+
         }
 
     }

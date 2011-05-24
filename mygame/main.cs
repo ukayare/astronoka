@@ -44,8 +44,6 @@ namespace WindowsFormsApplication1
                 date.day = 1;
                 date.month = 1;
                 date.year = 1;
-                date.week = "（月）";
-                date.season = "春";
                 date.money = 200;
                 date.fin = 0;
                 date.electmax = 1000;
@@ -56,8 +54,8 @@ namespace WindowsFormsApplication1
 
                 motimono.todaybaboo.Add(motimono.syokibaboo());
             }
-      
-            this.datelabel.Text = date.year + "年目 " + date.month + "月 " + date.day + "日" + date.week + date.season;
+
+            this.datelabel.Text = date.datedisplay;
             //この辺はデバッグ用の金増やし
             //moneychanged(0);
             //finchanged(0);

@@ -76,7 +76,7 @@ namespace WindowsFormsApplication1
             if (svt.v != null)
             {
                 v = svt.v;
-                this.bagpic.ImageLocation = v.imagepath();
+                this.bagpic.ImageLocation = v.imagepath;
             }
             if (svt.t != null)
                 t = svt.t;

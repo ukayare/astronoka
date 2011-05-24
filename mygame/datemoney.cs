@@ -39,15 +39,15 @@ namespace WindowsFormsApplication1
                 }
 
                 //表示の設定
-                this.datelabel.Text = date.year + "年目 " + date.month + "月 " + date.day + "日" + date.week + date.season;
+                this.datelabel.Text = date.datedisplay;
 
 
                 string dfile = "";//メッセージファイル
 
-                if (date.holidayok() == true)//休日チェック、バス出てるのメッセージ
+                if (date.holidayok == true)//休日チェック、バス出てるのメッセージ
                 {
                     this.button3.Enabled = true;
-                    text st = new text(date.holiday(), "peet");
+                    text st = new text(date.holiday, "peet");
                     st.ShowDialog();
                 }
                 else

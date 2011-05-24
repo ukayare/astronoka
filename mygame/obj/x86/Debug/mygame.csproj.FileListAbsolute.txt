@@ -148,3 +148,4 @@ D:\アストロノーカ\mygame\obj\x86\Debug\GenerateResource.write.831.tlog
 D:\アストロノーカ\mygame\obj\x86\Debug\mygame.exe.manifest
 D:\アストロノーカ\mygame\obj\x86\Debug\mygame.application
 D:\アストロノーカ\mygame\obj\x86\Debug\WindowsFormsApplication1.kakashidirect.resources
+D:\アストロノーカ\mygame\obj\x86\Debug\WindowsFormsApplication1.astronet.resources

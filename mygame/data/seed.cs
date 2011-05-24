@@ -2458,6 +2458,5 @@ namespace WindowsFormsApplication1
             if (price < 10)//値段の下限は１０
                 price = 10;
         }
-
     }
 }

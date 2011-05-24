@@ -33,41 +33,49 @@ namespace WindowsFormsApplication1
         //野菜の交配組み合わせ表示
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            string make = "";//交配組み合わせの文字列
-            DataGridViewCell c=DataGridView1.CurrentCell;//今選んだセル
-            int res;
-            int.TryParse(DataGridView1.Rows[c.RowIndex].Cells[0].Value.ToString(),out res);//今選んだやつのメンデル数を取得
-            for (int i = 0; i < c.RowIndex; i++)//今より上の部分でループを回す
-            {
-                for (int j = 1; j < 4; j++)//横は全部
-                {
-                    if (this.DataGridView1.Rows[i].Cells[j].Value.ToString() != "　　　")//なんかある場合
-                    {
-                        for (int k = i; k < c.RowIndex; k++)//今指してるやつより後ろ（メンデル同じ場所）から
-                        {
-                            for (int l = 1; l < 4; l++)//横は全部
-                            {
-                                if (this.DataGridView1.Rows[k].Cells[l].Value.ToString() != "　　　" && 
-                                    this.DataGridView1.Rows[i].Cells[j].Value.ToString() != this.DataGridView1.Rows[k].Cells[l].Value.ToString())//なんかあって同じやつじゃないとき
-                                {
-                                    //各メンデル数を記憶
-                                    int a;
-                                    int b;
-                                    int.TryParse(this.DataGridView1.Rows[i].Cells[0].Value.ToString(), out a);
-                                    int.TryParse(this.DataGridView1.Rows[k].Cells[0].Value.ToString(), out b);
+            MessageBox.Show(make);//最後に結果表示
+        }
 
-                                    //組み合わせ的にOKならその組み合わせを記憶しておく
-                                    if (a + b == res && ((j == l && j == c.ColumnIndex) || (j != l && j != c.ColumnIndex && l != c.ColumnIndex) && !(j>l && k==i)))
+        private string make
+        {
+            get
+            {
+                string make = "";//交配組み合わせの文字列
+                DataGridViewCell c = DataGridView1.CurrentCell;//今選んだセル
+                int res;
+                int.TryParse(DataGridView1.Rows[c.RowIndex].Cells[0].Value.ToString(), out res);//今選んだやつのメンデル数を取得
+                for (int i = 0; i < c.RowIndex; i++)//今より上の部分でループを回す
+                {
+                    for (int j = 1; j < 4; j++)//横は全部
+                    {
+                        if (this.DataGridView1.Rows[i].Cells[j].Value.ToString() != "　　　")//なんかある場合
+                        {
+                            for (int k = i; k < c.RowIndex; k++)//今指してるやつより後ろ（メンデル同じ場所）から
+                            {
+                                for (int l = 1; l < 4; l++)//横は全部
+                                {
+                                    if (this.DataGridView1.Rows[k].Cells[l].Value.ToString() != "　　　" &&
+                                        this.DataGridView1.Rows[i].Cells[j].Value.ToString() != this.DataGridView1.Rows[k].Cells[l].Value.ToString())//なんかあって同じやつじゃないとき
                                     {
-                                        make += this.DataGridView1.Rows[i].Cells[j].Value.ToString() + "×" + this.DataGridView1.Rows[k].Cells[l].Value.ToString()+"\n";
+                                        //各メンデル数を記憶
+                                        int a;
+                                        int b;
+                                        int.TryParse(this.DataGridView1.Rows[i].Cells[0].Value.ToString(), out a);
+                                        int.TryParse(this.DataGridView1.Rows[k].Cells[0].Value.ToString(), out b);
+
+                                        //組み合わせ的にOKならその組み合わせを記憶しておく
+                                        if (a + b == res && ((j == l && j == c.ColumnIndex) || (j != l && j != c.ColumnIndex && l != c.ColumnIndex) && !(j > l && k == i)))
+                                        {
+                                            make += this.DataGridView1.Rows[i].Cells[j].Value.ToString() + "×" + this.DataGridView1.Rows[k].Cells[l].Value.ToString() + "\n";
+                                        }
                                     }
                                 }
                             }
                         }
                     }
                 }
+                return make;
             }
-            MessageBox.Show(make);//最後に結果表示
         }
 
         public void ReadCsv(String fp)

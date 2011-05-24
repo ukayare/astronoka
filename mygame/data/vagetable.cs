@@ -383,59 +383,62 @@ namespace WindowsFormsApplication1
         }
 
         //画像のパス設定
-        public string imagepath()
+        public string imagepath
         {
-            string retstring = "";//返り値の文字列（パス
-            //植えたばっかり
-            if (mat == 0)
+            get
             {
-                switch (department)
+                string retstring = "";//返り値の文字列（パス
+                //植えたばっかり
+                if (mat == 0)
                 {
-                    case -1:
-                        retstring = "bagpicture\\A0.bmp";
-                        break;
-                    case 0:
-                        retstring = "bagpicture\\B0.bmp";
-                        break;
-                    case 1:
-                        retstring = "bagpicture\\C0.bmp";
-                        break;
+                    switch (department)
+                    {
+                        case -1:
+                            retstring = "bagpicture\\A0.bmp";
+                            break;
+                        case 0:
+                            retstring = "bagpicture\\B0.bmp";
+                            break;
+                        case 1:
+                            retstring = "bagpicture\\C0.bmp";
+                            break;
+                    }
                 }
-            }
-            //発芽
-            else if (mat == 1)
-            {
-                switch (department)
+                //発芽
+                else if (mat == 1)
                 {
-                    case -1:
-                        retstring = "bagpicture\\A1.bmp";
-                        break;
-                    case 0:
-                        retstring = "bagpicture\\B1.bmp";
-                        break;
-                    case 1:
-                        retstring = "bagpicture\\C1.bmp";
-                        break;
+                    switch (department)
+                    {
+                        case -1:
+                            retstring = "bagpicture\\A1.bmp";
+                            break;
+                        case 0:
+                            retstring = "bagpicture\\B1.bmp";
+                            break;
+                        case 1:
+                            retstring = "bagpicture\\C1.bmp";
+                            break;
+                    }
                 }
-            }
-            else
-            {
-                int st = picst(mat);//成長状態のモード
-                //パス名は科＋メンデル数＋状態
-                switch (department)
+                else
                 {
-                    case -1:
-                        retstring = "bagpicture\\A" + mendel + st + ".bmp";
-                        break;
-                    case 0:
-                        retstring = "bagpicture\\B" + mendel + st + ".bmp";
-                        break;
-                    case 1:
-                        retstring = "bagpicture\\C" + mendel + st + ".bmp";
-                        break;
+                    int st = picst(mat);//成長状態のモード
+                    //パス名は科＋メンデル数＋状態
+                    switch (department)
+                    {
+                        case -1:
+                            retstring = "bagpicture\\A" + mendel + st + ".bmp";
+                            break;
+                        case 0:
+                            retstring = "bagpicture\\B" + mendel + st + ".bmp";
+                            break;
+                        case 1:
+                            retstring = "bagpicture\\C" + mendel + st + ".bmp";
+                            break;
+                    }
                 }
+                return retstring;
             }
-            return retstring;
         }
 
         //完全成熟というか種付きは画像が同じ何でその辺の設定

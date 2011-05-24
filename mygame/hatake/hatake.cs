@@ -207,11 +207,11 @@ namespace WindowsFormsApplication1
             }
             else if (motimono.vaghatake[i, j].mat > 2 && motimono.vaghatake[i, j].mat < 8)
             {
-                bagpic[j].ImageLocation = motimono.vaghatake[i, j].imagepath();
+                bagpic[j].ImageLocation = motimono.vaghatake[i, j].imagepath;
             }
             else
             {
-                bagpic[j].ImageLocation = motimono.vaghatake[i, j].imagepath();
+                bagpic[j].ImageLocation = motimono.vaghatake[i, j].imagepath;
             }
         }
 

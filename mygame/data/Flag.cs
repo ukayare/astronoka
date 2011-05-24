@@ -17,6 +17,7 @@ namespace WindowsFormsApplication1
 
         //トラップの作成時とかそういうのに使う配列
         internal static Boolean[] tlist = new Boolean[17];
+
         internal static string[] tname = new string[] {"落とし穴"　,"フタ付き落とし穴",　"塀",　"扇風機",　"ジャンプ台",　"ぐるぐる台",
                     "冷水ぶっかけ装置",　"パンチングマシン",　"ビリビリマシン",　"風船サービス装置",
                 "米俵サービス装置",　"おめでとう装置",　"エサ",　"カカシ",　"オリ",　"とりもち","怪光線"};
@@ -40,17 +41,12 @@ namespace WindowsFormsApplication1
                 tlistpedro[j] = false;
 
             for (int i = 0; i < motimono.pedrotrap.Count; i++)
-            {
                 for (int j = 0; j < tlistpedro.Length; j++)
-                {
                     if (motimono.pedrotrap[i].type == j)
                     {
                         tlistpedro[j] = true;
                         break;
                     }
-                }
-
-            }
         }
     }
 }

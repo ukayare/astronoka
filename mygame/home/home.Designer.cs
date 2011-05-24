@@ -94,6 +94,7 @@
             this.butend.TabIndex = 3;
             this.butend.Text = "アストロネット";
             this.butend.UseVisualStyleBackColor = true;
+            this.butend.Click += new System.EventHandler(this.butend_Click);
             // 
             // button1
             // 

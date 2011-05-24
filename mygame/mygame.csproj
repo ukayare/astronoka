@@ -80,6 +80,19 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="home\astronet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="home\astronet.Designer.cs">
+      <DependentUpon>astronet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="article.cs" />
+    <Compile Include="concule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="concule.Designer.cs">
+      <DependentUpon>concule.cs</DependentUpon>
+    </Compile>
     <Compile Include="town\astrodome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,6 +269,9 @@
       <DependentUpon>trapfield.cs</DependentUpon>
     </Compile>
     <Compile Include="data\vagetable.cs" />
+    <EmbeddedResource Include="home\astronet.resx">
+      <DependentUpon>astronet.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="town\astrodome.resx">
       <DependentUpon>astrodome.cs</DependentUpon>
     </EmbeddedResource>

@@ -44,37 +44,37 @@ namespace WindowsFormsApplication1
                 //                ba.start();
                 //                motimono.baboolist.Add(ba.baboo);
                 //座標表示(x,y,向き)
-                this.label2.Text = ba.x.ToString() + "," + ba.y.ToString() + "," + ba.direction.ToString();
+                this.label2.Text = ba.now.x.ToString() + "," + ba.now.y.ToString() + "," + ba.direction.ToString();
                 this.baboopic.ImageLocation = "baboo\\" + ba.baboo.specie + ba.baboo.variation + ba.direction + ".bmp";
-                this.baboopic.Location = this.piclist[ba.x, ba.y+2].Location;
+                this.baboopic.Location = this.piclist[ba.now.x, ba.now.y+2].Location;
             }
         }
 
         //トラップの起動判定
         private void traphappen()
         {
-            if (motimono.tfield[ba.x, ba.y] != null)//踏むと起動するやつ
+            if (motimono.tfield[ba.now.x, ba.now.y] != null)//踏むと起動するやつ
             {
-                MessageBox.Show(motimono.tfield[ba.x, ba.y].name + "に引っかかった");
-                ba.effect(motimono.tfield[ba.x, ba.y]);
+                MessageBox.Show(motimono.tfield[ba.now.x, ba.now.y].name + "に引っかかった");
+                ba.effect(motimono.tfield[ba.now.x, ba.now.y]);
             }
             else
             {
-                int direct = (motimono.trapenable[ba.x, ba.y] - 2) % 4;//方向設定があるやつ（方向を取得
+                int direct = (motimono.trapenable[ba.now.x, ba.now.y] - 2) % 4;//方向設定があるやつ（方向を取得
                 switch (direct)
                 {
                     //各方向が指す先の座標から起動
                     case 0:
-                        effectpoint(ba.x, ba.y - 1);
+                        effectpoint(ba.now.x, ba.now.y - 1);
                         break;
                     case 1:
-                        effectpoint(ba.x - 1, ba.y);
+                        effectpoint(ba.now.x - 1, ba.now.y);
                         break;
                     case 2:
-                        effectpoint(ba.x, ba.y + 1);
+                        effectpoint(ba.now.x, ba.now.y + 1);
                         break;
                     case 3:
-                        effectpoint(ba.x + 1, ba.y);
+                        effectpoint(ba.now.x + 1, ba.now.y);
                         break;
                 }
             }
@@ -90,10 +90,10 @@ namespace WindowsFormsApplication1
         //次の行動処理
         private void butnext_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(motimono.trapenable[ba.x, ba.y].ToString());
-            if (motimono.tpoint[ba.x, ba.y] != null)
+            MessageBox.Show(motimono.trapenable[ba.now.x, ba.now.y].ToString());
+            if (motimono.tpoint[ba.now.x, ba.now.y] != null)
             {
-                foreach (point p in motimono.tpoint[ba.x, ba.y].tplist)
+                foreach (point p in motimono.tpoint[ba.now.x, ba.now.y].tplist)
                 {
                     if (motimono.tfield[p.x, p.y].type == 12 && ba.happen[p.x, p.y] == false)
                     {
@@ -101,11 +101,15 @@ namespace WindowsFormsApplication1
                         ba.esaeffect(p);
                         MessageBox.Show(ba.goalpoint.x.ToString() + ba.goalpoint.y.ToString());
                     }
+                    else if (motimono.tfield[p.x, p.y].type == 13 && ba.happen[p.x, p.y] == false)
+                    {
+                        MessageBox.Show("カカシ");
+                    }
                 }
             }
 
             //触ったら起動するタイプが起動する場合
-            if (ba.actioednfrag == true && ba.happen[ba.x, ba.y] == false)
+            if (ba.actioednfrag == true && ba.happen[ba.now.x, ba.now.y] == false)
             {
                 traphappen();
             }
@@ -117,7 +121,7 @@ namespace WindowsFormsApplication1
                 もう限界起動回数まで達している（１０回
                 上記のいずれかをみたした場合
              */
-            else if (motimono.trapenable[ba.x, ba.y] == 0 || motimono.trapenable[ba.x, ba.y] >= 6 || ba.torifrag == true || ba.happen[ba.x, ba.y] == true || ba.happeningcount[ba.x, ba.y] >= 10)
+            else if (motimono.trapenable[ba.now.x, ba.now.y] == 0 || motimono.trapenable[ba.now.x, ba.now.y] >= 6 || ba.torifrag == true || ba.happen[ba.now.x, ba.now.y] == true || ba.happeningcount[ba.now.x, ba.now.y] >= 10)
             {
                 MessageBox.Show("");
                 ba.move();
@@ -129,10 +133,10 @@ namespace WindowsFormsApplication1
                 }
             }
             //扇風機起動しているとき
-            else if (ba.sennpufrag == true && ba.happeningcount[ba.x, ba.y] < 10)
+            else if (ba.sennpufrag == true && ba.happeningcount[ba.now.x, ba.now.y] < 10)
             {
                 //足元にトラップがないまたは起動したトラップの場合
-                if (motimono.trapenable[ba.x, ba.y] == 0 || ba.happen[ba.x, ba.y] == true)
+                if (motimono.trapenable[ba.now.x, ba.now.y] == 0 || ba.happen[ba.now.x, ba.now.y] == true)
                     ba.senpumove();
                 //足元に起動するのがある場合扇風機のフラグ折って起動
                 else
@@ -147,9 +151,9 @@ namespace WindowsFormsApplication1
                 traphappen();
             }
             //座標表示（x,y,方向,滞在時間,起動回数）
-            this.label2.Text = ba.x.ToString() + "," + ba.y.ToString() + "," + ba.direction.ToString() + "," + ba.staying[ba.x, ba.y] + "," + ba.happeningcount[ba.x, ba.y].ToString() + "," + ba.distance[ba.x, ba.y].ToString();
+            this.richTextBox1.Text += ba.now.x.ToString() + "," + ba.now.y.ToString() + "," + ba.direction.ToString() + "," + ba.staying[ba.now.x, ba.now.y] + "," + ba.happeningcount[ba.now.x, ba.now.y].ToString() + "," + ba.distance[ba.now.x, ba.now.y].ToString()+"\n";
             this.baboopic.ImageLocation = "baboo\\" + ba.baboo.specie + ba.baboo.variation + ba.direction + ".bmp";
-            this.baboopic.Location = this.piclist[ba.x, ba.y+2].Location;
+            this.baboopic.Location = this.piclist[ba.now.x, ba.now.y+2].Location;
         }
 
     }

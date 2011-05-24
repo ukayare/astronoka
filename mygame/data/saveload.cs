@@ -78,8 +78,6 @@ namespace WindowsFormsApplication1
                 xtw.WriteElementString("day", date.day.ToString());
                 xtw.WriteElementString("month", date.month.ToString());
                 xtw.WriteElementString("year", date.year.ToString());
-                xtw.WriteElementString("week", date.week);
-                xtw.WriteElementString("season", date.season);
                 xtw.WriteElementString("money", date.money.ToString());
                 xtw.WriteElementString("fin", date.fin.ToString());
                 xtw.WriteElementString("electmax", date.electmax.ToString());
@@ -119,12 +117,6 @@ namespace WindowsFormsApplication1
                          int.TryParse(reader.ReadString(), out date.month); 
                     else if (reader.LocalName.Equals("year"))
                          int.TryParse(reader.ReadString(), out date.year); 
-                    else if (reader.LocalName.Equals("name"))
-                         date.week = reader.ReadString(); 
-                    else if (reader.LocalName.Equals("week"))
-                        date.week = reader.ReadString();
-                    else if (reader.LocalName.Equals("season"))
-                         date.season = reader.ReadString(); 
                     else if (reader.LocalName.Equals("money"))
                          int.TryParse(reader.ReadString(), out date.money); 
                     else if (reader.LocalName.Equals("fin"))
