@@ -112,48 +112,27 @@ namespace WindowsFormsApplication1
                     {
                     }
                     else if (reader.LocalName.Equals("name"))
-                    {
                          date.name = reader.ReadString(); 
-                    }
                     else if (reader.LocalName.Equals("day"))
-                    {
                          int.TryParse(reader.ReadString(), out date.day); 
-                    }else if (reader.LocalName.Equals("month"))
-                    {
+                    else if (reader.LocalName.Equals("month"))
                          int.TryParse(reader.ReadString(), out date.month); 
-                    }
                     else if (reader.LocalName.Equals("year"))
-                    {
                          int.TryParse(reader.ReadString(), out date.year); 
-                    }
                     else if (reader.LocalName.Equals("name"))
-                    {
                          date.week = reader.ReadString(); 
-                    }
                     else if (reader.LocalName.Equals("week"))
-                    {
                         date.week = reader.ReadString();
-                    }
                     else if (reader.LocalName.Equals("season"))
-                    {
                          date.season = reader.ReadString(); 
-                    }
                     else if (reader.LocalName.Equals("money"))
-                    {
                          int.TryParse(reader.ReadString(), out date.money); 
-                    }
                     else if (reader.LocalName.Equals("fin"))
-                    {
                         int.TryParse(reader.ReadString(), out date.fin);
-                    }
                     else if (reader.LocalName.Equals("electmax"))
-                    {
                         int.TryParse(reader.ReadString(), out date.electmax);
-                    }
                     else if (reader.LocalName.Equals("elect"))
-                    {
                         int.TryParse(reader.ReadString(), out date.elect);
-                    }
                 }
             }
 
@@ -233,41 +212,23 @@ namespace WindowsFormsApplication1
                 if (reader.NodeType == XmlNodeType.Element)
                 {
                     if (reader.LocalName.Equals("種"))
-                    {
                         s = new seed();
-                    }
                     else if (reader.LocalName.Equals("mendel"))
-                    {
                         int.TryParse(reader.ReadString(), out s.mendel);
-                    }
                     else if (reader.LocalName.Equals("id"))
-                    {
                         int.TryParse(reader.ReadString(), out s.id);
-                    }
                     else if (reader.LocalName.Equals("pure"))
-                    {
                         Boolean.TryParse(reader.ReadString(), out s.pure);
-                    }
                     else if (reader.LocalName.Equals("strengp"))
-                    {
                         int.TryParse(reader.ReadString(), out s.strengp);
-                    }
                     else if (reader.LocalName.Equals("strengele"))
-                    {
                         int.TryParse(reader.ReadString(), out s.strengele);
-                    }
                     else if (reader.LocalName.Equals("items"))
-                    {
                         int.TryParse(reader.ReadString(), out s.items);
-                    }
                     else if (reader.LocalName.Equals("department"))
-                    {
                         int.TryParse(reader.ReadString(), out s.department);
-                    }
                     else if (reader.LocalName.Equals("syoki"))
-                    {
                         Boolean.TryParse(reader.ReadString(), out s.syoki);
-                    }
                     else if (reader.LocalName.Equals("info"+i+j))
                     {
                         Boolean.TryParse(reader.ReadString(), out s.info[i,j]);
@@ -374,41 +335,23 @@ namespace WindowsFormsApplication1
                 if (reader.NodeType == XmlNodeType.Element)
                 {
                     if (reader.LocalName.Equals("野菜"))
-                    {
                         v = new seed();
-                    }
                     else if (reader.LocalName.Equals("mendel"))
-                    {
                         int.TryParse(reader.ReadString(), out v.mendel);
-                    }
                     else if (reader.LocalName.Equals("id"))
-                    {
                         int.TryParse(reader.ReadString(), out v.id);
-                    }
                     else if (reader.LocalName.Equals("pure"))
-                    {
                         Boolean.TryParse(reader.ReadString(), out v.pure);
-                    }
                     else if (reader.LocalName.Equals("items"))
-                    {
                         int.TryParse(reader.ReadString(), out v.items);
-                    }
                     else if (reader.LocalName.Equals("department"))
-                    {
                         int.TryParse(reader.ReadString(), out v.department);
-                    }
                     else if (reader.LocalName.Equals("syoki"))
-                    {
                         Boolean.TryParse(reader.ReadString(), out v.syoki);
-                    }
                     else if (reader.LocalName.Equals("days"))
-                    {
                         int.TryParse(reader.ReadString(), out days);
-                    }
                     else if (reader.LocalName.Equals("mat"))
-                    {
                         int.TryParse(reader.ReadString(), out mat);
-                    }
                     else if (reader.LocalName.Equals("info" + i + j))
                     {
                         Boolean.TryParse(reader.ReadString(), out v.info[i, j]);
@@ -538,44 +481,25 @@ namespace WindowsFormsApplication1
                             l = l % 10;
                         }
                         if (s.Equals("畑野菜part"+k+l))
-                        {
                             v = new seed();
-                        }
                         else if (s.Equals("mendelpart" + k + l))
-                        {
                             int.TryParse(reader.ReadString(), out v.mendel);
-                        }
                         else if (s.Equals("idpart" + k + l))
-                        {
                             int.TryParse(reader.ReadString(), out v.id);
-                        }
                         else if (s.Equals("purepart" + k + l))
-                        {
                             Boolean.TryParse(reader.ReadString(), out v.pure);
-                        }
                         else if (s.Equals("itemspart" + k + l))
-                        {
                             int.TryParse(reader.ReadString(), out v.items);
-                        }
                         else if (s.Equals("departmentpart" + k + l))
-                        {
                             int.TryParse(reader.ReadString(), out v.department);
-                        }
                         else if (s.Equals("syokipart" + k + l))
-                        {
                             Boolean.TryParse(reader.ReadString(), out v.syoki);
-                        }
                         else if (s.Equals("dayspart" + k + l))
-                        {
                             int.TryParse(reader.ReadString(), out days);
-                        }
                         else if (s.Equals("matpart" + k + l))
-                        {
                             int.TryParse(reader.ReadString(), out mat);
-                        }
                         else if (s.Equals("infopart" + i + j + k + l))
                         {
-
                             Boolean.TryParse(reader.ReadString(), out v.info[i, j]);
                             j++;
                             if (j == 8)
@@ -675,21 +599,13 @@ namespace WindowsFormsApplication1
                 if (reader.NodeType == XmlNodeType.Element)
                 {
                     if (reader.LocalName.Equals("トラップ"))
-                    {
                         t = new trap(0,0);
-                    }
                     else if (reader.LocalName.Equals("type"))
-                    {
                         int.TryParse(reader.ReadString(), out t.type);
-                    }
                     else if (reader.LocalName.Equals("grade"))
-                    {
                         int.TryParse(reader.ReadString(), out t.grade);
-                    }
                     else if (reader.LocalName.Equals("items"))
-                    {
                         int.TryParse(reader.ReadString(), out t.items);
-                    }
                 }
                 else if (reader.NodeType == XmlNodeType.EndElement)
                 {
@@ -797,17 +713,11 @@ namespace WindowsFormsApplication1
                                 flag = true;
                             }
                             else if (s.Equals("gradepart" + ten + iti))
-                            {
                                 int.TryParse(reader.ReadString(), out grade);
-                            }
                             else if (s.Equals("directionpart" + ten + iti))
-                            {
                                 int.TryParse(reader.ReadString(), out direction);
-                            }
                             else if (s.Equals("enablepart" + ten + iti))
-                            {
                                 int.TryParse(reader.ReadString(), out motimono.trapenable[ten, iti]);
-                            }
 
                         }
                         else if (reader.NodeType == XmlNodeType.EndElement)
@@ -893,26 +803,18 @@ namespace WindowsFormsApplication1
                 if (reader.NodeType == XmlNodeType.Element)
                 {
                     if (reader.LocalName.Equals("種"))
-                    {
                         s = new seed();
-                    }
                     else if (reader.LocalName.Equals("mendel"))
-                    {
                         int.TryParse(reader.ReadString(), out men);
-                    }
                     else if (reader.LocalName.Equals("department"))
-                    {
                         int.TryParse(reader.ReadString(), out dep);
-                    }
                 }
                 else if (reader.NodeType == XmlNodeType.EndElement)
-                {
                     if (reader.LocalName.Equals("種"))
                     {
                         s.baseset(men, dep);
-                       motimono.pedroseed.Add(s);
+                        motimono.pedroseed.Add(s);
                     }
-                }
             }
 
             Flag.loadfrag = true;
@@ -937,7 +839,6 @@ namespace WindowsFormsApplication1
 
                 for (int i = 0; i < motimono.pedrotrap.Count; i++)
                 {
-
                     xtw.WriteStartElement("トラップ");
 
                     xtw.WriteElementString("type", motimono.pedrotrap[i].type.ToString());
@@ -970,26 +871,18 @@ namespace WindowsFormsApplication1
                 if (reader.NodeType == XmlNodeType.Element)
                 {
                     if (reader.LocalName.Equals("トラップ"))
-                    {
                         t = new trap(0, 0);
-                    }
                     else if (reader.LocalName.Equals("type"))
-                    {
                         int.TryParse(reader.ReadString(), out t.type);
-                    }
                     else if (reader.LocalName.Equals("grade"))
-                    {
                         int.TryParse(reader.ReadString(), out t.grade);
-                    }
                 }
                 else if (reader.NodeType == XmlNodeType.EndElement)
-                {
                     if (reader.LocalName.Equals("トラップ"))
                     {
                         t.trapset();
                         motimono.pedrotrap.Add(t);
                     }
-                }
             }
 
             Flag.loadfrag = true;
