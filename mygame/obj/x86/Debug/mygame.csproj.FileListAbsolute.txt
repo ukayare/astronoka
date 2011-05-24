@@ -142,8 +142,6 @@ D:\アストロノーカ\mygame\obj\x86\Debug\WindowsFormsApplication1.sonbrelo.
 D:\アストロノーカ\mygame\obj\x86\Debug\WindowsFormsApplication1.tengaron.resources
 D:\アストロノーカ\mygame\obj\x86\Debug\WindowsFormsApplication1.townbase.resources
 D:\アストロノーカ\mygame\obj\x86\Debug\WindowsFormsApplication1.trapfield.resources
-D:\アストロノーカ\mygame\obj\x86\Debug\WindowsFormsApplication1.vagstatus.resources
-D:\アストロノーカ\mygame\obj\x86\Debug\WindowsFormsApplication1.vagstatus2.resources
 D:\アストロノーカ\mygame\obj\x86\Debug\GenerateResource.read.1.tlog
 D:\アストロノーカ\mygame\obj\x86\Debug\GenerateResource.write.1.tlog
 D:\アストロノーカ\mygame\obj\x86\Debug\GenerateResource.write.831.tlog

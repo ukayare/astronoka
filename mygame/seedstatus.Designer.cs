@@ -28,99 +28,97 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.butclose = new System.Windows.Forms.Button();
-            this.namelabel = new System.Windows.Forms.Label();
+            this.ele1 = new System.Windows.Forms.RichTextBox();
+            this.info1 = new System.Windows.Forms.RichTextBox();
+            this.eleval1 = new System.Windows.Forms.RichTextBox();
+            this.elename1 = new System.Windows.Forms.RichTextBox();
+            this.yasaiextext = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.infolabel = new System.Windows.Forms.Label();
-            this.plabel = new System.Windows.Forms.Label();
-            this.elelabel = new System.Windows.Forms.Label();
-            this.levlabel = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // butclose
+            // ele1
             // 
-            this.butclose.Location = new System.Drawing.Point(106, 221);
-            this.butclose.Name = "butclose";
-            this.butclose.Size = new System.Drawing.Size(75, 23);
-            this.butclose.TabIndex = 0;
-            this.butclose.Text = "閉じる";
-            this.butclose.UseVisualStyleBackColor = true;
-            this.butclose.Click += new System.EventHandler(this.butclose_Click);
+            this.ele1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.ele1.Location = new System.Drawing.Point(197, 82);
+            this.ele1.Name = "ele1";
+            this.ele1.ReadOnly = true;
+            this.ele1.Size = new System.Drawing.Size(39, 172);
+            this.ele1.TabIndex = 44;
+            this.ele1.Text = "";
             // 
-            // namelabel
+            // info1
             // 
-            this.namelabel.AutoSize = true;
-            this.namelabel.Location = new System.Drawing.Point(24, 9);
-            this.namelabel.Name = "namelabel";
-            this.namelabel.Size = new System.Drawing.Size(32, 12);
-            this.namelabel.TabIndex = 1;
-            this.namelabel.Text = "name";
+            this.info1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.info1.Location = new System.Drawing.Point(234, 82);
+            this.info1.Name = "info1";
+            this.info1.ReadOnly = true;
+            this.info1.Size = new System.Drawing.Size(104, 172);
+            this.info1.TabIndex = 43;
+            this.info1.Text = "";
+            // 
+            // eleval1
+            // 
+            this.eleval1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.eleval1.Location = new System.Drawing.Point(336, 82);
+            this.eleval1.Name = "eleval1";
+            this.eleval1.ReadOnly = true;
+            this.eleval1.Size = new System.Drawing.Size(32, 172);
+            this.eleval1.TabIndex = 45;
+            this.eleval1.Text = "";
+            // 
+            // elename1
+            // 
+            this.elename1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.elename1.Location = new System.Drawing.Point(366, 82);
+            this.elename1.Name = "elename1";
+            this.elename1.ReadOnly = true;
+            this.elename1.Size = new System.Drawing.Size(80, 172);
+            this.elename1.TabIndex = 46;
+            this.elename1.Text = "";
+            // 
+            // yasaiextext
+            // 
+            this.yasaiextext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.yasaiextext.Location = new System.Drawing.Point(9, 12);
+            this.yasaiextext.Name = "yasaiextext";
+            this.yasaiextext.ReadOnly = true;
+            this.yasaiextext.Size = new System.Drawing.Size(189, 242);
+            this.yasaiextext.TabIndex = 42;
+            this.yasaiextext.Text = "";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 51);
+            this.label1.Location = new System.Drawing.Point(220, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 72);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "大きさ\r\n重さ\r\n模様\r\n栄養\r\n糖度\r\n食感";
+            this.label1.Size = new System.Drawing.Size(35, 12);
+            this.label1.TabIndex = 47;
+            this.label1.Text = "label1";
+            this.label1.Visible = false;
             // 
-            // infolabel
+            // button1
             // 
-            this.infolabel.AutoSize = true;
-            this.infolabel.Location = new System.Drawing.Point(64, 51);
-            this.infolabel.Name = "infolabel";
-            this.infolabel.Size = new System.Drawing.Size(0, 12);
-            this.infolabel.TabIndex = 3;
-            // 
-            // plabel
-            // 
-            this.plabel.AutoSize = true;
-            this.plabel.Location = new System.Drawing.Point(193, 9);
-            this.plabel.Name = "plabel";
-            this.plabel.Size = new System.Drawing.Size(30, 12);
-            this.plabel.TabIndex = 4;
-            this.plabel.Text = "price";
-            // 
-            // elelabel
-            // 
-            this.elelabel.AutoSize = true;
-            this.elelabel.Location = new System.Drawing.Point(181, 51);
-            this.elelabel.Name = "elelabel";
-            this.elelabel.Size = new System.Drawing.Size(0, 12);
-            this.elelabel.TabIndex = 5;
-            // 
-            // levlabel
-            // 
-            this.levlabel.AutoSize = true;
-            this.levlabel.Location = new System.Drawing.Point(217, 51);
-            this.levlabel.Name = "levlabel";
-            this.levlabel.Size = new System.Drawing.Size(0, 12);
-            this.levlabel.TabIndex = 6;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 28);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 12);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "label2";
+            this.button1.Location = new System.Drawing.Point(185, 269);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 48;
+            this.button1.Text = "閉じる";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // seedstatus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.levlabel);
-            this.Controls.Add(this.elelabel);
-            this.Controls.Add(this.plabel);
-            this.Controls.Add(this.infolabel);
+            this.ClientSize = new System.Drawing.Size(455, 315);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.namelabel);
-            this.Controls.Add(this.butclose);
+            this.Controls.Add(this.ele1);
+            this.Controls.Add(this.info1);
+            this.Controls.Add(this.eleval1);
+            this.Controls.Add(this.elename1);
+            this.Controls.Add(this.yasaiextext);
             this.Name = "seedstatus";
             this.Text = "seedstatus";
             this.Load += new System.EventHandler(this.seedstatus_Load);
@@ -131,13 +129,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Button butclose;
-        private System.Windows.Forms.Label namelabel;
+        private System.Windows.Forms.RichTextBox ele1;
+        private System.Windows.Forms.RichTextBox info1;
+        private System.Windows.Forms.RichTextBox eleval1;
+        private System.Windows.Forms.RichTextBox elename1;
+        private System.Windows.Forms.RichTextBox yasaiextext;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label infolabel;
-        private System.Windows.Forms.Label plabel;
-        private System.Windows.Forms.Label elelabel;
-        private System.Windows.Forms.Label levlabel;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
     }
 }

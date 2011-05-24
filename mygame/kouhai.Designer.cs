@@ -206,10 +206,10 @@
             // yasaiextext
             // 
             this.yasaiextext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.yasaiextext.Location = new System.Drawing.Point(368, 26);
+            this.yasaiextext.Location = new System.Drawing.Point(345, 26);
             this.yasaiextext.Name = "yasaiextext";
             this.yasaiextext.ReadOnly = true;
-            this.yasaiextext.Size = new System.Drawing.Size(163, 203);
+            this.yasaiextext.Size = new System.Drawing.Size(186, 203);
             this.yasaiextext.TabIndex = 37;
             this.yasaiextext.Text = "";
             // 
@@ -256,10 +256,10 @@
             // yasaiextext2
             // 
             this.yasaiextext2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.yasaiextext2.Location = new System.Drawing.Point(368, 284);
+            this.yasaiextext2.Location = new System.Drawing.Point(345, 284);
             this.yasaiextext2.Name = "yasaiextext2";
             this.yasaiextext2.ReadOnly = true;
-            this.yasaiextext2.Size = new System.Drawing.Size(163, 203);
+            this.yasaiextext2.Size = new System.Drawing.Size(186, 203);
             this.yasaiextext2.TabIndex = 43;
             this.yasaiextext2.Text = "";
             // 

@@ -13,6 +13,8 @@ namespace WindowsFormsApplication1
         public static Boolean finfrag = false;//終了フラグ
         public static Boolean movefrag = false;//移動フラグ
 
+        public static Boolean newgameflag = false;
+
         //トラップの作成時とかそういうのに使う配列
         internal static Boolean[] tlist = new Boolean[17];
         internal static string[] tname = new string[] {"落とし穴"　,"フタ付き落とし穴",　"塀",　"扇風機",　"ジャンプ台",　"ぐるぐる台",

@@ -20,14 +20,13 @@ namespace WindowsFormsApplication1
 
             title form1 = new title();//タイトル
             Form3 form3 = new Form3();//メイン画面
-            form3 = form1.form3;
             Application.Run(form1);//タイトル走らせる
 
             //ここからタイトルが閉じたときの処理
             if (form1.finfrag == false)//終了フラグが立ってない
             {
                 if(Flag.loadfrag==true)//ロードフラグ立ってたらロードしてスタート
-                    form3.load();
+                    saveload.load();
                 Application.Run(form3);//じゃない場合はデフォルト起動
             }
         }

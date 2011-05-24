@@ -21,7 +21,6 @@ namespace WindowsFormsApplication1
 
         internal int direction;//方向
         internal Boolean flag=false;//フラグ
-        babooactive ba;//バブー行動（バトル用。これは別クラスで設定するかな
         trap selectedtrap;
 
         private List<point> traprange= new List<point>();

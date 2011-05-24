@@ -39,7 +39,7 @@ namespace WindowsFormsApplication1
             this.Left = (Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2;
 
             //ニューゲーム？
-            if (Flag.loadfrag == false)
+            if (Flag.newgameflag == true)
             {
                 date.day = 1;
                 date.month = 1;
@@ -101,11 +101,11 @@ namespace WindowsFormsApplication1
             {
                 if (System.IO.File.Exists("save\\date.xml"))//ファイルが存在してるときは上書き確認
                     if (MessageBox.Show("セーブデータを上書きしてもよろしいですか？", "セーブデータ上書き", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                        save();
+                        saveload.save();
                 if (!System.IO.Directory.Exists("save\\"))
                 {
                     System.IO.Directory.CreateDirectory("save\\");
-                    save();
+                    saveload.save();
                 }
             }
         }
@@ -116,7 +116,7 @@ namespace WindowsFormsApplication1
             if (MessageBox.Show("ロードしますか？", "ロード", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 //データを上書き
-                load();
+                saveload.load();
                 Flag.loadfrag = true;
                 this.datelabel.Text = date.year + "年目 " + date.month + "月 " + date.day + "日" + date.week + date.season;
                 moneychanged(0);
@@ -126,10 +126,6 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
-        {
-
-        }
 
         //終了
         private void finbut_Click(object sender, EventArgs e)
@@ -142,7 +138,7 @@ namespace WindowsFormsApplication1
         {
             if (MessageBox.Show("セーブしますか？", "セーブ", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                save();
+                saveload.save();
             }
         }
 
@@ -151,7 +147,7 @@ namespace WindowsFormsApplication1
         {
             if (MessageBox.Show("ロードしますか？", "ロード", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                load();
+                saveload.load();
                 Flag.loadfrag = true;
                 this.datelabel.Text = date.year + "年目 " + date.month + "月 " + date.day + "日" + date.week + date.season;
                 moneychanged(0);
@@ -323,7 +319,7 @@ namespace WindowsFormsApplication1
         //ニューゲーム時の処理
         private void Form3_Shown(object sender, EventArgs e)
         {
-            if (Flag.loadfrag == false)
+            if (Flag.newgameflag == true)
             {
                 text st = new text("start", "peet");
                 st.ShowDialog();
@@ -333,6 +329,7 @@ namespace WindowsFormsApplication1
                 hatake.ShowDialog();
                 this.Show();
                 musicstart();
+                Flag.newgameflag = false;
             }
 
         }

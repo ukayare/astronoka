@@ -11,10 +11,10 @@ using System.Xml;
 namespace WindowsFormsApplication1
 {
     //セーブとロード（メイン画面のパーシャル
-    public partial class Form3 : Form
+    public static class saveload
     {
         //各ファイルからデータ読み出し
-        private void save()
+        public static void save()
         {
             datesave();
             seedsave();
@@ -28,7 +28,7 @@ namespace WindowsFormsApplication1
         }
 
         //各ファイルにデータ書き込み
-        internal void load()
+        public static void load()
         {
             //リストデータはいったんクリアしてから読み込み
             dateload();
@@ -42,6 +42,9 @@ namespace WindowsFormsApplication1
             trapload();
 
             motimono.tfield = new trap[9, 9];
+
+            motimono.tpointd = new trappoint[9, 9];
+            motimono.tpoint = new trappoint[9, 9];
 
             motimono.trapenable = new int[9, 9];
             tfieldload();
@@ -57,7 +60,7 @@ namespace WindowsFormsApplication1
 
         //以下各ファイルのIO　xmlで操作
         //日付関係
-        private void datesave()
+        public static void datesave()
         {
             string fname = "save\\date.xml";
             XmlTextWriter xtw = null;
@@ -96,7 +99,7 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void dateload()
+        public static void dateload()
         {
             string fname = "save\\date.xml";
             XmlTextReader reader= new XmlTextReader(fname);
@@ -161,7 +164,7 @@ namespace WindowsFormsApplication1
         }
 
         //種
-        private void seedsave()
+        public static void seedsave()
         {
             string fname = "save\\seed.xml";
             XmlTextWriter xtw = null;
@@ -216,7 +219,7 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void seedload()
+        public static void seedload()
         {
             string fname = "save\\seed.xml";
             XmlTextReader reader = new XmlTextReader(fname);
@@ -299,7 +302,7 @@ namespace WindowsFormsApplication1
         }
 
         //野菜
-        private void vagsave()
+        public static void vagsave()
         {
             string fname = "save\\vag.xml";
             XmlTextWriter xtw = null;
@@ -354,7 +357,7 @@ namespace WindowsFormsApplication1
             }
         }
         //野菜読み込み時はいったん種情報に載せてから野菜に変換（インスタンスの関係
-        private void vagload()
+        public static void vagload()
         {
             string fname = "save\\vag.xml";
             XmlTextReader reader = new XmlTextReader(fname);
@@ -445,7 +448,7 @@ namespace WindowsFormsApplication1
         }
 
         //畑野菜
-        private void vaghsave()
+        public static void vaghsave()
         {
             string fname = "save\\vagh.xml";
             XmlTextWriter xtw = null;
@@ -502,7 +505,7 @@ namespace WindowsFormsApplication1
         }
 
         //畑野菜もいったん種にしてから変換
-        private void vaghload()
+        public static void vaghload()
         {
             string fname = "save\\vagh.xml";
             XmlTextReader reader = new XmlTextReader(fname);
@@ -622,7 +625,7 @@ namespace WindowsFormsApplication1
         }
 
         //トラップ
-        private void trapsave()
+        public static void trapsave()
         {
             string fname = "save\\trap.xml";
             XmlTextWriter xtw = null;
@@ -661,7 +664,7 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void trapload()
+        public static void trapload()
         {
             string fname = "save\\trap.xml";
             XmlTextReader reader = new XmlTextReader(fname);
@@ -704,7 +707,7 @@ namespace WindowsFormsApplication1
         }
 
         //トラップフィールド
-        private void tfieldsave()
+        public static void tfieldsave()
         {
             string fname = "save\\tfield.xml";
             XmlTextWriter xtw = null;
@@ -754,7 +757,7 @@ namespace WindowsFormsApplication1
 
         }
 
-        private void tfieldload()
+        public static void tfieldload()
         {
             string fname = "save\\tfield.xml";
             XmlTextReader reader = new XmlTextReader(fname);
@@ -821,6 +824,10 @@ namespace WindowsFormsApplication1
                                         //MessageBox.Show(direction.ToString());
                                     }
                                     motimono.tfield[ten , iti] = v;
+                                    if (motimono.tpointd[ten, iti] == null)
+                                        motimono.tpointd[ten, iti] = new trappoint();
+                                    motimono.tpointd[ten, iti].tplist.AddRange(motimono.trappointdset(v, ten, iti));
+                                    motimono.trappointset(ten, iti);
                                 }
                                 flag = false;
                             }
@@ -839,7 +846,7 @@ namespace WindowsFormsApplication1
         }
 
         //ペドロさんの種
-        private void pedroseedsave()
+        public static void pedroseedsave()
         {
             string fname = "save\\pedroseed.xml";
             XmlTextWriter xtw = null;
@@ -874,7 +881,7 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void pedroseedload()
+        public static void pedroseedload()
         {
             string fname = "save\\pedroseed.xml";
             XmlTextReader reader = new XmlTextReader(fname);
@@ -914,7 +921,7 @@ namespace WindowsFormsApplication1
         }
 
         //ペドロさんのトラップ
-        private void pedrotrapsave()
+        public static void pedrotrapsave()
         {
             string fname = "save\\pedrotrap.xml";
             XmlTextWriter xtw = null;
@@ -952,7 +959,7 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void pedrotrapload()
+        public static void pedrotrapload()
         {
             string fname = "save\\pedrotrap.xml";
             XmlTextReader reader = new XmlTextReader(fname);

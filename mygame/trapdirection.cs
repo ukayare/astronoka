@@ -75,47 +75,29 @@ namespace WindowsFormsApplication1
         {
             for (int i = -2; i < 3; i++)
                 for (int j = -2; j < 3; j++)
-                {
                     if (x + i > -1 && y + j > -3 && x + i < 9 && y + j < 9)//はみ出してないか
                     {
                         //MessageBox.Show((x+i).ToString() + (y+j+2).ToString());
                         if (i == 0 && j == 0)//中心は配置トラップ
                             piclist[2 + i, 2 + j].ImageLocation = "trap\\" + settrap.type + settrap.grade + ".bmp";
                         else
-                        {
-                                piclist[2 + i, 2 + j].Image = this.pointer.piclist[x + i, y + j + 2].Image;//デフォルトでもとの画像を配置
-                        }
+                            piclist[2 + i, 2 + j].Image = this.pointer.piclist[x + i, y + j + 2].Image;//デフォルトでもとの画像を配置
                         if (settrap.type == 4)//ジャンプ台
                         {
                             if (settrap.grade < 2 && (Math.Abs(i) == 1 && Math.Abs(j) == 1))//普通の
-                            {
                                 enablepicset(i, j);
-                            }
                             //桂馬R
                             else if (settrap.grade >= 2 && settrap.grade < 4 && ((Math.Abs(i) == 2 && Math.Abs(i + j) == 1) || (Math.Abs(i + j) == 3 && Math.Abs(j) == 2)))
-                            {
                                 enablepicset(i, j);
-                            }
                             //桂馬L
                             else if (settrap.grade >= 4 && settrap.grade < 6 && ((Math.Abs(j) == 2 && Math.Abs(i + j) == 1) || (Math.Abs(i + j) == 3 && Math.Abs(i) == 2)))
-                            {
                                 enablepicset(i, j);
-                            }
-                        }
-                        else if (settrap.type == 13)//カカシ
-                        {
-
                         }
                         //パンチングとかその他の方向とラップ
                         else if ((settrap.type == 3 || (settrap.type > 5 && settrap.type < 12) || settrap.type == 13) && (y + j < 0 || motimono.trapenable[x + i, y + j] == 0))
-                        {
                             if (Math.Abs(i + j) == 1 && (i == 0 || j == 0))
-                            {
                                 enablepicset(i, j);
-                            }
-                        }
                     }
-                }
         }
 
         //配列としてpictureboxをセット
@@ -147,8 +129,7 @@ namespace WindowsFormsApplication1
             piclist[3, 4] = pictureBox24;
             piclist[4, 4] = pictureBox25;
         }
-
-        
+   
 
         //配置方向の決定
         private void directdecide(int i,int x,int y)

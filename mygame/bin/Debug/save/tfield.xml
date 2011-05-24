@@ -1,2 +1,9 @@
 <?xml version="1.0" encoding="shift_jis"?>
-<設置トラップデータ />
+<設置トラップデータ>
+  <設置トラップpart62>
+    <typepart62>12</typepart62>
+    <gradepart62>0</gradepart62>
+    <directionpart62>0</directionpart62>
+    <enablepart62>1</enablepart62>
+  </設置トラップpart62>
+</設置トラップデータ>

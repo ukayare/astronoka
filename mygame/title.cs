@@ -76,6 +76,7 @@ namespace WindowsFormsApplication1
                 date.name = name;
                 MessageBox.Show("あなたの名前は" + date.name + "です。\nこれから頑張ってください");
                 resfrag = true;
+                Flag.newgameflag = true;
                 form3.namelabel.Text = "名前：" + date.name;
                 this.Dispose();
             }

@@ -111,6 +111,12 @@
     <Compile Include="date.cs" />
     <Compile Include="item.cs" />
     <Compile Include="motimono.cs" />
+    <Compile Include="seedstatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="seedstatus.Designer.cs">
+      <DependentUpon>seedstatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="seedvagtrap.cs" />
     <Compile Include="stringcreate.cs" />
     <Compile Include="traobattlepic.cs">
@@ -225,16 +231,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="saveload.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="saveload.cs" />
     <Compile Include="seed.cs" />
-    <Compile Include="seedstatus.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="seedstatus.Designer.cs">
-      <DependentUpon>seedstatus.cs</DependentUpon>
-    </Compile>
     <Compile Include="sonbrelo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -261,18 +259,6 @@
       <DependentUpon>trapfield.cs</DependentUpon>
     </Compile>
     <Compile Include="vagetable.cs" />
-    <Compile Include="vagstatus.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="vagstatus.Designer.cs">
-      <DependentUpon>vagstatus.cs</DependentUpon>
-    </Compile>
-    <Compile Include="vagstatus2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="vagstatus2.Designer.cs">
-      <DependentUpon>vagstatus2.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="astrodome.resx">
       <DependentUpon>astrodome.cs</DependentUpon>
     </EmbeddedResource>
@@ -281,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="kakashidirect.resx">
       <DependentUpon>kakashidirect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="seedstatus.resx">
+      <DependentUpon>seedstatus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="trapbattle.resx">
       <DependentUpon>trapbattle.cs</DependentUpon>
@@ -337,9 +326,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="seedstatus.resx">
-      <DependentUpon>seedstatus.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="sonbrelo.resx">
       <DependentUpon>sonbrelo.cs</DependentUpon>
     </EmbeddedResource>
@@ -351,12 +337,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="trapfield.resx">
       <DependentUpon>trapfield.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="vagstatus.resx">
-      <DependentUpon>vagstatus.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="vagstatus2.resx">
-      <DependentUpon>vagstatus2.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="mygame_TemporaryKey.pfx" />
