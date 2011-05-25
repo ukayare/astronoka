@@ -38,6 +38,8 @@ namespace WindowsFormsApplication1
         //トラップをセット
         public void trapset()
         {
+            article a=new article(1,2,3,4,"","",1);
+
             switch (type)
             {
                 case 0:

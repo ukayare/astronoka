@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication1
 {
-    partial class concule
+    partial class conculeseed
     {
         /// <summary>
         /// 必要なデザイナー変数です。
@@ -28,17 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // concule
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 562);
-            this.Name = "concule";
-            this.Text = "concule";
-            this.ResumeLayout(false);
-
+            this.Text = "conculeseed";
         }
 
         #endregion

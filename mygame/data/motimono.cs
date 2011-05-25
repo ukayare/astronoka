@@ -24,6 +24,8 @@ namespace WindowsFormsApplication1
         internal static List<seed> pedroseed = new List<seed>();//ペドロさんの種リスト
 
 
+        internal static List<article> astronetlist = new List<article>(); 
+
         internal static int mode = 0;//移動位置
         internal static int hatakemax = 0;//畑の数
 

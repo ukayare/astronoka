@@ -269,6 +269,9 @@
       <DependentUpon>trapfield.cs</DependentUpon>
     </Compile>
     <Compile Include="data\vagetable.cs" />
+    <EmbeddedResource Include="concule.resx">
+      <DependentUpon>concule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="home\astronet.resx">
       <DependentUpon>astronet.cs</DependentUpon>
     </EmbeddedResource>

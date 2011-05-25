@@ -8,7 +8,7 @@ namespace WindowsFormsApplication1
 {
     public class article
     {
-        public article(int topic,int year,int month,int day,string author,string title)
+        public article(int topic,int year,int month,int day,string author,string title,int type)
         {
             this.topic = topic;
             this.year = year;
@@ -16,25 +16,26 @@ namespace WindowsFormsApplication1
             this.day = day;
             this.author = author;
             this.title = title;
+            this.type = type;
         }
 
-        readonly int topic;
+        internal int topic;//0コンクール　1トラップ　2野菜　3私書箱
 
-        readonly int year;
-        readonly int month;
-        readonly int day;
+        internal readonly int year;
+        internal readonly int month;
+        internal readonly int day;
 
-        readonly string author;
-        readonly string title;
+        internal readonly string author;
+        internal readonly string title;
+        internal readonly int type;
 
-        public string context
+        public readonly string context
         {
             get
             {
-                StreamReader reader = new StreamReader("astronet\\" + title + ".txt", System.Text.Encoding.GetEncoding("shift_jis"));
+                StreamReader reader = new StreamReader("astronet\\" + title + type + ".txt", System.Text.Encoding.GetEncoding("shift_jis"));
                 return reader.ReadToEnd();
             }
         }
-
     }
 }

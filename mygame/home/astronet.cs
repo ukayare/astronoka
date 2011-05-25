@@ -41,5 +41,24 @@ namespace WindowsFormsApplication1
             sound.stop();
             sound.Dispose();
         }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            article selectedarticle = motimono.astronetlist.Find(a => a.title == this.listBox1.SelectedItem.ToString());
+            this.textBox1.Text = selectedarticle.title;
+            this.textBox2.Text = selectedarticle.author;
+            this.textBox3.Text = selectedarticle.year+"年"+selectedarticle.month+"月"+selectedarticle.day+"日";
+            this.richTextBox1.Text = selectedarticle.context;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.listBox1.Items.Clear();
+            List<article> currentlist = motimono.astronetlist.FindAll(a => a.topic == this.comboBox1.SelectedIndex);
+            foreach (article a in currentlist)
+            {
+                this.listBox1.Items.Add(a.title);
+            }
+        }
     }
 }
