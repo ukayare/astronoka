@@ -29,7 +29,7 @@ namespace WindowsFormsApplication1
         internal readonly string title;
         internal readonly int type;
 
-        public readonly string context
+        internal string context
         {
             get
             {

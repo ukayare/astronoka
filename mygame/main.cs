@@ -360,6 +360,5 @@ namespace WindowsFormsApplication1
             musicstart();
             this.Show();
         }
-
     }
 }

@@ -51,12 +51,12 @@ namespace WindowsFormsApplication1
         {
             if (x + i > -1 && y + j < 0 && x + i < 9)//はみ出していない場合
             {
-                piclist[2 + i, 2 + j].Image = global::WindowsFormsApplication1.Properties.Resources.direct;
+                piclist[2 + i, 2 + j].BackColor = System.Drawing.Color.DarkGray;
                 setenable[2 + i, 2 + j] = true;
             }
             else if (motimono.tfield[x + i, y + j] == null)//何もない場合
             {
-                piclist[2 + i, 2 + j].Image = global::WindowsFormsApplication1.Properties.Resources.direct;
+                piclist[2 + i, 2 + j].BackColor = System.Drawing.Color.DarkGray;
                 setenable[2 + i, 2 + j] = true;
             }
             else if (motimono.tfield[x + i, y + j].kotei == false)//その部分のトラップが固定物じゃない場合
@@ -81,7 +81,7 @@ namespace WindowsFormsApplication1
                         if (i == 0 && j == 0)//中心は配置トラップ
                             piclist[2 + i, 2 + j].ImageLocation = "trap\\" + settrap.type + settrap.grade + ".bmp";
                         else
-                            piclist[2 + i, 2 + j].Image = this.pointer.piclist[x + i, y + j + 2].Image;//デフォルトでもとの画像を配置
+                            piclist[2 + i, 2 + j].BackColor = this.pointer.piclist[x + i, y + j + 2].BackColor;//デフォルトでもとの画像を配置
                         if (settrap.type == 4)//ジャンプ台
                         {
                             if (settrap.grade < 2 && (Math.Abs(i) == 1 && Math.Abs(j) == 1))//普通の
@@ -221,6 +221,7 @@ namespace WindowsFormsApplication1
         private void pictureBox17_Click(object sender, EventArgs e)
         {
             directdecide(3, 1, 3);
-        }        
+        }
+
     }
 }

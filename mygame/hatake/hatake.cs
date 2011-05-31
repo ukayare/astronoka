@@ -48,11 +48,25 @@ namespace WindowsFormsApplication1
 
             //画像の貼り付け
             for (int i = 0; i < 6; i++)
-            {
                 hatapic(hatanum, i);
-            }
 
-            musicstart();            
+            if (motimono.seedlist.Exists(s => s.department == -1) == true)
+                this.depbox1.Items.Add("A科");
+            if (motimono.seedlist.Exists(s => s.department == -0) == true)
+                this.depbox1.Items.Add("B科");
+            if (motimono.seedlist.Exists(s => s.department == 1) == true)
+                this.depbox1.Items.Add("C科");
+
+            this.depbox1.SelectedIndex = 0;
+
+            musicstart();
+            this.label3.Text = nowhatanum;
+            if (motimono.hatakemax == 0)
+            {
+                button7.Visible = false;
+                button8.Visible = false;
+            }
+            
         }
 
         //種の種類選択
@@ -81,9 +95,7 @@ namespace WindowsFormsApplication1
             this.listBox1.Items.Clear();
             this.namebox1.Items.Clear();
             foreach (seed s in motimono.seedlist)
-            {
                 this.listBox1.Items.Add(s.finname);
-            }
             this.depbox1.SetSelected(0, true);
         }
 
@@ -115,9 +127,7 @@ namespace WindowsFormsApplication1
                             int find = motimono.seedlist.FindIndex(se => se == s);
                             motimono.seedlist[find].items--;
                             if (motimono.seedlist[find].items == 0)//０個になってたらリストから消去
-                            {
                                 motimono.seedlist.RemoveAt(find);
-                            }
 
                             boxset();//リストボックス初期化
                             hatapic(hatanum, num);//画像を表示する
@@ -181,9 +191,8 @@ namespace WindowsFormsApplication1
             if (hatanum < 0)
                 hatanum = motimono.hatakemax;
             for (int i = 0; i < 6; i++)
-            {
                 hatapic(hatanum, i);
-            }
+            this.label3.Text = nowhatanum;
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -192,27 +201,28 @@ namespace WindowsFormsApplication1
             if (hatanum > motimono.hatakemax)
                 hatanum = 0;
             for (int i = 0; i < 6; i++)
-            {
                 hatapic(hatanum, i);
-            }
+            this.label3.Text = nowhatanum;
         }
 
+
+        string nowhatanum
+        {
+            get
+            {
+                return (hatanum+1) + "番畑";
+            }
+        }
         //各区画の画像表示
         private void hatapic(int i, int j)
         {
             //ボタンのテキストを状態で変える
             if (motimono.vaghatake[i, j] == null)
-            {
                 bagpic[j].ImageLocation = "bagpicture\\null.bmp";
-            }
             else if (motimono.vaghatake[i, j].mat > 2 && motimono.vaghatake[i, j].mat < 8)
-            {
                 bagpic[j].ImageLocation = motimono.vaghatake[i, j].imagepath;
-            }
             else
-            {
                 bagpic[j].ImageLocation = motimono.vaghatake[i, j].imagepath;
-            }
         }
 
         private void musicstart()

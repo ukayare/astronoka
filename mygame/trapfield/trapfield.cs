@@ -23,6 +23,8 @@ namespace WindowsFormsApplication1
         internal Boolean flag=false;//フラグ
         trap selectedtrap;
 
+        int count = 0;
+        int count2 = 0;
         private List<point> traprange= new List<point>();
 
         music sound;
@@ -242,7 +244,8 @@ namespace WindowsFormsApplication1
             electset(motimono.tfield[x, y], false);
             motimono.tfield[x, y] = null;//フィールドから消去
             motimono.trappointremove(x, y);
-            piclist[x, y + 2].ImageLocation = "trap\\null.bmp";//画像も戻す
+            piclist[x, y + 2].ImageLocation = null;//画像も戻す
+            piclist[x, y + 2].BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             motimono.trapsort();
             this.trapextext2.Text = "";
             mouseLeave(x, y);
@@ -325,16 +328,15 @@ namespace WindowsFormsApplication1
         private void mouseEnter(int x, int y)
         {
             trapextext2.Text = "";
-            traprange.Clear();
             //選択したものを取得
             if (motimono.tfield[x,y] != null)
             {
-                StreamReader reader = new StreamReader("text\\trap\\" + motimono.tfield[x, y].type.ToString() + motimono.tfield[x, y].grade.ToString() + ".txt", System.Text.Encoding.GetEncoding("shift_jis"));
-                trapextext2.AppendText(reader.ReadToEnd());
+                trapextext2.AppendText(stringcreate.trapinfo(motimono.tfield[x, y]));
             }
 
             if (selectedtrap != null)
             {
+                piclist[x, y + 2].ImageLocation = "trap\\" + selectedtrap.type + selectedtrap.grade + ".bmp";
                 if (selectedtrap.constrange == true)
                 {
                     traprange = motimono.trappointdset(selectedtrap, x, y);
@@ -343,7 +345,6 @@ namespace WindowsFormsApplication1
                         rangedisplay(p);
                     }
                 }
-                piclist[x, y + 2].ImageLocation = "trap\\" + selectedtrap.type + selectedtrap.grade + ".bmp";
             }
             else if (motimono.tfield[x, y] != null && motimono.tfield[x, y].range == true)
             {
@@ -361,7 +362,7 @@ namespace WindowsFormsApplication1
         {
             if (p.y < 0)
             {
-                piclist[p.x, p.y + 2].Image = global::WindowsFormsApplication1.Properties.Resources.direct;
+                piclist[p.x, p.y + 2].BackColor = System.Drawing.Color.DarkGray;
             }
             else if (motimono.tfield[p.x, p.y] != null)
             {
@@ -371,7 +372,7 @@ namespace WindowsFormsApplication1
                     piclist[p.x, p.y + 2].ImageLocation = "trap\\" + motimono.tfield[p.x, p.y].type + motimono.tfield[p.x, p.y].grade + "a.bmp";
             }
             else
-                piclist[p.x, p.y + 2].Image = global::WindowsFormsApplication1.Properties.Resources.direct;
+                piclist[p.x, p.y + 2].BackColor = System.Drawing.Color.DarkGray;
         }
 
         private void rangeundisplay(point p)
@@ -380,19 +381,19 @@ namespace WindowsFormsApplication1
             if (p.y == -1)
             {
                 if (p.x == 4)
-                    piclist[p.x, p.y + 2].Image = global::WindowsFormsApplication1.Properties.Resources.enter;
+                    piclist[p.x, p.y + 2].BackColor = System.Drawing.Color.Sienna;
                 else
-                    piclist[p.x, p.y + 2].Image = global::WindowsFormsApplication1.Properties.Resources.shiba;
+                    piclist[p.x, p.y + 2].BackColor = System.Drawing.Color.ForestGreen;
             }
             else if (p.y == -2)
             {
                 if (p.x == 4)
-                    piclist[p.x, p.y + 2].Image = global::WindowsFormsApplication1.Properties.Resources.enter;
+                    piclist[p.x, p.y + 2].BackColor = System.Drawing.Color.Sienna;
                 else
-                    piclist[p.x, p.y + 2].Image = global::WindowsFormsApplication1.Properties.Resources.river;
+                    piclist[p.x, p.y + 2].BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             }
-            else if(((p.y>=0 && p.y<=1)||(p.y>=7 && p.y<=8))&& (p.x>=3 && p.x<=5))
-                piclist[p.x, p.y + 2].Image = global::WindowsFormsApplication1.Properties.Resources.entering;
+            else if (((p.y >= 0 && p.y <= 1) || (p.y >= 7 && p.y <= 8)) && (p.x >= 3 && p.x <= 5))
+                piclist[p.x, p.y + 2].BackColor = System.Drawing.Color.YellowGreen;
             else if (motimono.tfield[p.x, p.y] != null)
             {
                 if (motimono.tfield[p.x, p.y].direct == true)//方向設置か
@@ -401,7 +402,10 @@ namespace WindowsFormsApplication1
                     piclist[p.x, p.y + 2].ImageLocation = "trap\\" + motimono.tfield[p.x, p.y].type + motimono.tfield[p.x, p.y].grade + ".bmp";
             }
             else
-                piclist[p.x, p.y + 2].Image = global::WindowsFormsApplication1.Properties.Resources._null;
+            {
+                piclist[p.x, p.y + 2].ImageLocation = null;
+                piclist[p.x, p.y + 2].BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            }
         }
 
         private void mouseLeave(int x, int y)
@@ -414,16 +418,17 @@ namespace WindowsFormsApplication1
                 else
                     piclist[x, y + 2].ImageLocation = "trap\\" + motimono.tfield[x, y].type + motimono.tfield[x, y].grade + ".bmp";
             }
-            else if(selectedtrap!=null)
-                piclist[x, y + 2].ImageLocation = "trap\\null.bmp";
-            if (piclist != null)
+            else
+            {
+                piclist[x, y + 2].ImageLocation = null;
+            }
+            if (traprange.Count > 0)
             {
                 foreach (point p in traprange)
-                {
                     rangeundisplay(p);
-                }
+                traprange.Clear();
             }
-            this.label3.Text = "0";
+            this.label3.Text = "0"+(count2-count);
         }
 
 
@@ -432,5 +437,12 @@ namespace WindowsFormsApplication1
             this.listBox1.SelectedIndex = -1;
             selectedtrap = null;
         }
+
+        private void trapextext2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

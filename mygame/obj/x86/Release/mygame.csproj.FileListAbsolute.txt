@@ -137,11 +137,15 @@ D:\アストロノーカ\mygame\obj\x86\Release\WindowsFormsApplication1.sonbrel
 D:\アストロノーカ\mygame\obj\x86\Release\WindowsFormsApplication1.tengaron.resources
 D:\アストロノーカ\mygame\obj\x86\Release\WindowsFormsApplication1.townbase.resources
 D:\アストロノーカ\mygame\obj\x86\Release\WindowsFormsApplication1.trapfield.resources
-D:\アストロノーカ\mygame\obj\x86\Release\WindowsFormsApplication1.vagstatus.resources
-D:\アストロノーカ\mygame\obj\x86\Release\WindowsFormsApplication1.vagstatus2.resources
 D:\アストロノーカ\mygame\obj\x86\Release\GenerateResource.read.1.tlog
 D:\アストロノーカ\mygame\obj\x86\Release\GenerateResource.write.1.tlog
 D:\アストロノーカ\mygame\obj\x86\Release\mygame.exe.manifest
 D:\アストロノーカ\mygame\obj\x86\Release\mygame.application
 D:\アストロノーカ\mygame\obj\x86\Release\mygame.exe
 D:\アストロノーカ\mygame\obj\x86\Release\mygame.pdb
+D:\アストロノーカ\mygame\obj\x86\Release\WindowsFormsApplication1.calendar.resources
+D:\アストロノーカ\mygame\obj\x86\Release\WindowsFormsApplication1.concule.resources
+D:\アストロノーカ\mygame\obj\x86\Release\WindowsFormsApplication1.conculeseed.resources
+D:\アストロノーカ\mygame\obj\x86\Release\WindowsFormsApplication1.astronet.resources
+D:\アストロノーカ\mygame\obj\x86\Release\WindowsFormsApplication1.prepare_concule.resources
+D:\アストロノーカ\mygame\obj\x86\Release\WindowsFormsApplication1.kakashidirect.resources

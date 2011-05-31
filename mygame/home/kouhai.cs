@@ -311,5 +311,10 @@ namespace WindowsFormsApplication1
             kouhaiex kex = new kouhaiex();
             kex.ShowDialog();
         }
+
+        private void yasaiextext2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

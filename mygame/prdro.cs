@@ -163,6 +163,7 @@ namespace WindowsFormsApplication1
             {
                 this.bnameBox.Items.Clear();
                 this.listBox2.Items.Clear();
+                stringcreate.infoclear(this.yasaiextext, this.ele1, this.info1, this.eleval1, this.elename1, this.label2);
                 if (this.bitemBox1.SelectedItem.ToString() == "種")
                 {
                     this.bnameBox.Items.Add("全て");
@@ -180,7 +181,8 @@ namespace WindowsFormsApplication1
         //買う種類選択
         private void bnameBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (this.bitemBox1.SelectedIndex != -1 && this.bnameBox.SelectedItem!=null)
+            stringcreate.infoclear(this.yasaiextext, this.ele1, this.info1, this.eleval1, this.elename1, this.label2);
+            if (this.bitemBox1.SelectedIndex != -1 && this.bnameBox.SelectedItem != null)
             {
                 this.listBox2.Items.Clear();
                 if (this.bitemBox1.SelectedItem.ToString() == "種")
@@ -212,18 +214,22 @@ namespace WindowsFormsApplication1
         //買うもの選択
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            stringcreate.infoclear(this.yasaiextext, this.ele1, this.info1, this.eleval1, this.elename1, this.label2);
             //該当するものをそれぞれ取得
             if (this.bitemBox1.SelectedIndex != -1 && this.listBox2.SelectedItem != null && this.listBox2.SelectedIndex != -1)
             {
                 if (this.bitemBox1.SelectedItem.ToString() == "種")
                 {
                     selectedseed = motimono.pedroseed.Find(s => s.finname == this.listBox2.SelectedItem.ToString());
-                    stringcreate.infoshow(selectedseed, this.yasaiextext, this.ele1, this.info1, this.eleval1, this.elename1, this.label1);
+                    stringcreate.infoshow(selectedseed, this.yasaiextext, this.ele1, this.info1, this.eleval1, this.elename1, this.label2);
+                    this.label2.Text = selectedseed.sell + "z";
 
                 }
                 else if (this.bitemBox1.SelectedItem.ToString() == "トラップ")
                 {
                     selectedtrap = motimono.pedrotrap.Find(t => t.name == this.listBox2.SelectedItem.ToString());
+                    this.yasaiextext.Text = stringcreate.trapinfo(selectedtrap);
+                    this.label2.Text = selectedtrap.price + "z";
                 }
             }
         }

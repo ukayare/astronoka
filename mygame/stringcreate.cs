@@ -304,6 +304,12 @@ namespace WindowsFormsApplication1
             listBox.Items.Add(s.finname);
         }
 
+        public static string trapinfo(trap t)
+        {
+            StreamReader reader = new StreamReader("text\\trap\\" + t.type.ToString() + t.grade.ToString() + ".txt", System.Text.Encoding.GetEncoding("shift_jis"));
+            return reader.ReadToEnd();
+        }
+
         public static void infoshow(yasai s, System.Windows.Forms.RichTextBox extext, System.Windows.Forms.RichTextBox eletext, System.Windows.Forms.RichTextBox infotext, System.Windows.Forms.RichTextBox elevaltext, System.Windows.Forms.RichTextBox elenametext,System.Windows.Forms.Label itemlabel)
         {
             extext.Text = ""; eletext.Text = ""; infotext.Text = ""; elevaltext.Text = ""; elenametext.Text = ""; itemlabel.Text = "";
