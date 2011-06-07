@@ -119,13 +119,7 @@ namespace WindowsFormsApplication1
             {
                 for (int i = 0; i < l; i++)
                 {
-                    if (j == 0)
-                    {
-                    }
-                    else if (j == 1)
-                    {
-                    }
-                    else if (motimono.tfield[i, j - 2] == null)
+                    if (j < 2 || motimono.tfield[i, j - 2] == null)
                     {
                     }
                     else if (motimono.tfield[i, j - 2].direct == false)

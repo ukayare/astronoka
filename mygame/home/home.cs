@@ -113,5 +113,11 @@ namespace WindowsFormsApplication1
 
         }
 
+        private void butcontinue_Click(object sender, EventArgs e)
+        {
+            calendar c=new calendar();
+            c.ShowDialog();
+        }
+
     }
 }

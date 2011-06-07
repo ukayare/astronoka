@@ -46,7 +46,7 @@ namespace WindowsFormsApplication1
                 //座標表示(x,y,向き)
                 this.label2.Text = ba.now.x.ToString() + "," + ba.now.y.ToString() + "," + ba.direction.ToString();
                 this.baboopic.ImageLocation = "baboo\\" + ba.baboo.specie + ba.baboo.variation + ba.direction + ".bmp";
-                this.baboopic.Location = this.piclist[ba.now.x, ba.now.y+2].Location;
+                this.baboopic.Location = nowlocation(ba.now.x, ba.now.y);
             }
         }
 
@@ -153,8 +153,14 @@ namespace WindowsFormsApplication1
             //座標表示（x,y,方向,滞在時間,起動回数）
             this.richTextBox1.Text += ba.now.x.ToString() + "," + ba.now.y.ToString() + "," + ba.direction.ToString() + "," + ba.staying[ba.now.x, ba.now.y] + "," + ba.happeningcount[ba.now.x, ba.now.y].ToString() + "," + ba.distance[ba.now.x, ba.now.y].ToString()+"\n";
             this.baboopic.ImageLocation = "baboo\\" + ba.baboo.specie + ba.baboo.variation + ba.direction + ".bmp";
-            this.baboopic.Location = this.piclist[ba.now.x, ba.now.y+2].Location;
+            this.baboopic.Location =  nowlocation(ba.now.x,ba.now.y);
         }
 
+        private System.Drawing.Point nowlocation(int x, int y)
+        {
+            System.Drawing.Point location = new System.Drawing.Point(this.tableLayoutPanel1.Location.X + this.piclist[ba.now.x, ba.now.y + 2].Location.X, this.tableLayoutPanel1.Location.Y + this.piclist[ba.now.x, ba.now.y + 2].Location.Y);
+            return location;
+        }
     }
+
 }

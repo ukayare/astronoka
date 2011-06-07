@@ -93,6 +93,7 @@
             this.butcontinue.TabIndex = 2;
             this.butcontinue.Text = "カレンダー";
             this.butcontinue.UseVisualStyleBackColor = true;
+            this.butcontinue.Click += new System.EventHandler(this.butcontinue_Click);
             // 
             // butend
             // 

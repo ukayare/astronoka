@@ -76,12 +76,6 @@
             // 
             this.depbox1.FormattingEnabled = true;
             this.depbox1.ItemHeight = 12;
-            this.depbox1.Items.AddRange(new object[] {
-            "全て",
-            "A科",
-            "B科",
-            "C科",
-            "強化種"});
             this.depbox1.Location = new System.Drawing.Point(60, 3);
             this.depbox1.Name = "depbox1";
             this.depbox1.Size = new System.Drawing.Size(45, 64);
