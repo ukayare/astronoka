@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
 
 namespace WindowsFormsApplication1
 {
@@ -33,10 +34,8 @@ namespace WindowsFormsApplication1
             monthchanged();
         }
 
-        private void monthchanged()
+        private void holidayset()
         {
-            this.labelmonth.Text = this.month + "月";
-
             switch (month)
             {
                 case 1:
@@ -95,6 +94,58 @@ namespace WindowsFormsApplication1
                     break;
             }
 
+        }
+
+        private void butshow()
+        {
+            butday7.Visible = true;
+            butday14.Visible = true;
+            butday21.Visible = true;
+            butday28.Visible = true;
+            switch (month)
+            {
+                case 1:
+                    butday27.Visible = false;
+
+                    butday1.Visible = true;
+                    butday25.Visible = true;
+                    butday21.Visible = false;
+
+                    break;
+                case 2:
+                    butday1.Visible = false;
+                    butday25.Visible = false;
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    butday23.Visible = false;
+                    break;
+                case 5:
+                    butday23.Visible = true;
+
+                    butday27.Visible = false;
+                    break;
+                case 6:
+                    butday23.Visible = false;
+
+                    butday27.Visible = true;
+
+                    butday1.Visible = false;
+                    butday25.Visible = false;
+                    break;
+            }
+
+        }
+
+        private void monthchanged()
+        {
+            this.labelmonth.Text = this.month + "月";
+
+            holidayset();
+
+            butshow();
+
             if (month == date.month)
             {
                 this.day[date.day - 1].BackColor = todaycolor;
@@ -149,11 +200,11 @@ namespace WindowsFormsApplication1
             }
         }
 
-
         private void dayinfoclear()
         {
             dayinfoset = "";
             this.holoday.Text = "";
+            this.label29.Text = "";
         }
         
         private void settableday()
@@ -188,9 +239,102 @@ namespace WindowsFormsApplication1
             this.day[27] = tableday28;
         }
 
+        private void dayEnter(int month, int day)
+        {
+            switch (day)
+            {
+                case 1:
+                    if (month == 1)
+                    {
+                        this.holoday.Text = "新年祭";
+                        dayinfoset = "アストロドームでコンクールを開催";
+                    }
+                    break;
+                /*case 2:
+                case 3:
+                case 4:
+                case 5:
+                case 6:
+                case 8:
+                case 9:
+                case 11:
+                case 12:
+                case 13:
+                case 15:
+                case 16:
+                case 18:
+                case 19:
+                case 24:
+                case 26:
+                    break;*/
+                case 7:
+                case 14:
+                    pantaset();
+                    break;
+                case 10:
+                    if (month == 2)
+                        this.holoday.Text = "ニッカポッカ記念日";
+                    if (month == 4)
+                        this.holoday.Text = "惑星探査の日";
+                    break;
+                case 17:
+                    if (month == 6)
+                        this.holoday.Text = "満月の日";
+                    break;
+                case 20:
+                case 22:
+                    if (month == 4)
+                        this.holoday.Text = "収穫祭";
+                    break;
+                case 21:
+                    if (month != 1)
+                        dayinfoset = "テンガロン村でコンクールを開催";
+                    if (month == 2)
+                        this.holoday.Text = "新人の日";
+                    if (month == 4)
+                        this.holoday.Text = "収穫祭";
+                    break;
+                case 23:
+                    if (month == 5)
+                    {
+                        this.holoday.Text = "暗黒星雲の日";
+                        sonbset();
+                    }
+                    break;
+                case 25:
+                    if (month == 1)
+                    {
+                        this.holoday.Text = "ハーブ祭";
+                        sonbset();
+                    }
+                    break;
+                case 27:
+                    if (month == 6)
+                    {
+                        this.holoday.Text = "雪祭り";
+                        sonbset();
+                    }
+                    break;
+                case 28:
+                    sonbset();
+                    break;
+            }
+
+            memoset(month, day);
+        }
+
+        private void memoset(int month, int day)
+        {
+            if (System.IO.File.Exists("memo\\" + month + day + ".txt"))
+            {
+                StreamReader reader = new StreamReader(("memo\\" + month + day + ".txt"), System.Text.Encoding.GetEncoding("shift_jis"));
+                this.label29.Text = reader.ReadToEnd();
+            }
+        }
+
         private void day7Enter(object sender, EventArgs e)
         {
-            pantaset();
+            dayEnter(month, 7);
         }
         private void pantaset()
         {
@@ -201,171 +345,26 @@ namespace WindowsFormsApplication1
             dayinfoset = "ソンブレロ市でコンクールを開催";
         }
 
-        private void day14Enter(object sender, EventArgs e)
+
+        private void butday1_Click(object sender, EventArgs e)
         {
-            pantaset();
+            dayconcule(month, 1);
         }
 
-        private void day21Enter(object sender, EventArgs e)
+        private void dayconcule(int month, int day)
         {
-            if (month != 1)
-                dayinfoset = "テンガロン村でコンクールを開催";
-            if (month == 2)
-                this.holoday.Text = "新人の日";
-            if (month == 4)
-                this.holoday.Text = "収穫祭";
+            prepare_concule pc = new prepare_concule(month, day);
         }
 
-        private void mouseLeave(object sender, EventArgs e)
+        private void butmemo_Click(object sender, EventArgs e)
         {
-            dayinfoclear();
+            memo m = new memo();
+            m.ShowDialog();
         }
 
-        private void day28Enter(object sender, EventArgs e)
-        {
-            sonbset();
-        }
-
-        private void day1Enter(object sender, EventArgs e)
-        {
-            if (month == 1)
-            {
-                this.holoday.Text = "新年祭";
-                dayinfoset = "アストロドームでコンクールを開催";
-            }
-        }
-
-        private void day2Enter(object sender, EventArgs e)
+        private void tableLayoutPanel30_Paint(object sender, PaintEventArgs e)
         {
 
-        }
-
-        private void day3Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void day4Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void day5Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void day6Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void day8Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void day9Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void day10Enter(object sender, EventArgs e)
-        {
-            if (month == 2)
-                this.holoday.Text = "ニッカポッカ記念日";
-            if (month == 4)
-                this.holoday.Text = "惑星探査の日";
-        }
-
-        private void day11Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void day12Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void day13Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void day15Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void day16Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void day17Enter(object sender, EventArgs e)
-        {
-            if (month == 6)
-                this.holoday.Text = "満月の日";
-        }
-
-        private void day18Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void day19Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void day20Enter(object sender, EventArgs e)
-        {
-            if (month == 4)
-                this.holoday.Text = "収穫祭";
-        }
-
-        private void day22Enter(object sender, EventArgs e)
-        {
-            if (month == 4)
-                this.holoday.Text = "収穫祭";
-        }
-
-        private void day23Enter(object sender, EventArgs e)
-        {
-            if (month == 5)
-            {
-                this.holoday.Text = "暗黒星雲の日";
-                sonbset();
-            }
-        }
-
-        private void day24Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void day25Enter(object sender, EventArgs e)
-        {
-            if (month == 1)
-            {
-                this.holoday.Text = "ハーブ祭";
-                sonbset();
-            }
-        }
-
-        private void day26Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void day27Enter(object sender, EventArgs e)
-        {
-            if (month == 6)
-            {
-                this.holoday.Text = "雪祭り";
-                sonbset();
-            }
         }
 
     }

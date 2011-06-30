@@ -153,3 +153,4 @@ D:\アストロノーカ\mygame\obj\x86\Debug\WindowsFormsApplication1.concule.r
 D:\アストロノーカ\mygame\obj\x86\Debug\WindowsFormsApplication1.conculeseed.resources
 D:\アストロノーカ\mygame\obj\x86\Debug\WindowsFormsApplication1.calendar.resources
 D:\アストロノーカ\mygame\obj\x86\Debug\WindowsFormsApplication1.prepare_concule.resources
+D:\アストロノーカ\mygame\obj\x86\Debug\WindowsFormsApplication1.memo.resources

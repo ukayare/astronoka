@@ -15,5 +15,21 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
         }
+
+        public prepare_concule(int month,int day)
+        {
+            InitializeComponent();
+            conculeset(month, day);
+        }
+
+        private void conculeset(int month,int day)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

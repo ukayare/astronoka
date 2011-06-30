@@ -43,89 +43,117 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.Thu = new System.Windows.Forms.Label();
             this.tableday28 = new System.Windows.Forms.TableLayoutPanel();
+            this.butday28 = new System.Windows.Forms.Button();
             this.label28 = new System.Windows.Forms.Label();
             this.pictureBox28 = new System.Windows.Forms.PictureBox();
             this.tableday27 = new System.Windows.Forms.TableLayoutPanel();
+            this.butday27 = new System.Windows.Forms.Button();
             this.label27 = new System.Windows.Forms.Label();
             this.pictureBox27 = new System.Windows.Forms.PictureBox();
             this.tableday26 = new System.Windows.Forms.TableLayoutPanel();
+            this.butday26 = new System.Windows.Forms.Button();
             this.label26 = new System.Windows.Forms.Label();
             this.pictureBox26 = new System.Windows.Forms.PictureBox();
             this.tableday25 = new System.Windows.Forms.TableLayoutPanel();
+            this.butday25 = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
             this.pictureBox25 = new System.Windows.Forms.PictureBox();
             this.tableday24 = new System.Windows.Forms.TableLayoutPanel();
+            this.butday24 = new System.Windows.Forms.Button();
             this.label24 = new System.Windows.Forms.Label();
             this.pictureBox24 = new System.Windows.Forms.PictureBox();
             this.tableday23 = new System.Windows.Forms.TableLayoutPanel();
+            this.butday23 = new System.Windows.Forms.Button();
             this.label23 = new System.Windows.Forms.Label();
             this.pictureBox23 = new System.Windows.Forms.PictureBox();
             this.tableday22 = new System.Windows.Forms.TableLayoutPanel();
+            this.butday22 = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
             this.pictureBox22 = new System.Windows.Forms.PictureBox();
             this.tableday21 = new System.Windows.Forms.TableLayoutPanel();
+            this.butday21 = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
             this.pictureBox21 = new System.Windows.Forms.PictureBox();
             this.tableday20 = new System.Windows.Forms.TableLayoutPanel();
+            this.butday20 = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
             this.pictureBox20 = new System.Windows.Forms.PictureBox();
             this.tableday19 = new System.Windows.Forms.TableLayoutPanel();
+            this.butday19 = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
             this.pictureBox19 = new System.Windows.Forms.PictureBox();
             this.tableday18 = new System.Windows.Forms.TableLayoutPanel();
+            this.butday18 = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.pictureBox18 = new System.Windows.Forms.PictureBox();
             this.tableday17 = new System.Windows.Forms.TableLayoutPanel();
+            this.butday17 = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
             this.tableday16 = new System.Windows.Forms.TableLayoutPanel();
+            this.butday16 = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.tableday15 = new System.Windows.Forms.TableLayoutPanel();
+            this.butday15 = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.tableday14 = new System.Windows.Forms.TableLayoutPanel();
+            this.butday14 = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.tableday13 = new System.Windows.Forms.TableLayoutPanel();
+            this.butday13 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.tableday12 = new System.Windows.Forms.TableLayoutPanel();
+            this.butday12 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.tableday11 = new System.Windows.Forms.TableLayoutPanel();
+            this.butday11 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.tableday10 = new System.Windows.Forms.TableLayoutPanel();
+            this.butday10 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.tableday9 = new System.Windows.Forms.TableLayoutPanel();
+            this.butday9 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.tableday8 = new System.Windows.Forms.TableLayoutPanel();
+            this.butday8 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.tableday7 = new System.Windows.Forms.TableLayoutPanel();
+            this.butday7 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.tableday6 = new System.Windows.Forms.TableLayoutPanel();
+            this.butday6 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.tableday5 = new System.Windows.Forms.TableLayoutPanel();
+            this.butday5 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.tableday4 = new System.Windows.Forms.TableLayoutPanel();
+            this.butday4 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.tableday3 = new System.Windows.Forms.TableLayoutPanel();
+            this.butday3 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.tableday2 = new System.Windows.Forms.TableLayoutPanel();
+            this.butday2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tableday1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.butday1 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.Mon = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -138,34 +166,7 @@
             this.dayinfo = new System.Windows.Forms.Label();
             this.holoday = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
-            this.butday1 = new System.Windows.Forms.Button();
-            this.butday2 = new System.Windows.Forms.Button();
-            this.butday3 = new System.Windows.Forms.Button();
-            this.butday4 = new System.Windows.Forms.Button();
-            this.butday5 = new System.Windows.Forms.Button();
-            this.butday6 = new System.Windows.Forms.Button();
-            this.butday7 = new System.Windows.Forms.Button();
-            this.butday8 = new System.Windows.Forms.Button();
-            this.butday9 = new System.Windows.Forms.Button();
-            this.butday10 = new System.Windows.Forms.Button();
-            this.butday11 = new System.Windows.Forms.Button();
-            this.butday12 = new System.Windows.Forms.Button();
-            this.butday13 = new System.Windows.Forms.Button();
-            this.butday14 = new System.Windows.Forms.Button();
-            this.butday15 = new System.Windows.Forms.Button();
-            this.butday16 = new System.Windows.Forms.Button();
-            this.butday17 = new System.Windows.Forms.Button();
-            this.butday18 = new System.Windows.Forms.Button();
-            this.butday19 = new System.Windows.Forms.Button();
-            this.butday20 = new System.Windows.Forms.Button();
-            this.butday21 = new System.Windows.Forms.Button();
-            this.butday22 = new System.Windows.Forms.Button();
-            this.butday23 = new System.Windows.Forms.Button();
-            this.butday24 = new System.Windows.Forms.Button();
-            this.butday25 = new System.Windows.Forms.Button();
-            this.butday26 = new System.Windows.Forms.Button();
-            this.butday27 = new System.Windows.Forms.Button();
-            this.butday28 = new System.Windows.Forms.Button();
+            this.butmemo = new System.Windows.Forms.Button();
             this.tableLayoutPanel31.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -462,6 +463,18 @@
             this.tableday28.MouseEnter += new System.EventHandler(this.day28Enter);
             this.tableday28.MouseLeave += new System.EventHandler(this.mouseLeave);
             // 
+            // butday28
+            // 
+            this.butday28.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butday28.Location = new System.Drawing.Point(41, 20);
+            this.butday28.Name = "butday28";
+            this.butday28.Size = new System.Drawing.Size(20, 40);
+            this.butday28.TabIndex = 3;
+            this.butday28.Text = "詳細";
+            this.butday28.UseVisualStyleBackColor = true;
+            this.butday28.Visible = false;
+            this.butday28.MouseEnter += new System.EventHandler(this.day28Enter);
+            // 
             // label28
             // 
             this.label28.AutoSize = true;
@@ -503,6 +516,18 @@
             this.tableday27.TabIndex = 25;
             this.tableday27.MouseEnter += new System.EventHandler(this.day27Enter);
             this.tableday27.MouseLeave += new System.EventHandler(this.mouseLeave);
+            // 
+            // butday27
+            // 
+            this.butday27.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butday27.Location = new System.Drawing.Point(40, 20);
+            this.butday27.Name = "butday27";
+            this.butday27.Size = new System.Drawing.Size(20, 40);
+            this.butday27.TabIndex = 3;
+            this.butday27.Text = "詳細";
+            this.butday27.UseVisualStyleBackColor = true;
+            this.butday27.Visible = false;
+            this.butday27.MouseEnter += new System.EventHandler(this.day27Enter);
             // 
             // label27
             // 
@@ -546,6 +571,18 @@
             this.tableday26.MouseEnter += new System.EventHandler(this.day26Enter);
             this.tableday26.MouseLeave += new System.EventHandler(this.mouseLeave);
             // 
+            // butday26
+            // 
+            this.butday26.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butday26.Location = new System.Drawing.Point(40, 20);
+            this.butday26.Name = "butday26";
+            this.butday26.Size = new System.Drawing.Size(20, 40);
+            this.butday26.TabIndex = 3;
+            this.butday26.Text = "詳細";
+            this.butday26.UseVisualStyleBackColor = true;
+            this.butday26.Visible = false;
+            this.butday26.MouseEnter += new System.EventHandler(this.day26Enter);
+            // 
             // label26
             // 
             this.label26.AutoSize = true;
@@ -587,6 +624,18 @@
             this.tableday25.TabIndex = 23;
             this.tableday25.MouseEnter += new System.EventHandler(this.day25Enter);
             this.tableday25.MouseLeave += new System.EventHandler(this.mouseLeave);
+            // 
+            // butday25
+            // 
+            this.butday25.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butday25.Location = new System.Drawing.Point(40, 20);
+            this.butday25.Name = "butday25";
+            this.butday25.Size = new System.Drawing.Size(20, 40);
+            this.butday25.TabIndex = 3;
+            this.butday25.Text = "詳細";
+            this.butday25.UseVisualStyleBackColor = true;
+            this.butday25.Visible = false;
+            this.butday25.MouseEnter += new System.EventHandler(this.day25Enter);
             // 
             // label25
             // 
@@ -630,6 +679,18 @@
             this.tableday24.MouseEnter += new System.EventHandler(this.day24Enter);
             this.tableday24.MouseLeave += new System.EventHandler(this.mouseLeave);
             // 
+            // butday24
+            // 
+            this.butday24.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butday24.Location = new System.Drawing.Point(40, 20);
+            this.butday24.Name = "butday24";
+            this.butday24.Size = new System.Drawing.Size(20, 40);
+            this.butday24.TabIndex = 3;
+            this.butday24.Text = "詳細";
+            this.butday24.UseVisualStyleBackColor = true;
+            this.butday24.Visible = false;
+            this.butday24.MouseEnter += new System.EventHandler(this.day24Enter);
+            // 
             // label24
             // 
             this.label24.AutoSize = true;
@@ -671,6 +732,18 @@
             this.tableday23.TabIndex = 21;
             this.tableday23.MouseEnter += new System.EventHandler(this.day23Enter);
             this.tableday23.MouseLeave += new System.EventHandler(this.mouseLeave);
+            // 
+            // butday23
+            // 
+            this.butday23.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butday23.Location = new System.Drawing.Point(40, 20);
+            this.butday23.Name = "butday23";
+            this.butday23.Size = new System.Drawing.Size(20, 40);
+            this.butday23.TabIndex = 3;
+            this.butday23.Text = "詳細";
+            this.butday23.UseVisualStyleBackColor = true;
+            this.butday23.Visible = false;
+            this.butday23.MouseEnter += new System.EventHandler(this.day23Enter);
             // 
             // label23
             // 
@@ -714,6 +787,18 @@
             this.tableday22.MouseEnter += new System.EventHandler(this.day22Enter);
             this.tableday22.MouseLeave += new System.EventHandler(this.mouseLeave);
             // 
+            // butday22
+            // 
+            this.butday22.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butday22.Location = new System.Drawing.Point(40, 20);
+            this.butday22.Name = "butday22";
+            this.butday22.Size = new System.Drawing.Size(20, 40);
+            this.butday22.TabIndex = 3;
+            this.butday22.Text = "詳細";
+            this.butday22.UseVisualStyleBackColor = true;
+            this.butday22.Visible = false;
+            this.butday22.MouseEnter += new System.EventHandler(this.day22Enter);
+            // 
             // label22
             // 
             this.label22.AutoSize = true;
@@ -755,6 +840,18 @@
             this.tableday21.TabIndex = 19;
             this.tableday21.MouseEnter += new System.EventHandler(this.day21Enter);
             this.tableday21.MouseLeave += new System.EventHandler(this.mouseLeave);
+            // 
+            // butday21
+            // 
+            this.butday21.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butday21.Location = new System.Drawing.Point(41, 19);
+            this.butday21.Name = "butday21";
+            this.butday21.Size = new System.Drawing.Size(20, 38);
+            this.butday21.TabIndex = 3;
+            this.butday21.Text = "詳細";
+            this.butday21.UseVisualStyleBackColor = true;
+            this.butday21.Visible = false;
+            this.butday21.MouseEnter += new System.EventHandler(this.day21Enter);
             // 
             // label21
             // 
@@ -798,6 +895,18 @@
             this.tableday20.MouseEnter += new System.EventHandler(this.day20Enter);
             this.tableday20.MouseLeave += new System.EventHandler(this.mouseLeave);
             // 
+            // butday20
+            // 
+            this.butday20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butday20.Location = new System.Drawing.Point(40, 19);
+            this.butday20.Name = "butday20";
+            this.butday20.Size = new System.Drawing.Size(20, 38);
+            this.butday20.TabIndex = 3;
+            this.butday20.Text = "詳細";
+            this.butday20.UseVisualStyleBackColor = true;
+            this.butday20.Visible = false;
+            this.butday20.MouseEnter += new System.EventHandler(this.day20Enter);
+            // 
             // label20
             // 
             this.label20.AutoSize = true;
@@ -839,6 +948,18 @@
             this.tableday19.TabIndex = 17;
             this.tableday19.MouseEnter += new System.EventHandler(this.day19Enter);
             this.tableday19.MouseLeave += new System.EventHandler(this.mouseLeave);
+            // 
+            // butday19
+            // 
+            this.butday19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butday19.Location = new System.Drawing.Point(40, 19);
+            this.butday19.Name = "butday19";
+            this.butday19.Size = new System.Drawing.Size(20, 38);
+            this.butday19.TabIndex = 3;
+            this.butday19.Text = "詳細";
+            this.butday19.UseVisualStyleBackColor = true;
+            this.butday19.Visible = false;
+            this.butday19.MouseEnter += new System.EventHandler(this.day19Enter);
             // 
             // label19
             // 
@@ -882,6 +1003,18 @@
             this.tableday18.MouseEnter += new System.EventHandler(this.day18Enter);
             this.tableday18.MouseLeave += new System.EventHandler(this.mouseLeave);
             // 
+            // butday18
+            // 
+            this.butday18.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butday18.Location = new System.Drawing.Point(40, 19);
+            this.butday18.Name = "butday18";
+            this.butday18.Size = new System.Drawing.Size(20, 38);
+            this.butday18.TabIndex = 3;
+            this.butday18.Text = "詳細";
+            this.butday18.UseVisualStyleBackColor = true;
+            this.butday18.Visible = false;
+            this.butday18.MouseEnter += new System.EventHandler(this.day18Enter);
+            // 
             // label18
             // 
             this.label18.AutoSize = true;
@@ -923,6 +1056,18 @@
             this.tableday17.TabIndex = 15;
             this.tableday17.MouseEnter += new System.EventHandler(this.day17Enter);
             this.tableday17.MouseLeave += new System.EventHandler(this.mouseLeave);
+            // 
+            // butday17
+            // 
+            this.butday17.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butday17.Location = new System.Drawing.Point(40, 19);
+            this.butday17.Name = "butday17";
+            this.butday17.Size = new System.Drawing.Size(20, 38);
+            this.butday17.TabIndex = 3;
+            this.butday17.Text = "詳細";
+            this.butday17.UseVisualStyleBackColor = true;
+            this.butday17.Visible = false;
+            this.butday17.MouseEnter += new System.EventHandler(this.day17Enter);
             // 
             // label17
             // 
@@ -966,6 +1111,18 @@
             this.tableday16.MouseEnter += new System.EventHandler(this.day16Enter);
             this.tableday16.MouseLeave += new System.EventHandler(this.mouseLeave);
             // 
+            // butday16
+            // 
+            this.butday16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butday16.Location = new System.Drawing.Point(40, 19);
+            this.butday16.Name = "butday16";
+            this.butday16.Size = new System.Drawing.Size(20, 38);
+            this.butday16.TabIndex = 3;
+            this.butday16.Text = "詳細";
+            this.butday16.UseVisualStyleBackColor = true;
+            this.butday16.Visible = false;
+            this.butday16.MouseEnter += new System.EventHandler(this.day16Enter);
+            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -1007,6 +1164,18 @@
             this.tableday15.TabIndex = 13;
             this.tableday15.MouseEnter += new System.EventHandler(this.day15Enter);
             this.tableday15.MouseLeave += new System.EventHandler(this.mouseLeave);
+            // 
+            // butday15
+            // 
+            this.butday15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butday15.Location = new System.Drawing.Point(40, 19);
+            this.butday15.Name = "butday15";
+            this.butday15.Size = new System.Drawing.Size(20, 38);
+            this.butday15.TabIndex = 3;
+            this.butday15.Text = "詳細";
+            this.butday15.UseVisualStyleBackColor = true;
+            this.butday15.Visible = false;
+            this.butday15.MouseEnter += new System.EventHandler(this.day15Enter);
             // 
             // label15
             // 
@@ -1050,6 +1219,18 @@
             this.tableday14.MouseEnter += new System.EventHandler(this.day14Enter);
             this.tableday14.MouseLeave += new System.EventHandler(this.mouseLeave);
             // 
+            // butday14
+            // 
+            this.butday14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butday14.Location = new System.Drawing.Point(41, 19);
+            this.butday14.Name = "butday14";
+            this.butday14.Size = new System.Drawing.Size(20, 38);
+            this.butday14.TabIndex = 3;
+            this.butday14.Text = "詳細";
+            this.butday14.UseVisualStyleBackColor = true;
+            this.butday14.Visible = false;
+            this.butday14.MouseEnter += new System.EventHandler(this.day14Enter);
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -1091,6 +1272,18 @@
             this.tableday13.TabIndex = 11;
             this.tableday13.MouseEnter += new System.EventHandler(this.day13Enter);
             this.tableday13.MouseLeave += new System.EventHandler(this.mouseLeave);
+            // 
+            // butday13
+            // 
+            this.butday13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butday13.Location = new System.Drawing.Point(40, 19);
+            this.butday13.Name = "butday13";
+            this.butday13.Size = new System.Drawing.Size(20, 38);
+            this.butday13.TabIndex = 3;
+            this.butday13.Text = "詳細";
+            this.butday13.UseVisualStyleBackColor = true;
+            this.butday13.Visible = false;
+            this.butday13.MouseEnter += new System.EventHandler(this.day13Enter);
             // 
             // label13
             // 
@@ -1134,6 +1327,18 @@
             this.tableday12.MouseEnter += new System.EventHandler(this.day12Enter);
             this.tableday12.MouseLeave += new System.EventHandler(this.mouseLeave);
             // 
+            // butday12
+            // 
+            this.butday12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butday12.Location = new System.Drawing.Point(40, 19);
+            this.butday12.Name = "butday12";
+            this.butday12.Size = new System.Drawing.Size(20, 38);
+            this.butday12.TabIndex = 3;
+            this.butday12.Text = "詳細";
+            this.butday12.UseVisualStyleBackColor = true;
+            this.butday12.Visible = false;
+            this.butday12.MouseEnter += new System.EventHandler(this.day12Enter);
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -1175,6 +1380,18 @@
             this.tableday11.TabIndex = 9;
             this.tableday11.MouseEnter += new System.EventHandler(this.day11Enter);
             this.tableday11.MouseLeave += new System.EventHandler(this.mouseLeave);
+            // 
+            // butday11
+            // 
+            this.butday11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butday11.Location = new System.Drawing.Point(40, 19);
+            this.butday11.Name = "butday11";
+            this.butday11.Size = new System.Drawing.Size(20, 38);
+            this.butday11.TabIndex = 3;
+            this.butday11.Text = "詳細";
+            this.butday11.UseVisualStyleBackColor = true;
+            this.butday11.Visible = false;
+            this.butday11.MouseEnter += new System.EventHandler(this.day11Enter);
             // 
             // label11
             // 
@@ -1218,6 +1435,18 @@
             this.tableday10.MouseEnter += new System.EventHandler(this.day10Enter);
             this.tableday10.MouseLeave += new System.EventHandler(this.mouseLeave);
             // 
+            // butday10
+            // 
+            this.butday10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butday10.Location = new System.Drawing.Point(40, 19);
+            this.butday10.Name = "butday10";
+            this.butday10.Size = new System.Drawing.Size(20, 38);
+            this.butday10.TabIndex = 2;
+            this.butday10.Text = "詳細";
+            this.butday10.UseVisualStyleBackColor = true;
+            this.butday10.Visible = false;
+            this.butday10.MouseEnter += new System.EventHandler(this.day10Enter);
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -1259,6 +1488,18 @@
             this.tableday9.TabIndex = 7;
             this.tableday9.MouseEnter += new System.EventHandler(this.day9Enter);
             this.tableday9.MouseLeave += new System.EventHandler(this.mouseLeave);
+            // 
+            // butday9
+            // 
+            this.butday9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butday9.Location = new System.Drawing.Point(40, 19);
+            this.butday9.Name = "butday9";
+            this.butday9.Size = new System.Drawing.Size(20, 38);
+            this.butday9.TabIndex = 2;
+            this.butday9.Text = "詳細";
+            this.butday9.UseVisualStyleBackColor = true;
+            this.butday9.Visible = false;
+            this.butday9.MouseEnter += new System.EventHandler(this.day9Enter);
             // 
             // label9
             // 
@@ -1302,6 +1543,18 @@
             this.tableday8.MouseEnter += new System.EventHandler(this.day8Enter);
             this.tableday8.MouseLeave += new System.EventHandler(this.mouseLeave);
             // 
+            // butday8
+            // 
+            this.butday8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butday8.Location = new System.Drawing.Point(40, 19);
+            this.butday8.Name = "butday8";
+            this.butday8.Size = new System.Drawing.Size(20, 38);
+            this.butday8.TabIndex = 2;
+            this.butday8.Text = "詳細";
+            this.butday8.UseVisualStyleBackColor = true;
+            this.butday8.Visible = false;
+            this.butday8.MouseEnter += new System.EventHandler(this.day8Enter);
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -1343,6 +1596,18 @@
             this.tableday7.TabIndex = 5;
             this.tableday7.MouseEnter += new System.EventHandler(this.day7Enter);
             this.tableday7.MouseLeave += new System.EventHandler(this.mouseLeave);
+            // 
+            // butday7
+            // 
+            this.butday7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butday7.Location = new System.Drawing.Point(41, 19);
+            this.butday7.Name = "butday7";
+            this.butday7.Size = new System.Drawing.Size(20, 38);
+            this.butday7.TabIndex = 2;
+            this.butday7.Text = "詳細";
+            this.butday7.UseVisualStyleBackColor = true;
+            this.butday7.Visible = false;
+            this.butday7.MouseEnter += new System.EventHandler(this.day7Enter);
             // 
             // label7
             // 
@@ -1386,6 +1651,18 @@
             this.tableday6.MouseEnter += new System.EventHandler(this.day6Enter);
             this.tableday6.MouseLeave += new System.EventHandler(this.mouseLeave);
             // 
+            // butday6
+            // 
+            this.butday6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butday6.Location = new System.Drawing.Point(40, 19);
+            this.butday6.Name = "butday6";
+            this.butday6.Size = new System.Drawing.Size(20, 38);
+            this.butday6.TabIndex = 2;
+            this.butday6.Text = "詳細";
+            this.butday6.UseVisualStyleBackColor = true;
+            this.butday6.Visible = false;
+            this.butday6.MouseEnter += new System.EventHandler(this.day6Enter);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -1427,6 +1704,18 @@
             this.tableday5.TabIndex = 3;
             this.tableday5.MouseEnter += new System.EventHandler(this.day5Enter);
             this.tableday5.MouseLeave += new System.EventHandler(this.mouseLeave);
+            // 
+            // butday5
+            // 
+            this.butday5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butday5.Location = new System.Drawing.Point(40, 19);
+            this.butday5.Name = "butday5";
+            this.butday5.Size = new System.Drawing.Size(20, 38);
+            this.butday5.TabIndex = 2;
+            this.butday5.Text = "詳細";
+            this.butday5.UseVisualStyleBackColor = true;
+            this.butday5.Visible = false;
+            this.butday5.MouseEnter += new System.EventHandler(this.day5Enter);
             // 
             // label5
             // 
@@ -1470,6 +1759,18 @@
             this.tableday4.MouseEnter += new System.EventHandler(this.day4Enter);
             this.tableday4.MouseLeave += new System.EventHandler(this.mouseLeave);
             // 
+            // butday4
+            // 
+            this.butday4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butday4.Location = new System.Drawing.Point(40, 19);
+            this.butday4.Name = "butday4";
+            this.butday4.Size = new System.Drawing.Size(20, 38);
+            this.butday4.TabIndex = 2;
+            this.butday4.Text = "詳細";
+            this.butday4.UseVisualStyleBackColor = true;
+            this.butday4.Visible = false;
+            this.butday4.MouseEnter += new System.EventHandler(this.day4Enter);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -1512,6 +1813,18 @@
             this.tableday3.MouseEnter += new System.EventHandler(this.day3Enter);
             this.tableday3.MouseLeave += new System.EventHandler(this.mouseLeave);
             // 
+            // butday3
+            // 
+            this.butday3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butday3.Location = new System.Drawing.Point(40, 19);
+            this.butday3.Name = "butday3";
+            this.butday3.Size = new System.Drawing.Size(20, 38);
+            this.butday3.TabIndex = 2;
+            this.butday3.Text = "詳細";
+            this.butday3.UseVisualStyleBackColor = true;
+            this.butday3.Visible = false;
+            this.butday3.MouseHover += new System.EventHandler(this.day3Enter);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -1553,6 +1866,18 @@
             this.tableday2.TabIndex = 1;
             this.tableday2.MouseEnter += new System.EventHandler(this.day2Enter);
             this.tableday2.MouseLeave += new System.EventHandler(this.mouseLeave);
+            // 
+            // butday2
+            // 
+            this.butday2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butday2.Location = new System.Drawing.Point(40, 19);
+            this.butday2.Name = "butday2";
+            this.butday2.Size = new System.Drawing.Size(20, 38);
+            this.butday2.TabIndex = 2;
+            this.butday2.Text = "詳細";
+            this.butday2.UseVisualStyleBackColor = true;
+            this.butday2.Visible = false;
+            this.butday2.MouseEnter += new System.EventHandler(this.day2Enter);
             // 
             // label2
             // 
@@ -1617,6 +1942,19 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseEnter += new System.EventHandler(this.day1Enter);
+            // 
+            // butday1
+            // 
+            this.butday1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butday1.Location = new System.Drawing.Point(40, 19);
+            this.butday1.Name = "butday1";
+            this.butday1.Size = new System.Drawing.Size(20, 38);
+            this.butday1.TabIndex = 1;
+            this.butday1.Text = "詳細";
+            this.butday1.UseVisualStyleBackColor = true;
+            this.butday1.Visible = false;
+            this.butday1.Click += new System.EventHandler(this.butday1_Click);
+            this.butday1.MouseEnter += new System.EventHandler(this.day1Enter);
             // 
             // flowLayoutPanel1
             // 
@@ -1693,6 +2031,7 @@
             this.tableLayoutPanel30.Controls.Add(this.tableLayoutPanel31, 1, 0);
             this.tableLayoutPanel30.Controls.Add(this.button1, 1, 3);
             this.tableLayoutPanel30.Controls.Add(this.tableLayoutPanel2, 1, 2);
+            this.tableLayoutPanel30.Controls.Add(this.butmemo, 2, 0);
             this.tableLayoutPanel30.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel30.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel30.Name = "tableLayoutPanel30";
@@ -1703,6 +2042,7 @@
             this.tableLayoutPanel30.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7F));
             this.tableLayoutPanel30.Size = new System.Drawing.Size(584, 442);
             this.tableLayoutPanel30.TabIndex = 2;
+            this.tableLayoutPanel30.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel30_Paint);
             this.tableLayoutPanel30.MouseEnter += new System.EventHandler(this.mouseLeave);
             // 
             // tableLayoutPanel2
@@ -1758,319 +2098,23 @@
             // label29
             // 
             this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label29.Location = new System.Drawing.Point(3, 32);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(28, 12);
+            this.label29.Size = new System.Drawing.Size(39, 15);
             this.label29.TabIndex = 1;
             this.label29.Text = "メモ：";
             // 
-            // butday1
+            // butmemo
             // 
-            this.butday1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.butday1.Location = new System.Drawing.Point(40, 19);
-            this.butday1.Name = "butday1";
-            this.butday1.Size = new System.Drawing.Size(20, 38);
-            this.butday1.TabIndex = 1;
-            this.butday1.Text = "メモ";
-            this.butday1.UseVisualStyleBackColor = true;
-            this.butday1.MouseEnter += new System.EventHandler(this.day1Enter);
-            // 
-            // butday2
-            // 
-            this.butday2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.butday2.Location = new System.Drawing.Point(40, 19);
-            this.butday2.Name = "butday2";
-            this.butday2.Size = new System.Drawing.Size(20, 38);
-            this.butday2.TabIndex = 2;
-            this.butday2.Text = "メモ";
-            this.butday2.UseVisualStyleBackColor = true;
-            this.butday2.MouseEnter += new System.EventHandler(this.day2Enter);
-            // 
-            // butday3
-            // 
-            this.butday3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.butday3.Location = new System.Drawing.Point(40, 19);
-            this.butday3.Name = "butday3";
-            this.butday3.Size = new System.Drawing.Size(20, 38);
-            this.butday3.TabIndex = 2;
-            this.butday3.Text = "メモ";
-            this.butday3.UseVisualStyleBackColor = true;
-            this.butday3.MouseHover += new System.EventHandler(this.day3Enter);
-            // 
-            // butday4
-            // 
-            this.butday4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.butday4.Location = new System.Drawing.Point(40, 19);
-            this.butday4.Name = "butday4";
-            this.butday4.Size = new System.Drawing.Size(20, 38);
-            this.butday4.TabIndex = 2;
-            this.butday4.Text = "メモ";
-            this.butday4.UseVisualStyleBackColor = true;
-            this.butday4.MouseEnter += new System.EventHandler(this.day4Enter);
-            // 
-            // butday5
-            // 
-            this.butday5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.butday5.Location = new System.Drawing.Point(40, 19);
-            this.butday5.Name = "butday5";
-            this.butday5.Size = new System.Drawing.Size(20, 38);
-            this.butday5.TabIndex = 2;
-            this.butday5.Text = "メモ";
-            this.butday5.UseVisualStyleBackColor = true;
-            this.butday5.MouseEnter += new System.EventHandler(this.day5Enter);
-            // 
-            // butday6
-            // 
-            this.butday6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.butday6.Location = new System.Drawing.Point(40, 19);
-            this.butday6.Name = "butday6";
-            this.butday6.Size = new System.Drawing.Size(20, 38);
-            this.butday6.TabIndex = 2;
-            this.butday6.Text = "メモ";
-            this.butday6.UseVisualStyleBackColor = true;
-            this.butday6.MouseEnter += new System.EventHandler(this.day6Enter);
-            // 
-            // butday7
-            // 
-            this.butday7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.butday7.Location = new System.Drawing.Point(41, 19);
-            this.butday7.Name = "butday7";
-            this.butday7.Size = new System.Drawing.Size(20, 38);
-            this.butday7.TabIndex = 2;
-            this.butday7.Text = "メモ";
-            this.butday7.UseVisualStyleBackColor = true;
-            this.butday7.MouseEnter += new System.EventHandler(this.day7Enter);
-            // 
-            // butday8
-            // 
-            this.butday8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.butday8.Location = new System.Drawing.Point(40, 19);
-            this.butday8.Name = "butday8";
-            this.butday8.Size = new System.Drawing.Size(20, 38);
-            this.butday8.TabIndex = 2;
-            this.butday8.Text = "メモ";
-            this.butday8.UseVisualStyleBackColor = true;
-            this.butday8.MouseEnter += new System.EventHandler(this.day8Enter);
-            // 
-            // butday9
-            // 
-            this.butday9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.butday9.Location = new System.Drawing.Point(40, 19);
-            this.butday9.Name = "butday9";
-            this.butday9.Size = new System.Drawing.Size(20, 38);
-            this.butday9.TabIndex = 2;
-            this.butday9.Text = "メモ";
-            this.butday9.UseVisualStyleBackColor = true;
-            this.butday9.MouseEnter += new System.EventHandler(this.day9Enter);
-            // 
-            // butday10
-            // 
-            this.butday10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.butday10.Location = new System.Drawing.Point(40, 19);
-            this.butday10.Name = "butday10";
-            this.butday10.Size = new System.Drawing.Size(20, 38);
-            this.butday10.TabIndex = 2;
-            this.butday10.Text = "メモ";
-            this.butday10.UseVisualStyleBackColor = true;
-            this.butday10.MouseEnter += new System.EventHandler(this.day10Enter);
-            // 
-            // butday11
-            // 
-            this.butday11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.butday11.Location = new System.Drawing.Point(40, 19);
-            this.butday11.Name = "butday11";
-            this.butday11.Size = new System.Drawing.Size(20, 38);
-            this.butday11.TabIndex = 3;
-            this.butday11.Text = "メモ";
-            this.butday11.UseVisualStyleBackColor = true;
-            this.butday11.MouseEnter += new System.EventHandler(this.day11Enter);
-            // 
-            // butday12
-            // 
-            this.butday12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.butday12.Location = new System.Drawing.Point(40, 19);
-            this.butday12.Name = "butday12";
-            this.butday12.Size = new System.Drawing.Size(20, 38);
-            this.butday12.TabIndex = 3;
-            this.butday12.Text = "メモ";
-            this.butday12.UseVisualStyleBackColor = true;
-            this.butday12.MouseEnter += new System.EventHandler(this.day12Enter);
-            // 
-            // butday13
-            // 
-            this.butday13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.butday13.Location = new System.Drawing.Point(40, 19);
-            this.butday13.Name = "butday13";
-            this.butday13.Size = new System.Drawing.Size(20, 38);
-            this.butday13.TabIndex = 3;
-            this.butday13.Text = "メモ";
-            this.butday13.UseVisualStyleBackColor = true;
-            this.butday13.MouseEnter += new System.EventHandler(this.day13Enter);
-            // 
-            // butday14
-            // 
-            this.butday14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.butday14.Location = new System.Drawing.Point(41, 19);
-            this.butday14.Name = "butday14";
-            this.butday14.Size = new System.Drawing.Size(20, 38);
-            this.butday14.TabIndex = 3;
-            this.butday14.Text = "メモ";
-            this.butday14.UseVisualStyleBackColor = true;
-            this.butday14.MouseEnter += new System.EventHandler(this.day14Enter);
-            // 
-            // butday15
-            // 
-            this.butday15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.butday15.Location = new System.Drawing.Point(40, 19);
-            this.butday15.Name = "butday15";
-            this.butday15.Size = new System.Drawing.Size(20, 38);
-            this.butday15.TabIndex = 3;
-            this.butday15.Text = "メモ";
-            this.butday15.UseVisualStyleBackColor = true;
-            this.butday15.MouseEnter += new System.EventHandler(this.day15Enter);
-            // 
-            // butday16
-            // 
-            this.butday16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.butday16.Location = new System.Drawing.Point(40, 19);
-            this.butday16.Name = "butday16";
-            this.butday16.Size = new System.Drawing.Size(20, 38);
-            this.butday16.TabIndex = 3;
-            this.butday16.Text = "メモ";
-            this.butday16.UseVisualStyleBackColor = true;
-            this.butday16.MouseEnter += new System.EventHandler(this.day16Enter);
-            // 
-            // butday17
-            // 
-            this.butday17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.butday17.Location = new System.Drawing.Point(40, 19);
-            this.butday17.Name = "butday17";
-            this.butday17.Size = new System.Drawing.Size(20, 38);
-            this.butday17.TabIndex = 3;
-            this.butday17.Text = "メモ";
-            this.butday17.UseVisualStyleBackColor = true;
-            this.butday17.MouseEnter += new System.EventHandler(this.day17Enter);
-            // 
-            // butday18
-            // 
-            this.butday18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.butday18.Location = new System.Drawing.Point(40, 19);
-            this.butday18.Name = "butday18";
-            this.butday18.Size = new System.Drawing.Size(20, 38);
-            this.butday18.TabIndex = 3;
-            this.butday18.Text = "メモ";
-            this.butday18.UseVisualStyleBackColor = true;
-            this.butday18.MouseEnter += new System.EventHandler(this.day18Enter);
-            // 
-            // butday19
-            // 
-            this.butday19.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.butday19.Location = new System.Drawing.Point(40, 19);
-            this.butday19.Name = "butday19";
-            this.butday19.Size = new System.Drawing.Size(20, 38);
-            this.butday19.TabIndex = 3;
-            this.butday19.Text = "メモ";
-            this.butday19.UseVisualStyleBackColor = true;
-            this.butday19.MouseEnter += new System.EventHandler(this.day19Enter);
-            // 
-            // butday20
-            // 
-            this.butday20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.butday20.Location = new System.Drawing.Point(40, 19);
-            this.butday20.Name = "butday20";
-            this.butday20.Size = new System.Drawing.Size(20, 38);
-            this.butday20.TabIndex = 3;
-            this.butday20.Text = "メモ";
-            this.butday20.UseVisualStyleBackColor = true;
-            this.butday20.MouseEnter += new System.EventHandler(this.day20Enter);
-            // 
-            // butday21
-            // 
-            this.butday21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.butday21.Location = new System.Drawing.Point(41, 19);
-            this.butday21.Name = "butday21";
-            this.butday21.Size = new System.Drawing.Size(20, 38);
-            this.butday21.TabIndex = 3;
-            this.butday21.Text = "メモ";
-            this.butday21.UseVisualStyleBackColor = true;
-            this.butday21.MouseEnter += new System.EventHandler(this.day21Enter);
-            // 
-            // butday22
-            // 
-            this.butday22.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.butday22.Location = new System.Drawing.Point(40, 20);
-            this.butday22.Name = "butday22";
-            this.butday22.Size = new System.Drawing.Size(20, 40);
-            this.butday22.TabIndex = 3;
-            this.butday22.Text = "メモ";
-            this.butday22.UseVisualStyleBackColor = true;
-            this.butday22.MouseEnter += new System.EventHandler(this.day22Enter);
-            // 
-            // butday23
-            // 
-            this.butday23.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.butday23.Location = new System.Drawing.Point(40, 20);
-            this.butday23.Name = "butday23";
-            this.butday23.Size = new System.Drawing.Size(20, 40);
-            this.butday23.TabIndex = 3;
-            this.butday23.Text = "メモ";
-            this.butday23.UseVisualStyleBackColor = true;
-            this.butday23.MouseEnter += new System.EventHandler(this.day23Enter);
-            // 
-            // butday24
-            // 
-            this.butday24.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.butday24.Location = new System.Drawing.Point(40, 20);
-            this.butday24.Name = "butday24";
-            this.butday24.Size = new System.Drawing.Size(20, 40);
-            this.butday24.TabIndex = 3;
-            this.butday24.Text = "メモ";
-            this.butday24.UseVisualStyleBackColor = true;
-            this.butday24.MouseEnter += new System.EventHandler(this.day24Enter);
-            // 
-            // butday25
-            // 
-            this.butday25.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.butday25.Location = new System.Drawing.Point(40, 20);
-            this.butday25.Name = "butday25";
-            this.butday25.Size = new System.Drawing.Size(20, 40);
-            this.butday25.TabIndex = 3;
-            this.butday25.Text = "メモ";
-            this.butday25.UseVisualStyleBackColor = true;
-            this.butday25.MouseEnter += new System.EventHandler(this.day25Enter);
-            // 
-            // butday26
-            // 
-            this.butday26.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.butday26.Location = new System.Drawing.Point(40, 20);
-            this.butday26.Name = "butday26";
-            this.butday26.Size = new System.Drawing.Size(20, 40);
-            this.butday26.TabIndex = 3;
-            this.butday26.Text = "メモ";
-            this.butday26.UseVisualStyleBackColor = true;
-            this.butday26.MouseEnter += new System.EventHandler(this.day26Enter);
-            // 
-            // butday27
-            // 
-            this.butday27.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.butday27.Location = new System.Drawing.Point(40, 20);
-            this.butday27.Name = "butday27";
-            this.butday27.Size = new System.Drawing.Size(20, 40);
-            this.butday27.TabIndex = 3;
-            this.butday27.Text = "メモ";
-            this.butday27.UseVisualStyleBackColor = true;
-            this.butday27.MouseEnter += new System.EventHandler(this.day27Enter);
-            // 
-            // butday28
-            // 
-            this.butday28.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.butday28.Location = new System.Drawing.Point(41, 20);
-            this.butday28.Name = "butday28";
-            this.butday28.Size = new System.Drawing.Size(20, 40);
-            this.butday28.TabIndex = 3;
-            this.butday28.Text = "メモ";
-            this.butday28.UseVisualStyleBackColor = true;
-            this.butday28.MouseEnter += new System.EventHandler(this.day28Enter);
+            this.butmemo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butmemo.Location = new System.Drawing.Point(539, 3);
+            this.butmemo.Name = "butmemo";
+            this.butmemo.Size = new System.Drawing.Size(42, 38);
+            this.butmemo.TabIndex = 6;
+            this.butmemo.Text = "メモ";
+            this.butmemo.UseVisualStyleBackColor = true;
+            this.butmemo.Click += new System.EventHandler(this.butmemo_Click);
             // 
             // calendar
             // 
@@ -2331,6 +2375,7 @@
         private System.Windows.Forms.Button butday4;
         private System.Windows.Forms.Button butday3;
         private System.Windows.Forms.Button butday2;
+        private System.Windows.Forms.Button butmemo;
 
 
     }
