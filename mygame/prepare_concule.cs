@@ -11,11 +11,6 @@ namespace WindowsFormsApplication1
 {
     public partial class prepare_concule : Form
     {
-        public prepare_concule()
-        {
-            InitializeComponent();
-        }
-
         public prepare_concule(int month,int day)
         {
             InitializeComponent();
@@ -27,9 +22,15 @@ namespace WindowsFormsApplication1
 
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
+            this.Dispose();
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            conculeseed cs = new conculeseed("");
+            cs.ShowDialog();
         }
     }
 }

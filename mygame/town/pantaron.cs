@@ -20,10 +20,12 @@ namespace WindowsFormsApplication1
             mpath = "music\\pantaron.mp3";
         }
 
-        
+
 
         protected override void butcon_Click(object sender, EventArgs e)
         {
+            if (date.concule(1) == true)
+                pcget();
         }
         protected override void butua_Click(object sender, EventArgs e)
         {

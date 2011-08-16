@@ -222,5 +222,35 @@ namespace WindowsFormsApplication1
                 return false;
             }
         }
+
+        public static Boolean concule(int mode)
+        {
+            switch (mode)
+            {
+                case 0:
+                    if (month != 1 && day == 21)
+                        return true;
+                    break;
+                case 1:
+                    if (day == 7 || day == 14)
+                        return true;
+                    break;
+                case 2:
+                    if (day == 28)
+                        return true;
+                    else if (month == 1 && day == 25)
+                        return true;
+                    else if (month == 5 && day == 23)
+                        return true;
+                    else if (month == 6 && day == 27)
+                        return true;
+                    break;
+                case 3:
+                    if (month == 1 && day == 1)
+                        return true;
+                    break;
+            }
+            return false;
+        }
     }
 }

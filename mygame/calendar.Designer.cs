@@ -2042,7 +2042,6 @@
             this.tableLayoutPanel30.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7F));
             this.tableLayoutPanel30.Size = new System.Drawing.Size(584, 442);
             this.tableLayoutPanel30.TabIndex = 2;
-            this.tableLayoutPanel30.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel30_Paint);
             this.tableLayoutPanel30.MouseEnter += new System.EventHandler(this.mouseLeave);
             // 
             // tableLayoutPanel2

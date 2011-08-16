@@ -20,6 +20,8 @@ namespace WindowsFormsApplication1
             
         protected override void butcon_Click(object sender, EventArgs e) 
         {
+            if (date.concule(0) == true)
+                pcget();
         }
         protected override void butua_Click(object sender, EventArgs e)
         {

@@ -361,11 +361,5 @@ namespace WindowsFormsApplication1
             memo m = new memo();
             m.ShowDialog();
         }
-
-        private void tableLayoutPanel30_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
     }
 }

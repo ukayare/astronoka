@@ -113,5 +113,11 @@ namespace WindowsFormsApplication1
             sound.Dispose();
         }
 
+        protected void pcget()
+        {
+            prepare_concule pc = new prepare_concule(date.month, date.day);
+            pc.ShowDialog();
+        }
+
     }
 }
